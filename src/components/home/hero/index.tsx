@@ -8,6 +8,7 @@ import InfoCard from "../../shared/infoCard";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Pagination } from "swiper/modules";
 import "swiper/css";
+import LinkButton from "../../shared/linkButton";
 
 interface Card {
   title: string;
@@ -43,7 +44,7 @@ const cardsContent: Card[] = [
 export default function Hero() {
   return (
     <div className="bg-black">
-      <div className="flex flex-col py-52 px-32 container">
+      <div className="pt-52 pb-40 px-32 container">
         <div className="mb-11">
           <h1 className="text-white font-inter font-bold text-9xl uppercase leading-customLineHeight">
             Empowering Your Business{" "}
@@ -56,12 +57,11 @@ export default function Hero() {
             <h2 className="text-white text-2xl font-bold">
               WEB · BRANDING · GROWTH
             </h2>
-            <Link
-              to="#"
-              className="bg-customPurple px-14 py-2 rounded-full text-white text-normal font-semibold w-fit"
-            >
-              Explore Our Services
-            </Link>
+            <LinkButton
+              text="Explore Our Services"
+              path="#"
+              color="customPurple"
+            />
           </div>
 
           <div className="flex flex-row justify-end">

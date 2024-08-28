@@ -27,6 +27,7 @@ module.exports = {
       },
       fontSize: {
         "9xl": "110px",
+        "3xl": "60px",
         "2xl": "37px",
         normal: "30px",
         little: "20px",
@@ -34,9 +35,13 @@ module.exports = {
       colors: {
         customPink: {
           DEFAULT: "#F94074",
+          500: "#E886DF"
         },
         customPurple: {
           DEFAULT: "#5A56EC",
+        },
+        customBlue: {
+          DEFAULT: "#2C5DF3",
         },
       },
       lineHeight: {
