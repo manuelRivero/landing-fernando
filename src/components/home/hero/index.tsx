@@ -5,6 +5,9 @@ import star8 from "./../../../images/icons/star-8.svg";
 import star4 from "./../../../images/icons/star-4.svg";
 import { Link } from "gatsby";
 import InfoCard from "../../shared/infoCard";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { FreeMode, Pagination } from "swiper/modules";
+import "swiper/css";
 
 interface Card {
   title: string;
@@ -66,7 +69,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="grid grid-cols-3 gap-8">
+        <div className="hidden xl:grid grid-cols-3 gap-8">
           {cardsContent.map((card: Card) => (
             <InfoCard
               title={card.title}
@@ -75,6 +78,28 @@ export default function Hero() {
               alt={card.alt}
             />
           ))}
+        </div>
+        <div className="block xl:hidden">
+          <Swiper
+            slidesPerView={1}
+            spaceBetween={200}
+            freeMode={true}
+            pagination={{
+              clickable: true,
+            }}
+            modules={[FreeMode, Pagination]}
+          >
+            {cardsContent.map((card: Card, index: number) => (
+              <SwiperSlide key={`${card.title}-${index}`}>
+                <InfoCard
+                  title={card.title}
+                  description={card.description}
+                  icon={card.icon}
+                  alt={card.alt}
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </div>
     </div>
