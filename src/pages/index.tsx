@@ -2,12 +2,14 @@ import * as React from "react";
 import { Link, type HeadFC, type PageProps } from "gatsby";
 import Hero from "../components/home/hero";
 import Services from "../components/home/services";
+import Partners from "../components/home/partners";
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
     <div>
       <Hero />
       <Services />
+      <Partners />
     </div>
   );
 };

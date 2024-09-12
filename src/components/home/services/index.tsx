@@ -3,6 +3,7 @@ import Collapse from "../../shared/collapse";
 import lottoIcon from "./../../../images/icons/lotto.svg";
 import plusOutlinedIcon from "./../../../images/icons/plus-outlined.svg";
 import flowerIcon from "./../../../images/icons/flower-pink.svg";
+import LinkButton from "../../shared/linkButton";
 
 interface CollapseType {
   title: string;
@@ -35,15 +36,15 @@ const collapseData: CollapseType[] = [
     buttonData: {
       text: "GET QUOTE",
       path: "#",
-      color: "customPink-500",
+      color: "customPink-400",
     },
   },
 ];
 
 export default function Services() {
   return (
-    <div className="bg-customBlue">
-      <div className="py-24 px-32 mb-14 container">
+    <div className="bg-customBlue-500">
+      <div className="py-24 px-32 container">
         <div className="max-w-[479px]">
           <h1 className="text-white font-inter font-bold text-3xl uppercase">
             Services
@@ -54,21 +55,29 @@ export default function Services() {
           </p>
         </div>
 
-        <div className="flex flex-col divide-y divide-customPink-500 border-b border-b-customPink-500">
+        <div className="flex flex-col divide-y divide-customPink-400 border-b border-b-customPink-400 mb-14">
           {collapseData.map((item: CollapseType, index: number) => (
             <Collapse
               key={`${item.title}-${index}`}
               title={item.title}
               icon={item.icon}
               alt={item.alt}
-							description={item.description}
-							buttonData={{
-								text: item.buttonData?.text,
-								path: item.buttonData?.path,
-								color: item.buttonData?.color
-							}}
+              description={item.description}
+              buttonData={{
+                text: item.buttonData?.text,
+                path: item.buttonData?.path,
+                color: item.buttonData?.color,
+              }}
             />
           ))}
+        </div>
+
+        <div className="flex justify-center">
+          <LinkButton
+            text={"LEARN MORE"}
+            path={"#"}
+            color={"customPurple-600"}
+          />
         </div>
       </div>
     </div>

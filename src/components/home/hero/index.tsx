@@ -48,7 +48,7 @@ export default function Hero() {
         <div className="mb-11">
           <h1 className="text-white font-inter font-bold text-9xl uppercase leading-customLineHeight">
             Empowering Your Business{" "}
-            <span className="text-customPink">Growth</span>
+            <span className="text-customPink-500">Growth</span>
           </h1>
         </div>
 
@@ -60,7 +60,7 @@ export default function Hero() {
             <LinkButton
               text="Explore Our Services"
               path="#"
-              color="customPurple"
+              color="customPurple-500"
             />
           </div>
 
@@ -68,21 +68,20 @@ export default function Hero() {
             <img src={computerImg} alt="Computer" />
           </div>
         </div>
-
-        <div className="hidden xl:grid grid-cols-3 gap-8">
-          {cardsContent.map((card: Card) => (
-            <InfoCard
-              title={card.title}
-              description={card.description}
-              icon={card.icon}
-              alt={card.alt}
-            />
-          ))}
-        </div>
-        <div className="block xl:hidden">
+        <div>
           <Swiper
-            slidesPerView={1}
-            spaceBetween={200}
+            breakpoints={{
+              1300: {
+                slidesPerView: 3, // Mostrar 3 slides cuando la pantalla sea mayor a 1300px
+              },
+              900: {
+                slidesPerView: 2, // Mostrar 2 slides entre 900px y 1300px
+              },
+              0: {
+                slidesPerView: 1, // Mostrar 1 slide si la pantalla es menor a 900px
+              },
+            }}
+            spaceBetween={20}
             freeMode={true}
             pagination={{
               clickable: true,

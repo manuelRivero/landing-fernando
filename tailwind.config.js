@@ -34,14 +34,15 @@ module.exports = {
       },
       colors: {
         customPink: {
-          DEFAULT: "#F94074",
-          500: "#E886DF"
+          400: "#E886DF",
+          500: "#F94074",
         },
         customPurple: {
-          DEFAULT: "#5A56EC",
+          500: "#5A56EC",
+          600: "#2146B6"
         },
         customBlue: {
-          DEFAULT: "#2C5DF3",
+          500: "#2C5DF3",
         },
       },
       lineHeight: {
