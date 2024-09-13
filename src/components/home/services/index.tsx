@@ -44,7 +44,7 @@ const collapseData: CollapseType[] = [
 export default function Services() {
   return (
     <div className="bg-customBlue-500">
-      <div className="py-24 px-32 container">
+      <div className="py-24 px-8 md:px-32 container">
         <div className="max-w-[479px]">
           <h1 className="text-white font-inter font-bold text-3xl uppercase">
             Services

@@ -44,7 +44,7 @@ const cardsContent: Card[] = [
 export default function Hero() {
   return (
     <div className="bg-black">
-      <div className="pt-52 pb-40 px-32 container">
+      <div className="pt-52 pb-40 px-8 md:px-32 container">
         <div className="mb-11">
           <h1 className="text-white font-inter font-bold text-9xl uppercase leading-customLineHeight">
             Empowering Your Business{" "}

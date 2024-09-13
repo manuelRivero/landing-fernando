@@ -4,6 +4,7 @@ import Hero from "../components/home/hero";
 import Services from "../components/home/services";
 import Partners from "../components/home/partners";
 import Contact from "../components/home/contact";
+import Incubator from "../components/home/incubator";
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
@@ -12,6 +13,7 @@ const IndexPage: React.FC<PageProps> = () => {
       <Services />
       <Partners />
       <Contact />
+      <Incubator />
     </div>
   );
 };

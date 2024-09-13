@@ -1,19 +1,13 @@
 import { Link } from "gatsby";
 import React from "react";
+import { LinkButtonType } from "../../../types/linkButton";
 
-interface Props {
-  text: string;
-  path: string;
-  color: string;
-  textColor?: string;
-}
-
-export default function LinkButton({ text, path, color, textColor = "white" }: Props) {
+export default function LinkButton({ text, path, color, textColor = "white" }: LinkButtonType) {
   return (
     <Link
       to={path}
       type="button"
-      className={`bg-${color} px-14 py-2 rounded-full text-${textColor} text-normal font-semibold w-fit`}
+      className={`bg-${color} px-14 py-2 rounded-full text-${textColor} text-normal text-center font-semibold w-fit`}
     >
       {text}
     </Link>

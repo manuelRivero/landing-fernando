@@ -4,7 +4,7 @@ import LinkButton from "../../shared/linkButton";
 export default function Contact() {
   return (
     <div className="bg-customOrange-500">
-      <div className="py-14 px-32 container">
+      <div className="py-14 px-8 md:px-32 container">
         <h2 className="text-white text-center font-inter font-bold text-3xl uppercase">
           Chat with Us
         </h2>

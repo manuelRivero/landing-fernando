@@ -26,7 +26,7 @@ const logosData: Logo[] = [
 export default function Partners() {
   return (
     <div className="bg-black">
-      <div className="py-32 pb-40 px-32 container">
+      <div className="py-32 pb-40 px-8 md:px-32 container">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-11">
           <h2 className="text-white font-inter font-bold text-3xl uppercase leading-none">
             We’ve got the trust of
