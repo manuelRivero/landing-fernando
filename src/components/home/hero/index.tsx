@@ -5,6 +5,10 @@ import star8 from "./../../../images/icons/star-8.svg";
 import star4 from "./../../../images/icons/star-4.svg";
 import { Link } from "gatsby";
 import InfoCard from "../../shared/infoCard";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { FreeMode, Pagination } from "swiper/modules";
+import "swiper/css";
+import LinkButton from "../../shared/linkButton";
 
 interface Card {
   title: string;
@@ -40,11 +44,11 @@ const cardsContent: Card[] = [
 export default function Hero() {
   return (
     <div className="bg-black">
-      <div className="flex flex-col py-52 px-32 container">
+      <div className="pt-52 pb-40 px-32 container">
         <div className="mb-11">
           <h1 className="text-white font-inter font-bold text-9xl uppercase leading-customLineHeight">
             Empowering Your Business{" "}
-            <span className="text-customPink">Growth</span>
+            <span className="text-customPink-500">Growth</span>
           </h1>
         </div>
 
@@ -53,28 +57,48 @@ export default function Hero() {
             <h2 className="text-white text-2xl font-bold">
               WEB · BRANDING · GROWTH
             </h2>
-            <Link
-              to="#"
-              className="bg-customPurple px-14 py-2 rounded-full text-white text-normal font-semibold w-fit"
-            >
-              Explore Our Services
-            </Link>
+            <LinkButton
+              text="Explore Our Services"
+              path="#"
+              color="customPurple-500"
+            />
           </div>
 
           <div className="flex flex-row justify-end">
             <img src={computerImg} alt="Computer" />
           </div>
         </div>
-
-        <div className="grid grid-cols-3 gap-8">
-          {cardsContent.map((card: Card) => (
-            <InfoCard
-              title={card.title}
-              description={card.description}
-              icon={card.icon}
-              alt={card.alt}
-            />
-          ))}
+        <div>
+          <Swiper
+            breakpoints={{
+              1300: {
+                slidesPerView: 3, // Mostrar 3 slides cuando la pantalla sea mayor a 1300px
+              },
+              900: {
+                slidesPerView: 2, // Mostrar 2 slides entre 900px y 1300px
+              },
+              0: {
+                slidesPerView: 1, // Mostrar 1 slide si la pantalla es menor a 900px
+              },
+            }}
+            spaceBetween={20}
+            freeMode={true}
+            pagination={{
+              clickable: true,
+            }}
+            modules={[FreeMode, Pagination]}
+          >
+            {cardsContent.map((card: Card, index: number) => (
+              <SwiperSlide key={`${card.title}-${index}`}>
+                <InfoCard
+                  title={card.title}
+                  description={card.description}
+                  icon={card.icon}
+                  alt={card.alt}
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </div>
     </div>
