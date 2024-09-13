@@ -43,6 +43,13 @@ module.exports = {
         },
         customBlue: {
           500: "#2C5DF3",
+          600: "#2B0B57",
+        },
+        customOrange: {
+          500: "#E85F30",
+        },
+        customGreen: {
+          500: "#1BE5A6",
         },
       },
       lineHeight: {
