@@ -14,7 +14,7 @@ export default function GenericSection({
   icon,
 }: Props) {
   return (
-    <div className="flex flex-col justify-center items-center">
+    <div className="flex flex-col justify-center items-center space-y-4">
       {icon && <img src={icon.src} alt={icon.alt} />}
       <h2 className="text-white text-center text-normal font-bold uppercase">{title}</h2>
       <h2 className="text-white text-center text-normal font-normal">{description}</h2>

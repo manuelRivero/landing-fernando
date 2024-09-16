@@ -8,13 +8,9 @@ import ubuLogo from "./../../../images/logos/ubu-logo.svg";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Pagination } from "swiper/modules";
 import "swiper/css";
+import { ImageType } from "../../../types/imageType";
 
-interface Logo {
-  src: string;
-  alt: string;
-}
-
-const logosData: Logo[] = [
+const logosData: ImageType[] = [
   { src: nusaLogo, alt: "nusa-logo" },
   { src: brandWithLogo, alt: "brand-with-logo" },
   { src: teuLogo, alt: "teu-logo" },
@@ -28,10 +24,10 @@ export default function Partners() {
     <div className="bg-black">
       <div className="py-32 pb-40 px-8 md:px-32 container">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-11">
-          <h2 className="text-white font-inter font-bold text-3xl uppercase leading-none">
+          <h2 className="text-white text-center lg:text-left font-inter font-bold text-3xl uppercase leading-none">
             We’ve got the trust of
           </h2>
-          <h3 className="text-white font-inter font-bold text-normal leading-tight">
+          <h3 className="text-white text-center lg:text-left font-inter font-bold text-normal leading-tight">
             Brand With, Nusa, UBU, Ardente, Casa del Cielo, Teu, Instructivo del
             alma, <span className="font-normal">and more.</span>
           </h3>
@@ -43,11 +39,11 @@ export default function Partners() {
               1300: {
                 slidesPerView: 6, // Mostrar 3 slides cuando la pantalla sea mayor a 1300px
               },
-              900: {
+              1080: {
                 slidesPerView: 3, // Mostrar 2 slides entre 900px y 1300px
               },
               0: {
-                slidesPerView: 1, // Mostrar 1 slide si la pantalla es menor a 900px
+                slidesPerView: 2, // Mostrar 1 slide si la pantalla es menor a 900px
               },
             }}
             spaceBetween={20}
@@ -57,7 +53,7 @@ export default function Partners() {
             }}
             modules={[FreeMode, Pagination]}
           >
-            {logosData.map((logo: Logo, index: number) => (
+            {logosData.map((logo: ImageType, index: number) => (
               <SwiperSlide key={`${index}`}>
                 <div className="flex justify-center">
                   <img src={logo.src} alt={logo.alt} />

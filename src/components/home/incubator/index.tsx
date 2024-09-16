@@ -5,7 +5,7 @@ import incubatorIcon from "./../../../images/icons/incubator.svg";
 export default function Incubator() {
   return (
     <div className="bg-black">
-      <div className="py-32 pb-40 px-8 md:px-32 container">
+      <div className="py-32 pb-20 lg:pb-40 px-8 md:px-32 container">
         <GenericSection
           icon={{ src: incubatorIcon, alt: "Incubator icon" }}
           title="Incubator"

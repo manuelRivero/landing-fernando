@@ -26,9 +26,9 @@ export default function Clients() {
           <div className="col-span-12 lg:col-span-3">
             <div className="lg:w-fit">
               <h2 className="text-white text-center font-inter font-bold text-normal">
-                REVIEWS
+                REVIEWS <span className="inline lg:hidden"> · Our clients</span>
               </h2>
-              <p className="text-white text-center font-inter text-normal mb-8">Our clients</p>
+              <p className="hidden lg:block text-white text-center font-inter text-normal mb-8">Our clients</p>
               <div className="hidden lg:flex items-center justify-between">
                 <button className="custom-prev-btn">
                   <img src={chevronLeft} alt="Chevron Left" />
@@ -49,7 +49,7 @@ export default function Clients() {
                   slidesPerView: 3, // Mostrar 2 slides entre 900px y 1300px
                 },
                 0: {
-                  slidesPerView: 1, // Mostrar 1 slide si la pantalla es menor a 900px
+                  slidesPerView: 2, // Mostrar 1 slide si la pantalla es menor a 900px
                 },
               }}
               spaceBetween={20}

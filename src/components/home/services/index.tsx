@@ -45,11 +45,11 @@ export default function Services() {
   return (
     <div className="bg-customBlue-500">
       <div className="py-24 px-8 md:px-32 container">
-        <div className="max-w-[479px]">
-          <h1 className="text-white font-inter font-bold text-3xl uppercase">
+        <div className="lg:max-w-[479px]">
+          <h1 className="text-white text-center lg:text-left font-inter font-bold text-3xl uppercase">
             Services
           </h1>
-          <p className="text-white font-inter text-normal">
+          <p className="text-white text-center lg:text-left font-inter text-normal">
             We specialize in <span className="font-bold">business growth</span>{" "}
             and <span className="font-bold">digital product</span> development.
           </p>
