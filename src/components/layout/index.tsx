@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
+import menuFlower from "./../../images/icons/menu-flower.svg";
 import zapianLogo from "./../../images/logos/zapian-logo.svg";
 import burguerMenu from "./../../images/icons/burger-menu.svg";
 import footerTop from "./../../images/footer-top.png";
@@ -10,6 +11,17 @@ import tiktokLogo from "./../../images/logos/tiktok-logo.svg";
 import whatsappLogo from "./../../images/logos/whatsapp-logo.svg";
 import { Link } from "gatsby";
 import { ImageType } from "../../types/imageType";
+
+const menuLinks = [
+  { text: "Home", href: "#", bold: true },
+  { text: "About us", href: "#", bold: true },
+  { text: "Services", href: "#", bold: true },
+  { text: "Branding", href: "#", bold: false },
+  { text: "CONTENT & GROWTH", href: "#", bold: false },
+  { text: "WEB DESIGN", href: "#", bold: false },
+  { text: "Coaching ", href: "#", bold: true },
+  { text: "Incubator", href: "#", bold: true },
+];
 
 const importantLinks = [
   { text: "Home", href: "#" },
@@ -27,19 +39,69 @@ const socialMediaList: ImageType[] = [
 ];
 
 export default function Layout({ children }: JSX.Element) {
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+  const menuRef = useRef(null);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  // Este efecto cierra el menú cuando se hace clic fuera del mismo
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setIsMenuOpen(false); // Cierra el menú si se hace clic fuera
+      }
+    };
+
+    // Escucha de eventos global de clic
+    document.addEventListener("mousedown", handleClickOutside);
+
+    // Limpia el evento al desmontar el componente
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [menuRef]);
+
   return (
     <main>
       <div className="relative">
-        <header className="container mx-0 absolute top-0 left-1/2 -translate-x-1/2 p-16">
+        <header className="container mx-0 absolute top-0 left-1/2 -translate-x-1/2 p-8 lg:p-16">
           <div className="flex flex-row justify-between">
             <div className="flex flex-row justify-center items-center">
               <img src={zapianLogo} alt="Zapian logo" />
             </div>
             <div className="flex flex-row justify-center items-center">
-              <img src={burguerMenu} alt="Burguer menu" />
+              <img
+                src={burguerMenu}
+                alt="Burguer menu"
+                className="cursor-pointer"
+                onClick={() => toggleMenu()}
+              />
             </div>
           </div>
         </header>
+        {isMenuOpen && (
+          <div
+            ref={menuRef}
+            className="absolute top-0 right-0 rounded-bl-[120px] bg-customPink-500 flex flex-col items-end pt-16 pr-16 pl-9 pb-32"
+          >
+            <img src={menuFlower} alt="Menu-flower" className="mb-6" />
+            {menuLinks.map((linkItem) => (
+              <Link
+                key={linkItem.text}
+                to={linkItem.href}
+                type="button"
+                className={`font-inter text-white text-normal uppercase ${
+                  linkItem.bold && "font-bold"
+                }`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {linkItem.text}
+              </Link>
+            ))}
+          </div>
+        )}
         {children}
         <footer className="bg-black">
           <div>
@@ -56,7 +118,7 @@ export default function Layout({ children }: JSX.Element) {
                     key={linkItem.text}
                     to={linkItem.href}
                     type="button"
-                    className="text-white text-normal font-semibold"
+                    className="font-inter text-white text-normal font-semibold"
                   >
                     {linkItem.text}
                   </Link>
