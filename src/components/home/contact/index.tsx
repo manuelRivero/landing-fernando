@@ -8,13 +8,13 @@ export default function Contact() {
         <h2 className="text-white text-center font-inter font-bold text-3xl uppercase">
           Chat with Us
         </h2>
-        <p className="text-white text-center font-inter font-normal text-normal">
+        <p className="text-white text-center font-inter font-normal text-normal mb-8">
           Answers to all your questions related to business and digital
-          products.
-        </p>
-        <p className="text-white text-center font-inter font-bold text-normal mb-8">
-          We work with small and medium-sized enterprises, startups, and large
-          corporations.
+          products.{" "}
+          <span className="font-normal lg:font-bold">
+            We work with small and medium-sized enterprises, startups, and large
+            corporations.
+          </span>
         </p>
 
         <div className="flex justify-center">

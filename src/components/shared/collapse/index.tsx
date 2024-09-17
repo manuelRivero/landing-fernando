@@ -32,13 +32,13 @@ export default function Collapse({
       className="grid grid-cols-12 items-start py-14 text-white font-inter text-normal cursor-pointer"
       onClick={() => handleOpen()}
     >
-      <div className="col-span-1 place-self-start">
+      <div className="col-span-1 place-self-center lg:place-self-start">
         <img src={icon} alt={alt} />
       </div>
 
       <div className="col-span-10 place-self-center text-center">
         <div className="cursor-pointer">
-          <h2 className="font-bold uppercase">{title}</h2>
+          <h2 className="font-bold uppercase px-4">{title}</h2>
         </div>
         {isOpen && (
           <div>
@@ -48,7 +48,7 @@ export default function Collapse({
         )}
       </div>
 
-      <div className="col-span-1 place-self-end self-start">
+      <div className="col-span-1 place-self-center lg:place-self-end self-center lg:self-start">
         <img src={isOpen ? closeIcon : plusIcon} alt="Plus icon" />
       </div>
     </div>
