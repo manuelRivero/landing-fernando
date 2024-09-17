@@ -9,7 +9,7 @@ interface Props {
 
 export default function InfoCard({ title, description, icon, alt }: Props) {
   return (
-    <div className="bg-customPink-500 w-[332px] h-[135px] rounded-r-[30px] rounded-bl-[30px] relative">
+    <div className="bg-customPink-500 w-[332px] h-[135px] rounded-r-[30px] rounded-bl-[30px] relative mt-16">
       <div className="absolute top-0 right-2 -translate-y-full pb-2 pl-2">
         <img src={icon} alt={alt} />
       </div>

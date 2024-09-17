@@ -90,12 +90,14 @@ export default function Hero() {
           >
             {cardsContent.map((card: Card, index: number) => (
               <SwiperSlide key={`${card.title}-${index}`}>
-                <InfoCard
-                  title={card.title}
-                  description={card.description}
-                  icon={card.icon}
-                  alt={card.alt}
-                />
+                <div className="flex justify-center">
+                  <InfoCard
+                    title={card.title}
+                    description={card.description}
+                    icon={card.icon}
+                    alt={card.alt}
+                  />
+                </div>
               </SwiperSlide>
             ))}
           </Swiper>

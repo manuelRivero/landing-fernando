@@ -38,7 +38,7 @@ export default function Collapse({
 
       <div className="col-span-10 place-self-center text-center">
         <div className="cursor-pointer">
-          <h2 className="font-bold uppercase">{title}</h2>
+          <h2 className="font-bold uppercase px-4">{title}</h2>
         </div>
         {isOpen && (
           <div>
