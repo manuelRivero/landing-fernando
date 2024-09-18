@@ -31,6 +31,8 @@ module.exports = {
         "2xl": "37px",
         normal: "30px",
         little: "20px",
+        "2xs": "15px",
+        "3xs": "10px",
       },
       colors: {
         customPink: {
