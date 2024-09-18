@@ -66,7 +66,7 @@ export default function Layout({ children }: JSX.Element) {
   return (
     <main>
       <div className="relative">
-        <header className="container mx-0 absolute top-0 left-1/2 -translate-x-1/2 p-8 lg:p-16">
+        <header className="container mx-0 absolute top-0 left-1/2 -translate-x-1/2 p-8 lg:p-16 z-10">
           <div className="flex flex-row justify-between">
             <div className="flex flex-row justify-center items-center">
               <img src={zapianLogo} alt="Zapian logo" />
@@ -84,7 +84,7 @@ export default function Layout({ children }: JSX.Element) {
         {isMenuOpen && (
           <div
             ref={menuRef}
-            className="absolute top-0 right-0 rounded-bl-[120px] bg-customPink-500 flex flex-col items-end pt-16 pr-16 pl-9 pb-32"
+            className="absolute top-0 right-0 rounded-bl-[120px] bg-customPink-500 flex flex-col items-end pt-8 md:pt-16 pr-8 md:pr-16 pl-5 md:pl-9 pb-20 md:pb-32 space-y-2 md:space-y-0 z-20"
           >
             <img src={menuFlower} alt="Menu-flower" className="mb-6" />
             {menuLinks.map((linkItem) => (
@@ -92,7 +92,7 @@ export default function Layout({ children }: JSX.Element) {
                 key={linkItem.text}
                 to={linkItem.href}
                 type="button"
-                className={`font-inter text-white text-normal uppercase ${
+                className={`font-inter text-white text-little md:text-normal uppercase ${
                   linkItem.bold && "font-bold"
                 }`}
                 onClick={() => setIsMenuOpen(false)}
@@ -104,13 +104,13 @@ export default function Layout({ children }: JSX.Element) {
         )}
         {children}
         <footer className="bg-black">
-          <div>
+          <div className="container">
             <div className="grid grid-cols-1 px-8">
               <img src={footerTop} alt="" />
             </div>
             <div className="grid grid-cols-12 gap-8 p-8">
               <div className="col-span-12 lg:col-span-3 flex flex-col space-y-4 lg:space-y-14">
-                <h3 className="font-inter text-customOrange-500 text-normal uppercase">
+                <h3 className="font-inter text-customOrange-500 text-little md:text-normal uppercase">
                   Important links
                 </h3>
                 {importantLinks.map((linkItem) => (
@@ -118,7 +118,7 @@ export default function Layout({ children }: JSX.Element) {
                     key={linkItem.text}
                     to={linkItem.href}
                     type="button"
-                    className="font-inter text-white text-normal font-semibold"
+                    className="font-inter text-white text-little md:text-normal font-semibold"
                   >
                     {linkItem.text}
                   </Link>
@@ -126,30 +126,30 @@ export default function Layout({ children }: JSX.Element) {
               </div>
               <div className="col-span-12 lg:col-span-4 flex flex-col space-y-8">
                 <div>
-                  <h3 className="font-inter text-customOrange-500 text-normal md:text-little uppercase">
+                  <h3 className="font-inter text-customOrange-500 text-little md:text-normal md:text-little uppercase">
                     Contact
                   </h3>
-                  <p className="text-white text-normal md:text-little">
+                  <p className="text-white text-little md:text-normal md:text-little">
                     hola@zapian.co
                   </p>
-                  <p className="text-white text-normal md:text-little">
+                  <p className="text-white text-little md:text-normal md:text-little">
                     55 0000 0000
                   </p>
                 </div>
                 <div>
-                  <h3 className="font-inter text-customOrange-500 text-normal md:text-little uppercase">
+                  <h3 className="font-inter text-customOrange-500 text-little md:text-normal md:text-little uppercase">
                     Address
                   </h3>
-                  <p className="text-white text-normal md:text-little italic">
+                  <p className="text-white text-little md:text-normal md:text-little italic">
                     Anzures, 11590 CDMX, México. C. del Pez, Centro, 28004
                     Madrid, España.
                   </p>
-                  <p className="text-white text-normal md:text-little italic">
+                  <p className="text-white text-little md:text-normal md:text-little italic">
                     S Beverly Dr, Beverly Hills, CA 90212, United States.
                   </p>
                 </div>
                 <div>
-                  <h3 className="font-inter text-customOrange-500 text-normal md:text-little uppercase">
+                  <h3 className="font-inter text-customOrange-500 text-little md:text-normal md:text-little uppercase">
                     Social Media
                   </h3>
                   <div className="flex space-x-3">
@@ -164,25 +164,25 @@ export default function Layout({ children }: JSX.Element) {
                   </div>
                 </div>
                 <div>
-                  <h3 className="font-inter text-customOrange-500 text-normal md:text-little uppercase">
+                  <h3 className="font-inter text-customOrange-500 text-little md:text-normal md:text-little uppercase">
                     ENGLISH | MEXICO · $0,000
                   </h3>
-                  <p className="text-white text-normal md:text-little italic">
+                  <p className="text-white text-little md:text-normal md:text-little italic">
                     Prices do not include taxes
                   </p>
                 </div>
                 <div>
-                  <h3 className="font-inter text-customOrange-500 text-normal md:text-little uppercase">
+                  <h3 className="font-inter text-customOrange-500 text-little md:text-normal md:text-little uppercase">
                     We Accept
                   </h3>
-                  <p className="text-white text-normal md:text-little underline">
+                  <p className="text-white text-little md:text-normal md:text-little underline">
                     Visa | Mastercard | American Express | OXXO | PayPal
                   </p>
                 </div>
               </div>
               <div className="col-span-12 lg:col-span-5 flex flex-col space-y-8">
                 <div>
-                  <h3 className="font-inter font-normal lg:font-semibold text-customOrange-500 text-normal md:text-little uppercase">
+                  <h3 className="font-inter font-normal lg:font-semibold text-customOrange-500 text-little md:text-normal md:text-little uppercase">
                     Subscribe to the newsletter
                   </h3>
                   <div className="grid grid-cols-6 gap-4">
@@ -199,25 +199,25 @@ export default function Layout({ children }: JSX.Element) {
                   </div>
                 </div>
                 <div className="h-full flex flex-col justify-end">
-                  <h3 className="font-inter text-customOrange-500 text-normal md:text-little uppercase">
+                  <h3 className="font-inter text-customOrange-500 text-little md:text-normal md:text-little uppercase">
                     Resource Links:
                   </h3>
-                  <p className="text-white text-normal md:text-little font-inter italic mb-10">
+                  <p className="text-white text-little md:text-normal md:text-little font-inter italic mb-10">
                     Free PDF
                   </p>
                   <div className="flex justify-start items-end mb-4">
                     <img src={zapianFooter} alt="Zapian" />
                   </div>
-                  <h3 className="font-inter font-normal text-customOrange-500 text-normal md:text-little uppercase">
+                  <h3 className="font-inter font-normal text-customOrange-500 text-little md:text-normal md:text-little uppercase">
                     Policies and Terms
                   </h3>
-                  <p className="text-white text-normal md:text-little font-inter">
+                  <p className="text-white text-little md:text-normal md:text-little font-inter">
                     Privacy Policy
                   </p>
-                  <p className="text-white text-normal md:text-little font-inter">
+                  <p className="text-white text-little md:text-normal md:text-little font-inter">
                     Terms and Conditions of Use
                   </p>
-                  <p className="text-white text-normal md:text-little font-inter">
+                  <p className="text-white text-little md:text-normal md:text-little font-inter">
                     © 2023 Zapian All rights reserved.
                   </p>
                 </div>

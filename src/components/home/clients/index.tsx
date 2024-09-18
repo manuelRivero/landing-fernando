@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import client1 from "./../../../images/home/clients/client1.png";
 import client2 from "./../../../images/home/clients/client2.png";
 import client3 from "./../../../images/home/clients/client3.png";
@@ -19,6 +19,7 @@ const clientsList: ImageType[] = [
 ];
 
 export default function Clients() {
+  const [showSlideInfo, setShowSlideInfo] = useState<number>(-1);
   return (
     <div className="bg-black">
       <div className="pb-36 px-8 md:px-32 container">
@@ -28,7 +29,9 @@ export default function Clients() {
               <h2 className="text-white text-center font-inter font-bold text-normal">
                 REVIEWS <span className="inline lg:hidden"> · Our clients</span>
               </h2>
-              <p className="hidden lg:block text-white text-center font-inter text-normal mb-8">Our clients</p>
+              <p className="hidden lg:block text-white text-center font-inter text-normal mb-8">
+                Our clients
+              </p>
               <div className="hidden lg:flex items-center justify-between">
                 <button className="custom-prev-btn">
                   <img src={chevronLeft} alt="Chevron Left" />
@@ -65,8 +68,30 @@ export default function Clients() {
             >
               {clientsList.map((logo: ImageType, index: number) => (
                 <SwiperSlide key={`${index}`}>
-                  <div className="flex justify-center">
+                  <div
+                    className="flex justify-center relative"
+                    onClick={() => {
+                      setShowSlideInfo((prev: number) =>
+                        prev === index ? -1 : index
+                      );
+                    }}
+                  >
                     <img src={logo.src} alt={logo.alt} />
+                    <div
+                      className={`${
+                        showSlideInfo === index ? "block" : "hidden"
+                      } absolute top-0 left-0 w-full h-full bg-customBlue-500 rounded-[18px] p-8 pt-10 transition-all`}
+                    >
+                      <p className="text-customPink-500 text-2xs font-inter font-semibold uppercase">
+                        Ana Pau
+                      </p>
+                      <p className="text-white text-3xs font-light">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing
+                        elit. Sunt eveniet repellat, molestiae nam ad ducimus
+                        soluta placeat magni ut! Quis facilis totam odit debitis
+                        aspernatur quos accusantium ipsum voluptas omnis.
+                      </p>
+                    </div>
                   </div>
                 </SwiperSlide>
               ))}
