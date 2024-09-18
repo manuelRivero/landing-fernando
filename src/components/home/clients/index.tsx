@@ -52,7 +52,7 @@ export default function Clients() {
                   slidesPerView: 3, // Mostrar 2 slides entre 900px y 1300px
                 },
                 0: {
-                  slidesPerView: 2, // Mostrar 1 slide si la pantalla es menor a 900px
+                  slidesPerView: 1, // Mostrar 1 slide si la pantalla es menor a 900px
                 },
               }}
               spaceBetween={20}
@@ -79,10 +79,10 @@ export default function Clients() {
                     <img src={logo.src} alt={logo.alt} />
                     <div
                       className={`${
-                        showSlideInfo === index ? "block" : "hidden"
-                      } absolute top-0 left-0 w-full h-full bg-customBlue-500 rounded-[18px] p-8 pt-10 transition-all`}
+                        showSlideInfo === index ? "flex" : "hidden"
+                      } absolute top-0 left-0 w-full h-full bg-customBlue-500 rounded-[18px] px-5 flex-col justify-center items-center transition-all`}
                     >
-                      <p className="text-customPink-500 text-2xs font-inter font-semibold uppercase">
+                      <p className="text-customPink-500 text-2xs place-self-start font-inter font-semibold uppercase">
                         Ana Pau
                       </p>
                       <p className="text-white text-3xs font-light">

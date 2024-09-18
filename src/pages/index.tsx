@@ -13,7 +13,7 @@ import Clients from "../components/home/clients";
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
-    <div className="relative">
+    <div className="relative overflow-x-hidden">
       <Hero />
       <Services />
       <Partners />
