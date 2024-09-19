@@ -2,20 +2,22 @@ import React, { useState } from "react";
 import client1 from "./../../../images/home/clients/client1.png";
 import client2 from "./../../../images/home/clients/client2.png";
 import client3 from "./../../../images/home/clients/client3.png";
+import client4 from "./../../../images/home/clients/client4.png";
+import client5 from "./../../../images/home/clients/client5.png";
 import chevronRight from "./../../../images/icons/chevron-right.svg";
 import chevronLeft from "./../../../images/icons/chevron-left.svg";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Pagination, Navigation } from "swiper/modules";
 import "swiper/css";
 import { ImageType } from "../../../types/imageType";
+import { motion } from "framer-motion";
 
-const clientsList: ImageType[] = [
-  { src: client1, alt: "client-1" },
-  { src: client2, alt: "client-2" },
-  { src: client3, alt: "client-3" },
-  { src: client1, alt: "client-1" },
-  { src: client2, alt: "client-2" },
-  { src: client3, alt: "client-3" },
+const clientsList = [
+  { src: client1, alt: "client-1", text1: "", text2: "", description: "" },
+  { src: client2, alt: "client-2", text1: "", text2: "", description: "" },
+  { src: client3, alt: "client-3", text1: "", text2: "", description: "" },
+  { src: client4, alt: "client-4", text1: "", text2: "", description: "" },
+  { src: client5, alt: "client-5", text1: "", text2: "", description: "" },
 ];
 
 export default function Clients() {
@@ -69,28 +71,36 @@ export default function Clients() {
               {clientsList.map((logo: ImageType, index: number) => (
                 <SwiperSlide key={`${index}`}>
                   <div
-                    className="flex justify-center relative"
+                    className="flex justify-center"
                     onClick={() => {
                       setShowSlideInfo((prev: number) =>
                         prev === index ? -1 : index
                       );
                     }}
                   >
-                    <img src={logo.src} alt={logo.alt} />
-                    <div
-                      className={`${
-                        showSlideInfo === index ? "flex" : "hidden"
-                      } absolute top-0 left-0 w-full h-full bg-customBlue-500 rounded-[18px] px-5 flex-col justify-center items-center transition-all`}
-                    >
-                      <p className="text-customPink-500 text-2xs place-self-start font-inter font-semibold uppercase">
-                        Ana Pau
-                      </p>
-                      <p className="text-white text-3xs font-light">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing
-                        elit. Sunt eveniet repellat, molestiae nam ad ducimus
-                        soluta placeat magni ut! Quis facilis totam odit debitis
-                        aspernatur quos accusantium ipsum voluptas omnis.
-                      </p>
+                    <div className="relative w-fit">
+                      <img src={logo.src} alt={logo.alt} />
+                      <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={showSlideInfo === index ? { opacity: 1 } : { opacity: 0 }}
+                        transition={{ duration: 0.5, ease: "easeOut" }} // Transición suave sin rebote
+                        className={`absolute top-0 left-0 h-full`}
+                      >
+                        <div
+                          className={`h-full bg-customBlue-500 rounded-[18px] px-5 transition-all flex flex-col justify-center items-center`}
+                        >
+                          <p className="text-customPink-500 text-2xs place-self-start font-inter font-semibold uppercase">
+                            Ana Pau
+                          </p>
+                          <p className="text-white text-3xs font-light">
+                            Lorem ipsum dolor, sit amet consectetur adipisicing
+                            elit. Sunt eveniet repellat, molestiae nam ad
+                            ducimus soluta placeat magni ut! Quis facilis totam
+                            odit debitis aspernatur quos accusantium ipsum
+                            voluptas omnis.
+                          </p>
+                        </div>
+                      </motion.div>
                     </div>
                   </div>
                 </SwiperSlide>
