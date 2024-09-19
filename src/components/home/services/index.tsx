@@ -2,7 +2,7 @@ import React from "react";
 import Collapse from "../../shared/collapse";
 import lottoIcon from "./../../../images/icons/lotto.svg";
 import plusOutlinedIcon from "./../../../images/icons/plus-outlined.svg";
-import flowerIcon from "./../../../images/icons/flower-pink.svg";
+import flowerIcon from "./../../../images/icons/flower-white.svg";
 import LinkButton from "../../shared/linkButton";
 
 interface CollapseType {
