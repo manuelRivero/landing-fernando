@@ -10,7 +10,7 @@ const menuLinks = [
   { text: "About us", href: "#", bold: true },
   { text: "Services", href: "#", bold: true },
   { text: "Branding", href: "#", bold: false },
-  { text: "CONTENT & GROWTH", href: "#", bold: false },
+  { text: "CONTENT & GROWTH", href: "/content-and-growth", bold: false },
   { text: "WEB DESIGN", href: "#", bold: false },
   { text: "Coaching ", href: "#", bold: true },
   { text: "Incubator", href: "#", bold: true },
