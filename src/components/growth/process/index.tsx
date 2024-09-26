@@ -4,13 +4,17 @@ import flower8 from "./../../../images/icons/flower-8.svg";
 import plusBlue from "./../../../images/icons/plus-blue.svg";
 import Collapse from "../../shared/collapse";
 
-const collapseTexts: string[] = [
-  "HAvE THE BEST CONTENT",
-  "Focus on Elementary Metrics",
-  "A REAL Funnel Strategy",
-  "NOT HAVING TO DO EVERYTHING MANUAL",
-  "ADVERTISMENT THAT WORKS",
-  "DO EXPERIMENTATION",
+const collapseTexts: { title: string; description: string }[] = [
+  {
+    title: "HAvE THE BEST CONTENT",
+    description:
+      "We delve deep to decipher how we can minimize your customer acquisition cost and devise optimal strategies to effectively communicate your business's core value to your ideal target audience.",
+  },
+  { title: "Focus on Elementary Metrics", description: "" },
+  { title: "A REAL Funnel Strategy", description: "" },
+  { title: "NOT HAVING TO DO EVERYTHING MANUAL", description: "" },
+  { title: "ADVERTISMENT THAT WORKS", description: "" },
+  { title: "DO EXPERIMENTATION", description: "" },
 ];
 
 export default function Process() {
@@ -21,15 +25,15 @@ export default function Process() {
           Process
         </h1>
         <div className="flex flex-col divide-y divide-customBlue-600 border-b border-b-customBlue-600 mb-14">
-          {collapseTexts.map((text: string, index: number) => (
+          {collapseTexts.map((item, index: number) => (
             <Collapse
-              key={`${text}-${index}`}
-              title={text}
+              key={`${item.title}-${index}`}
+              title={item.title}
               textColor="customBlue-600"
               icon={flower8}
               plusColor="#2B0B57"
               alt={"flower-8"}
-              description={""}
+              description={item.description}
             />
           ))}
         </div>

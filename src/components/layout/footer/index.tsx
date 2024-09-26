@@ -2,7 +2,7 @@ import { Link } from "gatsby";
 import React from "react";
 import footerTop from "./../../../images/footer-top.png";
 import footerBottom from "./../../../images/footer-bottom.png";
-import zapianFooter from "./../../../images/logos/zapian-footer.png"
+import zapianFooter from "./../../../images/logos/zapian-footer.png";
 import linkedinLogo from "./../../../images/logos/linkedin-logo.svg";
 import instagramLogo from "./../../../images/logos/instagram-logo.svg";
 import tiktokLogo from "./../../../images/logos/tiktok-logo.svg";
@@ -10,19 +10,19 @@ import whatsappLogo from "./../../../images/logos/whatsapp-logo.svg";
 import { ImageType } from "../../../types/imageType";
 
 const importantLinks = [
-    { text: "Home", href: "#" },
-    { text: "Services", href: "#" },
-    { text: "Coaching Sessions", href: "#" },
-    { text: "About Us", href: "#" },
-    { text: "Incubator", href: "#" },
-  ];
-  
-  const socialMediaList: ImageType[] = [
-    { src: linkedinLogo, alt: "linkedin-logo" },
-    { src: instagramLogo, alt: "instagram-logo" },
-    { src: tiktokLogo, alt: "tiktok-logo" },
-    { src: whatsappLogo, alt: "whatsapp-logo" },
-  ];
+  { text: "Home", href: "/" },
+  { text: "Web", href: "#" },
+  { text: "Branding", href: "#" },
+  { text: "Growth", href: "/content-and-growth" },
+  { text: "Incubator", href: "#" },
+];
+
+const socialMediaList: ImageType[] = [
+  { src: linkedinLogo, alt: "linkedin-logo" },
+  { src: instagramLogo, alt: "instagram-logo" },
+  { src: tiktokLogo, alt: "tiktok-logo" },
+  { src: whatsappLogo, alt: "whatsapp-logo" },
+];
 
 export default function Footer() {
   return (

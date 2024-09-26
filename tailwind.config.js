@@ -32,6 +32,7 @@ module.exports = {
         normal: "30px",
         little: "20px",
         "2xs": "15px",
+        "tight": "12px",
         "3xs": "10px",
       },
       colors: {

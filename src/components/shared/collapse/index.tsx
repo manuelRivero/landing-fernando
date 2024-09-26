@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import plusIcon from "./../../../images/icons/plus.svg";
 import closeIcon from "./../../../images/icons/close-pink.svg";
 import LinkButton from "../linkButton";
+import { useLocation } from "@reach/router";
 
 interface Props {
   title: string;
@@ -26,6 +27,7 @@ export default function Collapse({
   alt,
   buttonData,
 }: Props) {
+  const location = useLocation();
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const handleOpen = () => {
@@ -40,25 +42,40 @@ export default function Collapse({
         <img src={icon} alt={alt} />
       </div>
 
-      <div className="col-span-10 place-self-center text-center">
+      <div className="col-span-10 place-self-center">
         <div className="cursor-pointer">
-          <h2 className="font-bold uppercase px-4">{title}</h2>
+          <h2 className="font-bold uppercase px-4 text-center">{title}</h2>
         </div>
         {isOpen && (
-          <div>
-            <p className="mb-11">{description}</p>
-            <LinkButton
-              text={buttonData?.text}
-              path={buttonData?.path}
-              color={buttonData?.color}
-            />
+          <div className="flex flex-col space-y-11">
+            <p className={location.pathname === "/" ? "text-center" : ""}>
+              {description}
+            </p>
+            {buttonData && (
+              <LinkButton
+                text={buttonData?.text}
+                path={buttonData?.path}
+                color={buttonData?.color}
+              />
+            )}
           </div>
         )}
       </div>
 
       <div className="col-span-1 place-self-end self-start">
         {isOpen ? (
-          <img src={closeIcon} alt="Plus icon" />
+          <svg
+            width="26"
+            height="26"
+            viewBox="0 0 26 26"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M24.81 20.9308L17.1099 13.2308L24.81 5.53081C25.91 4.43081 25.91 2.64082 24.81 1.54082C23.71 0.44082 21.9199 0.44082 20.8199 1.54082L13.1199 9.24077L5.41997 1.54082C4.31997 0.44082 2.52998 0.44082 1.42998 1.54082C0.32998 2.64082 0.32998 4.43081 1.42998 5.53081L9.12993 13.2308L1.42998 20.9308C0.32998 22.0308 0.32998 23.8208 1.42998 24.9208C2.52998 26.0208 4.31997 26.0208 5.41997 24.9208L13.1199 17.2208L20.8199 24.9208C21.9199 26.0208 23.71 26.0208 24.81 24.9208C25.91 23.8208 25.91 22.0308 24.81 20.9308Z"
+              fill={location.pathname === "/" ? "#E886DF" : plusColor}
+            />
+          </svg>
         ) : (
           <svg
             width="34"
