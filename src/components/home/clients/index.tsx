@@ -13,11 +13,46 @@ import { ImageType } from "../../../types/imageType";
 import { motion } from "framer-motion";
 
 const clientsList = [
-  { src: client1, alt: "client-1", text1: "", text2: "", description: "" },
-  { src: client2, alt: "client-2", text1: "", text2: "", description: "" },
-  { src: client3, alt: "client-3", text1: "", text2: "", description: "" },
-  { src: client4, alt: "client-4", text1: "", text2: "", description: "" },
-  { src: client5, alt: "client-5", text1: "", text2: "", description: "" },
+  {
+    src: client1,
+    alt: "client-1",
+    text1: "",
+    text2: "· Ana Pau",
+    description:
+      "Cuando empecé a posicionarme en las redes me sentía muy perdida. Andy me guió  para elevar mi presencia en línea. Con ella hubo un giro drástico y positivo en mi audiencia. Siempre estaba presente para contestar mis preguntas y mandarme contenido. Gracias a ella me siento más segura con mi contenido y he crecido.",
+  },
+  {
+    src: client2,
+    alt: "client-2",
+    text1: "Curena Mia",
+    text2: "· Jimena de la Torre",
+    description:
+      "Andy me ayudo a creando mi brand book para mi marca Curena Mía y ella estuvo ahí desde el principio del proceso, desde la creación del nombre hasta los logos y la paleta de color, TODO!  Me encantó lo que me entregó, todo a tiempo y forma, y estoy muy contenta con ella. La recomiendo muchisimo, es una buenaza!",
+  },
+  {
+    src: client3,
+    alt: "client-3",
+    text1: "Centro de Diseño, Cine y TV ",
+    text2: "· Miguel Torres",
+    description:
+      "Con Andrea estamos ante el ejemplo de la constancia, estamos ante el ejemplo de la disciplina y ante el ejemplo de la persona que de manera rigurosa y cuidadosa siguió metódicamente todos los pasos, todo el proceso de una manera ejemplar.",
+  },
+  {
+    src: client4,
+    alt: "client-4",
+    text1: "Co-fundador de Teu ",
+    text2: "· Fernando Oviedo",
+    description:
+      "Desde el nombre hasta el sitio web, Zapian nos ha llevado a crear una marca y un producto digital que nos ayuda a posicionarnos y crecer en el mercado. Seguiremos trabajando con ellos.",
+  },
+  {
+    src: client5,
+    alt: "client-5",
+    text1: "Nomatt ",
+    text2: "· Kathy",
+    description:
+      "Me sentía estancada en el desarrollo de mi marca y el comenzar a trabajar con Andrea me hizo salir de esto pues me fue guiando paso por paso, desde el comienzo sentí que estábamos en la misma sintonía pues siempre capto mis ideas, sin duda se cumplió todo lo que yo buscaba y superó todas mis espectativas.",
+  },
 ];
 
 export default function Clients() {
@@ -48,10 +83,10 @@ export default function Clients() {
             <Swiper
               breakpoints={{
                 1300: {
-                  slidesPerView: 4, // Mostrar 3 slides cuando la pantalla sea mayor a 1300px
+                  slidesPerView: 3, // Mostrar 3 slides cuando la pantalla sea mayor a 1300px
                 },
-                1080: {
-                  slidesPerView: 3, // Mostrar 2 slides entre 900px y 1300px
+                700: {
+                  slidesPerView: 2, // Mostrar 2 slides entre 900px y 1300px
                 },
                 0: {
                   slidesPerView: 1, // Mostrar 1 slide si la pantalla es menor a 900px
@@ -68,8 +103,8 @@ export default function Clients() {
               }}
               modules={[FreeMode, Pagination, Navigation]}
             >
-              {clientsList.map((logo: ImageType, index: number) => (
-                <SwiperSlide key={`${index}`}>
+              {clientsList.map((logo, index: number) => (
+                <SwiperSlide key={`${index}`} className="cursor-pointer">
                   <div
                     className="flex justify-center"
                     onClick={() => {
@@ -79,25 +114,29 @@ export default function Clients() {
                     }}
                   >
                     <div className="relative w-fit">
-                      <img src={logo.src} alt={logo.alt} />
+                      <img src={logo.src} alt={logo.alt} className="max-w-[220px]" />
                       <motion.div
                         initial={{ opacity: 0 }}
-                        animate={showSlideInfo === index ? { opacity: 1 } : { opacity: 0 }}
+                        animate={
+                          showSlideInfo === index
+                            ? { opacity: 1 }
+                            : { opacity: 0 }
+                        }
                         transition={{ duration: 0.5, ease: "easeOut" }} // Transición suave sin rebote
                         className={`absolute top-0 left-0 h-full`}
                       >
                         <div
                           className={`h-full bg-customBlue-500 rounded-[18px] px-5 transition-all flex flex-col justify-center items-center`}
                         >
-                          <p className="text-customPink-500 text-2xs place-self-start font-inter font-semibold uppercase">
-                            Ana Pau
+                          <p className="text-white text-2xs place-self-start font-inter font-semibold uppercase">
+                            {logo.text1}
+                            <span className="text-customPink-500">
+                              {logo.text2}
+                            </span>
                           </p>
+
                           <p className="text-white text-3xs font-light">
-                            Lorem ipsum dolor, sit amet consectetur adipisicing
-                            elit. Sunt eveniet repellat, molestiae nam ad
-                            ducimus soluta placeat magni ut! Quis facilis totam
-                            odit debitis aspernatur quos accusantium ipsum
-                            voluptas omnis.
+                            {logo.description}
                           </p>
                         </div>
                       </motion.div>

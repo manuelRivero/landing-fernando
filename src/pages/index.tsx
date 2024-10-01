@@ -10,12 +10,14 @@ import teamImg from "../images/home/team.png";
 import officeImg from "../images/home/office.png";
 import whatsapp from "../images/logos/whatsapp-logo-button.png";
 import Clients from "../components/home/clients";
+import Welcome from "../components/home/welcome";
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
     <div className="relative overflow-x-hidden">
       <Hero />
       <Services />
+      <Welcome />
       <Partners />
       <Contact />
       <Incubator />
