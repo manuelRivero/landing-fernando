@@ -2,7 +2,11 @@ import React from "react";
 import contentImg from "./../../../images/content-and-growth/content.png";
 import LinkButton from "../../shared/linkButton";
 
-export default function GrowthHero() {
+interface Props {
+  close: () => void;
+}
+
+export default function GrowthHero({ close }: Props) {
   return (
     <div className="bg-white">
       <div className="pt-32 lg:pt-52 pb-32 lg:pb-40 px-8 md:px-32 container">
@@ -18,15 +22,18 @@ export default function GrowthHero() {
               Optimize every conversion point
             </h2>
             <p className="text-customBlue-600 text-center lg:text-left text-normal">
-              <span className="font-bold">Optimize every conversion point Visualize your client funnel: </span>
+              <span className="font-bold">
+                Optimize every conversion point Visualize your client funnel:{" "}
+              </span>
               build exponential growth for your business.
             </p>
-            <LinkButton
-              text="QUOTE"
-              path="#"
-              color="customYellow-500"
-              textColor="customBlue-600"
-            />
+            <button
+              onClick={() => close()}
+              type="button"
+              className="bg-customYellow-500 px-7 py-2 rounded-full text-customBlue-600 text-normal text-center font-bold"
+            >
+              QUOTE
+            </button>
           </div>
 
           <div className="flex flex-row justify-end mb-8 lg:mb-0">

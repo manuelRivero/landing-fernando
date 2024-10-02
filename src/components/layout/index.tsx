@@ -9,7 +9,7 @@ const menuLinks = [
   { text: "Home", href: "/", bold: true },
   { text: "WEB · APP", href: "#", bold: false },
   { text: "Branding", href: "#", bold: false },
-  { text: "Growth & Funnel", href: "/content-and-growth", bold: false },
+  { text: "Growth & Funnel", href: "/growth-and-funnel", bold: false },
   { text: "Incubator", href: "#", bold: true },
 ];
 

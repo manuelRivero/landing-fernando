@@ -35,6 +35,7 @@ export default function GenericSection({
         path={buttonData.path}
         text={buttonData.text}
         textColor={buttonData.textColor || "white"}
+        target={buttonData.target}
       />
     </div>
   );

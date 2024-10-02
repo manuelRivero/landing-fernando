@@ -13,7 +13,7 @@ const importantLinks = [
   { text: "Home", href: "/" },
   { text: "Web", href: "#" },
   { text: "Branding", href: "#" },
-  { text: "Growth", href: "/content-and-growth" },
+  { text: "Growth", href: "/growth-and-funnel" },
   { text: "Incubator", href: "#" },
 ];
 
