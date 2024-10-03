@@ -3,4 +3,5 @@ export interface LinkButtonType {
   path: string;
   color: string;
   textColor?: string;
+  target?: string;
 }
