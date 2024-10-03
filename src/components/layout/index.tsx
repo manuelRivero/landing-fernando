@@ -1,9 +1,13 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { ReactNode, useEffect, useRef, useState } from "react";
 import { Link } from "gatsby";
 import Header from "./header";
 import Footer from "./footer";
 import { motion } from "framer-motion";
 import { useLocation } from "@reach/router";
+
+interface LayoutProps {
+  children: ReactNode; // Esto permite que se pasen elementos React como hijos
+}
 
 const menuLinks = [
   { text: "Home", href: "/", bold: true },
@@ -18,10 +22,10 @@ const variants = {
   closed: { opacity: 0, x: "-100%" },
 };
 
-export default function Layout({ children }: JSX.Element) {
+export default function Layout({ children }: LayoutProps) {
   const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
-  const menuRef = useRef(null);
+  const menuRef: any = useRef(null);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -29,7 +33,7 @@ export default function Layout({ children }: JSX.Element) {
 
   // Este efecto cierra el menú cuando se hace clic fuera del mismo
   useEffect(() => {
-    const handleClickOutside = (event) => {
+    const handleClickOutside = (event: any) => {
       if (menuRef.current && !menuRef.current.contains(event.target)) {
         setIsMenuOpen(false); // Cierra el menú si se hace clic fuera
       }
