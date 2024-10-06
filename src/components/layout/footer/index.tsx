@@ -11,7 +11,7 @@ import { ImageType } from "../../../types/imageType";
 
 const importantLinks = [
   { text: "Home", href: "/" },
-  { text: "Web", href: "#" },
+  { text: "Web", href: "/web-and-app" },
   { text: "Branding", href: "#" },
   { text: "Growth", href: "/growth-and-funnel" },
   { text: "Incubator", href: "#" },
