@@ -4,9 +4,7 @@ import flower8 from "./../../../images/icons/flower-8.svg";
 import plusBlue from "./../../../images/icons/plus-blue.svg";
 import Collapse from "../../shared/collapse";
 
-interface Props {
-  close: () => void;
-}
+
 
 const collapseTexts: { title: string; description: string }[] = [
   {
@@ -21,7 +19,7 @@ const collapseTexts: { title: string; description: string }[] = [
   { title: "DO EXPERIMENTATION", description: "" },
 ];
 
-export default function Process({ close }: Props) {
+export default function Process() {
   return (
     <div className="bg-white">
       <div className="pt-32 lg:pt-52 pb-32 lg:pb-40 px-8 md:px-32 container">

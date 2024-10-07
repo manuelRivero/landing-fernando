@@ -1,15 +1,13 @@
 import React, { useState } from "react";
-import swiperContainerImg from "./../../../images/content-and-growth/swiper-container.png";
-import planDetailContainerImg from "./../../../images/content-and-growth/plan-detail-container.png";
+import swiperContainerImg from "./../../../images/web-and-app/swiper-container.png";
+import planDetailContainerImg from "./../../../images/web-and-app/plan-detail-container.png";
 import LinkButton from "../../shared/linkButton";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Pagination } from "swiper/modules";
 import "swiper/css";
 import { motion } from "framer-motion";
-
-interface Props {
-  close: () => void;
-}
+import { useDispatch } from "react-redux";
+import { showContactPopup } from "../../../store/global";
 
 const swiperTexts: string[] = [
   "Starter · STARTER",
@@ -17,11 +15,12 @@ const swiperTexts: string[] = [
   "Growth hacker · STARTER",
 ];
 
-export default function Plans({ close }: Props) {
+export default function Plans() {
+  const dispatch = useDispatch();
   const [showSlideInfo, setShowSlideInfo] = useState<number>(-1);
 
   return (
-    <div className="bg-customYellow-500">
+    <div className="bg-customGreen-500">
       <div className="pt-32 lg:pt-52 pb-32 lg:pb-40 px-8 md:px-32 container">
         <div>
           <Swiper
@@ -59,7 +58,7 @@ export default function Plans({ close }: Props) {
                         width={"100%"}
                       />
                       <div className="absolute bottom-0 left-0 font-inter text-white text-normal font-bold uppercase p-8">
-                        <h3>Starter · STARTER</h3>
+                        <h3>Landing · one-time fee</h3>
                       </div>
                     </div>
                   </div>
@@ -81,41 +80,20 @@ export default function Plans({ close }: Props) {
                         />
                         <div className="absolute w-full h-full top-0 left-0 font-inter text-customBlue-600 p-8 flex flex-col justify-between">
                           <h3 className="font-bold text-little uppercase">
-                            Starter
+                            Landing
                           </h3>
 
-                          <div className="flex flex-col space-y-4">
-                            <div>
-                              <p className="text-tight leading-tight">
-                                Advertising
-                              </p>
-                              <p className="text-tight leading-tight font-bold">
-                                1 campaign(s) on 1 platform(s) (Meta Ads)
-                              </p>
-                            </div>
-                            <div>
-                              <p className="text-tight leading-tight">
-                                Organic content development
-                              </p>
-                              <p className="text-tight leading-tight font-bold">
-                                8 content(s) on 1 channel(s) (Meta)
-                              </p>
-                              <p className="text-tight leading-tight font-bold">
-                                Creation of 0 SEO blogs
-                              </p>
-                            </div>
-                            <div>
-                              <p className="text-tight leading-tight">
-                                Flexible
-                              </p>
-                              <p className="text-tight leading-tight font-bold">
-                                Including copy in 2 channels(s) (Meta, Meta Ads)
-                              </p>
-                              <p className="text-tight leading-tight font-bold">
-                                Including design in 2 channels(s) (Meta, Meta
-                                Ads)
-                              </p>
-                            </div>
+                          <div className="flex flex-col">
+                            <p className="text-2xs leading-tight">
+                              · Design and development
+                            </p>
+                            <p className="text-2xs leading-tight">· 1 page</p>
+                            <p className="text-2xs leading-tight">
+                              · Web animations (Basic)
+                            </p>
+                            <p className="text-2xs leading-tight">
+                              · Standard features and services
+                            </p>
                           </div>
                         </div>
                       </div>
@@ -124,9 +102,9 @@ export default function Plans({ close }: Props) {
                 </div>
 
                 <button
-                  onClick={() => close()}
+                  onClick={() => dispatch(showContactPopup(true))}
                   type="button"
-                  className="bg-customBlue-600 px-7 py-2 rounded-full text-customYellow-500 text-normal text-center font-bold w-fit"
+                  className="bg-customBlue-600 px-7 py-2 rounded-full text-customGreen-500 text-normal text-center font-bold w-fit"
                 >
                   SELECT
                 </button>
@@ -148,7 +126,7 @@ export default function Plans({ close }: Props) {
                         width={"100%"}
                       />
                       <div className="absolute bottom-0 left-0 font-inter text-white text-normal font-bold uppercase p-8">
-                        <h3>Growth Path · STARTER</h3>
+                        <h3>Standard Development · one-time fee</h3>
                       </div>
                     </div>
                   </div>
@@ -168,51 +146,38 @@ export default function Plans({ close }: Props) {
                           width={"100%"}
                         />
                         <div className="absolute w-full h-full top-0 left-0 font-inter text-customBlue-600 p-8 flex flex-col justify-between">
-                          <h3 className="font-bold text-little uppercase">
-                            Growth Path
+                          <h3 className="font-bold text-little uppercase pr-8 leading-tight">
+                            Standard Development
                           </h3>
 
-                          <div className="flex flex-col space-y-4">
-                            <div>
-                              <p className="text-3xs leading-tight">
-                                Advertising
-                              </p>
-                              <p className="text-3xs leading-tight font-bold">
-                                3 campaign(s) on 2 platform(s) (2 Meta Ads, 1
-                                Google)
-                              </p>
-                            </div>
-                            <div>
-                              <p className="text-3xs leading-tight">
-                                Organic content development
-                              </p>
-                              <p className="text-3xs leading-tight font-bold">
-                                16 content(s) on 2 channels(s) (Meta, TikTok)
-                              </p>
-                              <p className="text-3xs leading-tight font-bold">
-                                Creation of 1 SEO blog (web needed)
-                              </p>
-                            </div>
-                            <div>
-                              <p className="text-3xs leading-tight">
-                                Communication automations with leads/clients
-                              </p>
-                              <p className="text-3xs leading-tight font-bold">
-                                1 communication channel (SMS, WhatsApp, Email,
-                                Calls) 4 monthly contents
-                              </p>
-                            </div>
-                            <div>
-                              <p className="text-3xs leading-tight">Flexible</p>
-                              <p className="text-3xs leading-tight font-bold">
-                                Including copy in 4 channels(s) (Meta, Meta Ads,
-                                Google Ads, Email)
-                              </p>
-                              <p className="text-3xs leading-tight font-bold">
-                                Including design in 3 channels(s) (Meta, Meta
-                                Ads, Email)
-                              </p>
-                            </div>
+                          <div className="flex flex-col">
+                            <p className="text-2xs leading-tight">
+                              · Design and development
+                            </p>
+                            <p className="text-2xs leading-tight">
+                              · Up to 3 pages
+                            </p>
+                            <p className="text-2xs leading-tight">
+                              · Web animations (Intermediate)
+                            </p>
+                            <p className="text-2xs leading-tight">
+                              · Standard back-office design
+                            </p>
+                            <p className="text-2xs leading-tight">
+                              · Enhanced features and services
+                            </p>
+                            <p className="text-2xs leading-tight">
+                              · Intermediate integrations and APIs
+                            </p>
+                            <p className="text-2xs leading-tight">
+                              · Accept Payment
+                            </p>
+                            <p className="text-2xs leading-tight">
+                              · Web customization by cookies/page (Intermediate)
+                            </p>
+                            <p className="text-2xs leading-tight">
+                              · Annual maintenance (Regular)
+                            </p>
                           </div>
                         </div>
                       </div>
@@ -221,9 +186,9 @@ export default function Plans({ close }: Props) {
                 </div>
 
                 <button
-                  onClick={() => close()}
+                  onClick={() => dispatch(showContactPopup(true))}
                   type="button"
-                  className="bg-customBlue-600 px-7 py-2 rounded-full text-customYellow-500 text-normal text-center font-bold w-fit"
+                  className="bg-customBlue-600 px-7 py-2 rounded-full text-customGreen-500 text-normal text-center font-bold w-fit"
                 >
                   SELECT
                 </button>
@@ -245,7 +210,7 @@ export default function Plans({ close }: Props) {
                         width={"100%"}
                       />
                       <div className="absolute bottom-0 left-0 font-inter text-white text-normal font-bold uppercase p-8">
-                        <h3>Growth hacker · STARTER</h3>
+                        <h3>Premium Development · one-time fee</h3>
                       </div>
                     </div>
                   </div>
@@ -265,55 +230,35 @@ export default function Plans({ close }: Props) {
                           width={"100%"}
                         />
                         <div className="absolute w-full h-full top-0 left-0 font-inter text-customBlue-600 p-8 flex flex-col justify-between">
-                          <h3 className="font-bold text-little uppercase">
-                            Growth Hacker
+                          <h3 className="font-bold text-little uppercase pr-8 leading-tight">
+                            Premium Development
                           </h3>
 
-                          <div className="flex flex-col space-y-4">
-                            <div>
-                              <p className="text-3xs leading-tight">
-                                Advertising
-                              </p>
-                              <p className="text-3xs leading-tight font-bold">
-                                4 campaign(s) on 3 platform(s) (2 Meta Ads, 1
-                                Google, 1 TikTok)
-                              </p>
-                            </div>
-                            <div>
-                              <p className="text-3xs leading-tight">
-                                Organic content development
-                              </p>
-                              <p className="text-3xs leading-tight font-bold">
-                                20 content(s) on 2 channels(s) (Meta, TikTok)
-                              </p>
-                              <p className="text-3xs leading-tight font-bold">
-                                Creation of 4 SEO blogs (web needed)
-                              </p>
-                            </div>
-                            <div>
-                              <p className="text-3xs leading-tight">
-                                Communication automations with leads/clients
-                              </p>
-                              <p className="text-3xs leading-tight font-bold">
-                                2 communication channels (SMS, WhatsApp, Email,
-                                Calls)
-                              </p>
-                              <p className="text-3xs leading-tight font-bold">
-                                6 monthly contents (4 Email, 2 WhatsApp
-                                broadcast)
-                              </p>
-                            </div>
-                            <div>
-                              <p className="text-3xs leading-tight">Flexible</p>
-                              <p className="text-3xs leading-tight font-bold">
-                                Including copy in 5 channels(s) (Meta, Meta Ads,
-                                Google Ads, Email, WhatsApp)
-                              </p>
-                              <p className="text-3xs leading-tight font-bold">
-                                Including design in 4 channels(s) (Meta, Meta
-                                Ads, Email, WhatsApp)
-                              </p>
-                            </div>
+                          <div className="flex flex-col">
+                            <p className="text-2xs leading-tight">
+                              · Design and development
+                            </p>
+                            <p className="text-2xs leading-tight">
+                              · Up to 10 pages
+                            </p>
+                            <p className="text-2xs leading-tight">
+                              · Web animations (Advanced)
+                            </p>
+                            <p className="text-2xs leading-tight">
+                              · Customized back-office design
+                            </p>
+                            <p className="text-2xs leading-tight">
+                              · Accept Payment
+                            </p>
+                            <p className="text-2xs leading-tight">
+                              · Advanced features and services
+                            </p>
+                            <p className="text-2xs leading-tight">
+                              · Advanced integrations and APIs
+                            </p>
+                            <p className="text-2xs leading-tight">
+                              · Web customization by cookies/page (Advanced)
+                            </p>
                           </div>
                         </div>
                       </div>
@@ -322,9 +267,9 @@ export default function Plans({ close }: Props) {
                 </div>
 
                 <button
-                  onClick={() => close()}
+                  onClick={() => dispatch(showContactPopup(true))}
                   type="button"
-                  className="bg-customBlue-600 px-7 py-2 rounded-full text-customYellow-500 text-normal text-center font-bold w-fit"
+                  className="bg-customBlue-600 px-7 py-2 rounded-full text-customGreen-500 text-normal text-center font-bold w-fit"
                 >
                   SELECT
                 </button>

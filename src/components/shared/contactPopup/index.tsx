@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { motion } from "framer-motion";
-import { hideContactPopup } from "../../../store/global";
+import { showContactPopup } from "../../../store/global";
 import { RootState } from "../../../store";
 
 export default function ContactPopup() {
@@ -12,8 +12,8 @@ export default function ContactPopup() {
   // Función para cerrar ambos divs
   const handleClickOutside = (event: MouseEvent) => {
     // Verifica si el clic ocurrió fuera del div hijo
-    if (childRef.current && !childRef.current.contains(event.target as Node)) {
-      dispatch(hideContactPopup());
+    if (childRef.current && !childRef.current.contains(event.target as Node)) {      
+      dispatch(showContactPopup(false));
     }
   };
 
@@ -31,7 +31,7 @@ export default function ContactPopup() {
       initial={{ opacity: 0 }}
       animate={contactPopupValue ? { opacity: 1 } : { opacity: 0 }}
       transition={{ duration: 0.5, ease: "easeOut" }} // Transición suave sin rebote
-      className={`${contactPopupValue ? "fixed" : "hidden"} h-screen flex justify-center items-center z-20 overflow-hidde`}
+      className={`${contactPopupValue ? "fixed" : "hidden"} h-screen w-full flex justify-center items-center z-20 overflow-hidde bg-black bg-opacity-30`}
     >
       <div ref={childRef} className="bg-white rounded-[32px] min-w-[300px] lg:w-[825px] p-7 flex flex-col space-y-6">
         <h3 className="text-customBlue-600 text-little lg:text-normal uppercase font-bold">

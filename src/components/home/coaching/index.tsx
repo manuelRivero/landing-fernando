@@ -1,18 +1,34 @@
 import React from "react";
-import GenericSection from "../../shared/genericSection";
 import coachingIcon from "./../../../images/icons/coaching.svg";
+import LinkButton from "../../shared/linkButton";
 
 export default function Coaching() {
-    return (
-        <div className="bg-black">
-            <div className="py-32 pb-40 px-8 md:px-32 container">
-                <GenericSection
-                    icon={{ src: coachingIcon, alt: "Coaching icon" }}
-                    title="Get your Coaching Session"
-                    description="Clear your doubts and talk to business experts. Schedule a consultation to receive personalized guidance."
-                    buttonData={{ color: "customGreen-500", path: "#", text: "SCHEDULE" }}
-                />
-            </div>
+  return (
+    <div className="bg-black">
+      <div className="py-32 pb-40 px-8 md:px-32 container">
+        <div className="flex flex-col justify-center items-center space-y-4">
+          <img src={coachingIcon} alt="Coaching icon" />
+          <a
+            href="https://www.canva.com/design/DAGEOtU18t0/WrP44fuTROrsfebghYJ5HA/view?utm_content=DAGEOtU18t0&utm_campaign=designshare&utm_medium=link&utm_source=editor"
+            target="_blank"
+          >
+            <h2 className="text-white text-center text-normal font-bold uppercase underline">
+              Get your Coaching Session
+            </h2>
+          </a>
+          <h2 className="text-white text-center text-normal font-normal">
+            Clear your doubts and talk to business experts. Schedule a
+            consultation to receive personalized guidance.
+          </h2>
+          <LinkButton
+            color={"customGreen-500"}
+            path={"https://calendly.com/andy-lde/30min"}
+            text={"SCHEDULE"}
+            textColor={"white"}
+            target={"_blank"}
+          />
         </div>
-    );
+      </div>
+    </div>
+  );
 }

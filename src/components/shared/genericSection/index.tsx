@@ -4,7 +4,7 @@ import LinkButton from "../linkButton";
 interface Props {
   title: string;
   description?: string;
-  buttonData: LinkButtonType;
+  buttonData?: LinkButtonType;
   icon?: { src: string; alt: string };
   isUppercase?: boolean;
 }
@@ -30,13 +30,13 @@ export default function GenericSection({
           {description}
         </h2>
       )}
-      <LinkButton
+      {buttonData && <LinkButton
         color={buttonData.color}
         path={buttonData.path}
         text={buttonData.text}
         textColor={buttonData.textColor || "white"}
         target={buttonData.target}
-      />
+      />}
     </div>
   );
 }

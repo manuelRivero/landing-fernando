@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { motion } from "framer-motion";
-import { hideVerifyPopup } from "../../../store/global";
+import { showVerifyPopup } from "../../../store/global";
 import { RootState } from "../../../store";
 
 export default function VerifyPopup() {
@@ -13,7 +13,7 @@ export default function VerifyPopup() {
   const handleClickOutside = (event: MouseEvent) => {
     // Verifica si el clic ocurrió fuera del div hijo
     if (childRef.current && !childRef.current.contains(event.target as Node)) {
-      dispatch(hideVerifyPopup());
+      dispatch(showVerifyPopup(false));
     }
   };
 
@@ -33,9 +33,9 @@ export default function VerifyPopup() {
       transition={{ duration: 0.5, ease: "easeOut" }}
       className={`${
         verifyPopupValue ? "fixed" : "hidden"
-      } h-screen flex justify-center items-center z-20 overflow-hidde`}
+      } h-screen w-full flex justify-center items-center z-20 overflow-hidde bg-black bg-opacity-30`}
     >
-      <div className="bg-customBlue-600 rounded-[32px] lg:w-[825px] p-7  flex flex-col space-y-6">
+      <div ref={childRef} className="bg-customBlue-600 rounded-[32px] lg:w-[825px] p-7  flex flex-col space-y-6">
         <h3 className="text-white text-normal uppercase pr-14 font-bold">
           Create an account and chat with us to make informed business decisions
         </h3>

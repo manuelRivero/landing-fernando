@@ -1,5 +1,5 @@
 // src/features/yourSlice.js
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction  } from "@reduxjs/toolkit";
 
 const initialValues = {
   contactPopupValue: false,
@@ -10,25 +10,14 @@ const globalSlice = createSlice({
   name: "global",
   initialState: initialValues,
   reducers: {
-    showVerifyPopup: (state) => {
-      state.verifyPopupValue = true;
+    showVerifyPopup: (state, action: PayloadAction<boolean>) => {
+      state.verifyPopupValue = action.payload;
     },
-    hideVerifyPopup: (state) => {
-      state.verifyPopupValue = false;
-    },
-    showContactPopup: (state) => {
-      state.contactPopupValue = true;
-    },
-    hideContactPopup: (state) => {
-      state.contactPopupValue = false;
+    showContactPopup: (state, action: PayloadAction<boolean>) => {
+      state.contactPopupValue = action.payload;
     },
   },
 });
 
-export const {
-  showVerifyPopup,
-  hideVerifyPopup,
-  showContactPopup,
-  hideContactPopup,
-} = globalSlice.actions;
+export const { showVerifyPopup, showContactPopup } = globalSlice.actions;
 export default globalSlice.reducer;

@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
-import plusIcon from "./../../../images/icons/plus.svg";
-import closeIcon from "./../../../images/icons/close-pink.svg";
-import LinkButton from "../linkButton";
 import { useLocation } from "@reach/router";
-import ContactPopup from "../contactPopup";
+import { showContactPopup } from "../../../store/global";
+import CustomButton from "../customButton";
+import { useDispatch } from "react-redux";
 
 interface Props {
   title: string;
@@ -12,11 +11,6 @@ interface Props {
   alt: string;
   textColor?: string;
   plusColor?: string;
-  buttonData?: {
-    text?: string;
-    path?: string;
-    color?: string;
-  };
 }
 
 export default function Collapse({
@@ -26,24 +20,10 @@ export default function Collapse({
   plusColor = "white",
   icon,
   alt,
-  buttonData,
 }: Props) {
+  const dispatch = useDispatch()
   const location = useLocation();
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [showContactModal, setShowContactModal] = useState<boolean>(false);
-
-  useEffect(() => {
-    if (showContactModal) {
-      document.body.style.overflow = "hidden"; // Bloquea el scroll
-    } else {
-      document.body.style.overflow = ""; // Restablece el scroll
-    }
-
-    // Limpia el efecto al desmontar el componente
-    return () => {
-      document.body.style.overflow = ""; // Asegura que el scroll se restablezca
-    };
-  }, [showContactModal]);
 
   const handleOpen = () => {
     setIsOpen(!isOpen);
@@ -51,11 +31,6 @@ export default function Collapse({
   return (
     <div className="relative">
       <div
-        onClick={() => {
-          if (showContactModal) {
-            setShowContactModal(false);
-          }
-        }}
         className={`text-${textColor} grid grid-cols-12 items-start py-14 font-inter text-normal`}
       >
         <div className="col-span-1 place-self-start">
@@ -63,23 +38,14 @@ export default function Collapse({
         </div>
 
         <div className="col-span-10 place-self-center">
-          <div className="cursor-pointer">
+          <div>
             <h2 className="font-bold uppercase px-4 text-center">{title}</h2>
           </div>
           {isOpen && (
-            <div className="flex flex-col items-center space-y-11">
+            <div className="flex flex-col items-center mt-4">
               <p className={location.pathname === "/" ? "text-center" : ""}>
                 {description}
               </p>
-              {buttonData && (
-                <button
-                  onClick={() => setShowContactModal(true)}
-                  type="button"
-                  className={`bg-${buttonData?.color} px-7 py-2 rounded-full text-white text-normal text-center font-bold`}
-                >
-                  {buttonData?.text}
-                </button>
-              )}
             </div>
           )}
         </div>
@@ -117,8 +83,6 @@ export default function Collapse({
           )}
         </div>
       </div>
-
-      {showContactModal && <ContactPopup />}
     </div>
   );
 }

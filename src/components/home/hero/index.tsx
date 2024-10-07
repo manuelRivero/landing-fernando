@@ -9,6 +9,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Pagination } from "swiper/modules";
 import "swiper/css";
 import LinkButton from "../../shared/linkButton";
+import CustomButton from "../../shared/customButton";
+import { useDispatch } from "react-redux";
+import { showContactPopup } from "../../../store/global";
 
 interface Card {
   title: string;
@@ -42,6 +45,8 @@ const cardsContent: Card[] = [
 ];
 
 export default function Hero() {
+  const dispatch = useDispatch();
+
   return (
     <div className="bg-black">
       <div className="pt-32 lg:pt-52 pb-32 lg:pb-40 px-8 md:px-32 container">
@@ -57,10 +62,11 @@ export default function Hero() {
             <h2 className="text-white text-center lg:text-left text-2xl font-bold">
               WEB · BRANDING · GROWTH
             </h2>
-            <LinkButton
-              text="Explore Our Services"
-              path="#"
-              color="customPurple-500"
+            <CustomButton
+              bgColor="customPurple-500"
+              textColor="white"
+              text="GET QUOTE"
+              cb={() => dispatch(showContactPopup(true))}
             />
           </div>
 

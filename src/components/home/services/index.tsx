@@ -4,6 +4,9 @@ import lottoIcon from "./../../../images/icons/lotto.svg";
 import plusOutlinedIcon from "./../../../images/icons/plus-outlined.svg";
 import flowerIcon from "./../../../images/icons/flower-white.svg";
 import LinkButton from "../../shared/linkButton";
+import CustomButton from "../../shared/customButton";
+import { useDispatch } from "react-redux";
+import { showContactPopup } from "../../../store/global";
 
 interface CollapseType {
   title: string;
@@ -42,6 +45,8 @@ const collapseData: CollapseType[] = [
 ];
 
 export default function Services() {
+  const dispatch = useDispatch()
+
   return (
     <div className="bg-customBlue-500">
       <div className="py-24 px-8 md:px-32 container">
@@ -63,20 +68,16 @@ export default function Services() {
               icon={item.icon}
               alt={item.alt}
               description={item.description}
-              buttonData={{
-                text: item.buttonData?.text,
-                path: item.buttonData?.path,
-                color: item.buttonData?.color,
-              }}
             />
           ))}
         </div>
 
         <div className="flex justify-center">
-          <LinkButton
-            text={"LEARN MORE"}
-            path={"#"}
-            color={"customPurple-600"}
+          <CustomButton
+            bgColor="customPink-400"
+            textColor="white"
+            text="GET QUOTE"
+            cb={() => dispatch(showContactPopup(true))}
           />
         </div>
       </div>

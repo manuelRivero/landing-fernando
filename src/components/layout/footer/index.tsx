@@ -10,11 +10,11 @@ import whatsappLogo from "./../../../images/logos/whatsapp-logo.svg";
 import { ImageType } from "../../../types/imageType";
 
 const importantLinks = [
-  { text: "Home", href: "/" },
-  { text: "Web", href: "/web-and-app" },
-  { text: "Branding", href: "#" },
-  { text: "Growth", href: "/growth-and-funnel" },
-  { text: "Incubator", href: "#" },
+  { text: "Home", href: "/", bold: true },
+  { text: "Web", href: "/web-and-app", bold: false },
+  { text: "Branding", href: "#", bold: false },
+  { text: "Growth", href: "/growth-and-funnel", bold: false },
+  { text: "Incubator", href: "#", bold: true },
 ];
 
 const socialMediaList: ImageType[] = [
@@ -33,7 +33,7 @@ export default function Footer() {
         </div>
         <div className="grid grid-cols-12 gap-y-8 md:gap-x-8 p-8">
           <div className="col-span-12 lg:col-span-3 flex flex-col space-y-4 lg:space-y-14">
-            <h3 className="font-inter text-customOrange-500 text-little md:text-normal uppercase">
+            <h3 className="text-customOrange-500 text-little md:text-normal uppercase">
               Important links
             </h3>
             {importantLinks.map((linkItem) => (
@@ -41,7 +41,7 @@ export default function Footer() {
                 key={linkItem.text}
                 to={linkItem.href}
                 type="button"
-                className="font-inter text-white text-little md:text-normal font-semibold"
+                className={`text-white text-little md:text-normal ${linkItem.bold && "font-semibold"}`}
               >
                 {linkItem.text}
               </Link>
@@ -49,30 +49,30 @@ export default function Footer() {
           </div>
           <div className="col-span-12 lg:col-span-4 flex flex-col space-y-8">
             <div>
-              <h3 className="font-inter text-customOrange-500 text-little md:text-normal uppercase">
+              <h3 className="text-customOrange-500 text-little md:text-little uppercase">
                 Contact
               </h3>
-              <p className="text-white text-little md:text-normal">
+              <p className="text-white text-little md:text-little">
                 hola@zapian.co
               </p>
-              <p className="text-white text-little md:text-normal">
+              <p className="text-white text-little md:text-little">
                 55 0000 0000
               </p>
             </div>
             <div>
-              <h3 className="font-inter text-customOrange-500 text-little md:text-normal uppercase">
+              <h3 className="text-customOrange-500 text-little md:text-little uppercase">
                 Address
               </h3>
-              <p className="text-white text-little md:text-normal italic">
+              <p className="text-white text-little md:text-little italic">
                 Anzures, 11590 CDMX, México. C. del Pez, Centro, 28004 Madrid,
                 España.
               </p>
-              <p className="text-white text-little md:text-normal italic">
+              <p className="text-white text-little md:text-little italic">
                 S Beverly Dr, Beverly Hills, CA 90212, United States.
               </p>
             </div>
             <div>
-              <h3 className="font-inter text-customOrange-500 text-little md:text-normal uppercase">
+              <h3 className="text-customOrange-500 text-little md:text-little uppercase">
                 Social Media
               </h3>
               <div className="flex space-x-3">
@@ -87,25 +87,25 @@ export default function Footer() {
               </div>
             </div>
             <div>
-              <h3 className="font-inter text-customOrange-500 text-little md:text-normal uppercase">
+              <h3 className="text-customOrange-500 text-little md:text-little uppercase font-semibold">
                 ENGLISH | MEXICO · $0,000
               </h3>
-              <p className="text-white text-little md:text-normal italic">
+              <p className="text-white text-little md:text-little italic">
                 Prices do not include taxes
               </p>
             </div>
             <div>
-              <h3 className="font-inter text-customOrange-500 text-little md:text-normal uppercase">
+              <h3 className="text-customOrange-500 text-little md:text-little uppercase">
                 We Accept
               </h3>
-              <p className="text-white text-little md:text-normal underline">
+              <p className="text-white text-little md:text-little underline">
                 Visa | Mastercard | American Express | OXXO | PayPal
               </p>
             </div>
           </div>
           <div className="col-span-12 lg:col-span-5 flex flex-col space-y-8">
             <div>
-              <h3 className="font-inter font-normal lg:font-semibold text-customOrange-500 text-little md:text-normal uppercase mb-2">
+              <h3 className="font-normal text-customOrange-500 text-little md:text-little uppercase mb-2">
                 Subscribe to the newsletter
               </h3>
               <div className="grid grid-cols-6 gap-2">
@@ -124,25 +124,25 @@ export default function Footer() {
               </div>
             </div>
             <div className="h-full flex flex-col justify-end">
-              <h3 className="font-inter text-customOrange-500 text-little md:text-normal uppercase">
+              <h3 className="text-customOrange-500 text-little md:text-little uppercase">
                 Resource Links:
               </h3>
-              <p className="text-white text-little md:text-normal font-inter italic mb-10">
+              <p className="text-white text-little md:text-little font-inter italic mb-10">
                 Free PDF
               </p>
               <div className="flex justify-start items-end mb-4">
                 <img src={zapianFooter} alt="Zapian" />
               </div>
-              <h3 className="font-inter font-normal text-customOrange-500 text-little md:text-normal uppercase">
+              <h3 className="font-inter font-little text-white text-little md:text-little uppercase">
                 Policies and Terms
               </h3>
-              <p className="text-white text-little md:text-normal font-inter">
+              <p className="text-white text-little md:text-little font-inter">
                 Privacy Policy
               </p>
-              <p className="text-white text-little md:text-normal font-inter">
+              <p className="text-white text-little md:text-little font-inter">
                 Terms and Conditions of Use
               </p>
-              <p className="text-white text-little md:text-normal font-inter">
+              <p className="text-white text-little md:text-little font-inter">
                 © 2023 Zapian All rights reserved.
               </p>
             </div>

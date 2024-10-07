@@ -34,9 +34,12 @@ const IndexPage: React.FC<PageProps> = () => {
       <Coaching />
       <Clients />
       <div className="hidden md:block fixed bottom-0 right-0 -translate-x-1/2 -translate-y-1/2 z-10">
-      <button type="button">
-        <img src={whatsapp} alt="Whatsapp" />
-      </button>
+        <a
+          href="https://api.whatsapp.com/send?phone=5215639308664&text=%C2%A1Hola!%20Me%20interesa%20saber%20m%C3%A1s%20de%20Zapian."
+          target="_blank"
+        >
+          <img src={whatsapp} alt="Whatsapp" />
+        </a>
       </div>
     </div>
   );

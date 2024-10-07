@@ -1,11 +1,12 @@
 import React from "react";
 import GenericSection from "../../shared/genericSection";
+import { useDispatch } from "react-redux";
 
-interface Props {
-  close: () => void;
-}
 
-export default function GetQuotation({ close }: Props) {
+
+export default function GetQuotation() {
+  const dispatch = useDispatch();
+
   return (
     <div className="bg-black">
       <div className="py-24 px-8 md:px-32 container">
@@ -16,8 +17,8 @@ export default function GetQuotation({ close }: Props) {
             target: "_blank",
             color: "customBlue-600",
             path: "https://calendly.com/andy-lde/30min",
-            text: "Get your Personalized Quotation",
-            textColor: "customYellow-500",
+            text: "GET YOUR PERSONALIZED QUOTATION",
+            textColor: "customGreen-500",
           }}
         />
       </div>

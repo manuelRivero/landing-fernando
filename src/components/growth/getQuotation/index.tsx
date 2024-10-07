@@ -1,11 +1,9 @@
 import React from "react";
 import GenericSection from "../../shared/genericSection";
 
-interface Props {
-  close: () => void;
-}
 
-export default function GetQuotation({ close }: Props) {
+
+export default function GetQuotation() {
   return (
     <div className="bg-black">
       <div className="py-24 px-8 md:px-32 container">

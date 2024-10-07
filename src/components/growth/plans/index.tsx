@@ -6,10 +6,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Pagination } from "swiper/modules";
 import "swiper/css";
 import { motion } from "framer-motion";
-
-interface Props {
-  close: () => void;
-}
+import { useDispatch } from "react-redux";
+import { showContactPopup } from "../../../store/global";
 
 const swiperTexts: string[] = [
   "Starter · STARTER",
@@ -17,7 +15,8 @@ const swiperTexts: string[] = [
   "Growth hacker · STARTER",
 ];
 
-export default function Plans({ close }: Props) {
+export default function Plans() {
+const dispatch = useDispatch()
   const [showSlideInfo, setShowSlideInfo] = useState<number>(-1);
 
   return (
@@ -124,7 +123,7 @@ export default function Plans({ close }: Props) {
                 </div>
 
                 <button
-                  onClick={() => close()}
+                  onClick={() => dispatch(showContactPopup(true))}
                   type="button"
                   className="bg-customBlue-600 px-7 py-2 rounded-full text-customYellow-500 text-normal text-center font-bold w-fit"
                 >
@@ -221,7 +220,7 @@ export default function Plans({ close }: Props) {
                 </div>
 
                 <button
-                  onClick={() => close()}
+                  onClick={() => dispatch(showContactPopup(true))}
                   type="button"
                   className="bg-customBlue-600 px-7 py-2 rounded-full text-customYellow-500 text-normal text-center font-bold w-fit"
                 >
@@ -322,7 +321,7 @@ export default function Plans({ close }: Props) {
                 </div>
 
                 <button
-                  onClick={() => close()}
+                  onClick={() => dispatch(showContactPopup(true))}
                   type="button"
                   className="bg-customBlue-600 px-7 py-2 rounded-full text-customYellow-500 text-normal text-center font-bold w-fit"
                 >
