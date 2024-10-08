@@ -14,7 +14,7 @@ const importantLinks = [
   { text: "Web", href: "/web-and-app", bold: false },
   { text: "Branding", href: "#", bold: false },
   { text: "Growth", href: "/growth-and-funnel", bold: false },
-  { text: "Incubator", href: "#", bold: true },
+  { text: "Incubator", href: "/incubator", bold: true },
 ];
 
 const socialMediaList: ImageType[] = [

@@ -18,7 +18,7 @@ const menuLinks = [
   { text: "WEB · APP", href: "/web-and-app", bold: false },
   { text: "Branding", href: "#", bold: false },
   { text: "Growth & Funnel", href: "/growth-and-funnel", bold: false },
-  { text: "Incubator", href: "#", bold: true },
+  { text: "Incubator", href: "/incubator", bold: true },
 ];
 
 export default function Layout({ children }: LayoutProps) {

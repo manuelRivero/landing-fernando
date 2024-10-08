@@ -29,7 +29,7 @@ module.exports = {
         "9xl": "98px",
         "3xl": "60px",
         "2xl": "37px",
-        normal: "30px",
+        normal: "28px",
         little: "20px",
         "2xs": "15px",
         "tight": "12px",
