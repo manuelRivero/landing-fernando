@@ -23,7 +23,7 @@ export default function Process() {
   return (
     <div className="bg-white">
       <div className="pt-32 lg:pt-52 pb-32 lg:pb-40 px-8 md:px-32 container">
-        <h1 className="text-customBlue-600 text-center lg:text-left font-inter font-black text-2xl md:text-3xl uppercase leading-tight lg:leading-customLineHeight">
+        <h1 className="text-customBlue-600 text-center lg:text-left font-inter font-bold text-2xl md:text-3xl uppercase leading-tight lg:leading-customLineHeight">
           Process
         </h1>
         <div className="flex flex-col divide-y divide-customBlue-600 border-b border-b-customBlue-600 mb-14">

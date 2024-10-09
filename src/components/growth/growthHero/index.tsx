@@ -11,7 +11,7 @@ export default function GrowthHero() {
     <div className="bg-white">
       <div className="pt-32 lg:pt-52 pb-32 lg:pb-40 px-8 md:px-32 container">
         <div className="mb-11">
-          <h1 className="text-customBlue-600 text-center lg:text-left font-inter font-black text-2xl md:text-3xl lg:text-9xl uppercase leading-tight lg:leading-customLineHeight">
+          <h1 className="text-customBlue-600 text-center lg:text-left font-inter font-bold text-2xl md:text-3xl lg:text-9xl uppercase leading-tight lg:leading-customLineHeight">
             CONTENT & GROWTH MARKETING
           </h1>
         </div>

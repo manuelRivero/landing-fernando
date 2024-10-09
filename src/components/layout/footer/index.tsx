@@ -26,7 +26,7 @@ const socialMediaList: ImageType[] = [
 
 export default function Footer() {
   return (
-    <footer className="bg-black">
+    <footer className="bg-black pt-8">
       <div className="container">
         <div className="grid grid-cols-1 px-8">
           <img src={footerTop} alt="" />

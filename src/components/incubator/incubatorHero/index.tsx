@@ -13,7 +13,7 @@ export default function IncubatorHero() {
         <div className="flex flex-col-reverse lg:grid lg:grid-cols-2 items-center pb-32">
           <div className="flex flex-col space-y-4 items-center lg:items-start">
             <div>
-              <h1 className="text-white text-center lg:text-left font-inter font-black text-2xl md:text-3xl uppercase leading-tight">
+              <h1 className="text-white text-center lg:text-left font-inter font-bold text-2xl md:text-3xl uppercase leading-tight">
                 <span className="text-customGreen-500">Incubator</span> Program
               </h1>
               <p className="text-white text-center lg:text-left text-normal leading-none">
