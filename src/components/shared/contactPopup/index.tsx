@@ -41,12 +41,12 @@ export default function ContactPopup() {
 
         <input
           type="text"
-          className="rounded-full w-full border border-customYellow-500 bg-transparent px-6 py-2 text-little lg:text-normal text-customYellow-500"
+          className="placeholder-customYellow-500 rounded-full w-full border border-customYellow-500 bg-transparent px-6 py-2 text-little lg:text-normal text-customYellow-500"
           placeholder="NAME"
         />
         <input
           type="text"
-          className="rounded-full w-full border border-customYellow-500 bg-transparent px-6 py-2 text-little lg:text-normal text-customYellow-500"
+          className="placeholder-customYellow-500 rounded-full w-full border border-customYellow-500 bg-transparent px-6 py-2 text-little lg:text-normal text-customYellow-500"
           placeholder="EMAIL"
         />
 
@@ -56,12 +56,12 @@ export default function ContactPopup() {
           </p>
           <input
             type="text"
-            className="rounded-full w-full border border-customYellow-500 bg-transparent px-6 py-2 text-little lg:text-normal text-customYellow-500"
+            className="placeholder-customYellow-500 rounded-full w-full border border-customYellow-500 bg-transparent px-6 py-2 text-little lg:text-normal text-customYellow-500"
             placeholder="PHONE NUMBER"
           />
         </div>
         <textarea
-          className="rounded-[32px] w-full border border-customYellow-500 bg-transparent px-6 py-2 text-little lg:text-normal text-customYellow-500"
+          className="placeholder-customYellow-500 rounded-[32px] w-full border border-customYellow-500 bg-transparent px-6 py-2 text-little lg:text-normal text-customYellow-500"
           placeholder="MESSAGE"
         />
         <div className="flex justify-center">
