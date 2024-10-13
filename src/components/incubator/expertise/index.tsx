@@ -1,11 +1,7 @@
 import React from "react";
-import GenericSection from "../../shared/genericSection";
-import { useDispatch } from "react-redux";
 import IconsAndTextsSection from "../../shared/iconsAndTextsSection";
 
 export default function Expertise() {
-  const dispatch = useDispatch();
-
   return (
     <div className="bg-black">
       <div className="py-24 px-8 md:px-32 container">

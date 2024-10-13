@@ -1,8 +1,6 @@
 import React from "react";
 import GenericSection from "../../shared/genericSection";
 
-
-
 export default function GetQuotation() {
   return (
     <div className="bg-black">

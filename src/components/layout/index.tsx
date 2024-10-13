@@ -16,7 +16,7 @@ interface LayoutProps {
 const menuLinks = [
   { text: "Home", href: "/", bold: true },
   { text: "WEB · APP", href: "/web-and-app", bold: false },
-  { text: "Branding", href: "#", bold: false },
+  { text: "Branding", href: "/branding", bold: false },
   { text: "Growth & Funnel", href: "/growth-and-funnel", bold: false },
   { text: "Incubator", href: "/incubator", bold: true },
 ];
