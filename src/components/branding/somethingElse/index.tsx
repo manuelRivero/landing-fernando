@@ -8,14 +8,14 @@ export default function SomethingElse() {
 
   return (
     <div className="bg-black">
-      <div className="py-32 pb-40 px-8 md:px-32 container">
-        <div className="flex flex-col justify-center items-center space-y-12">
+      <div className="py-16 md:py-32 md:pb-40 px-8 md:px-32 container">
+        <div className="flex flex-col justify-center items-center space-y-4 md:space-y-12">
           <div>
-            <h1 className="text-white text-center text-3xl font-bold uppercase leading-none">
+            <h1 className="text-white text-center text-2xl md:text-3xl font-bold uppercase leading-none">
               <span className="text-customPink-500">Looking </span>
               for something else?
             </h1>
-            <p className="text-white text-center text-normal">
+            <p className="text-white text-center text-xs md:text-normal">
               We generate your AI chatbot as well.
             </p>
           </div>

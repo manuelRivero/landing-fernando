@@ -28,9 +28,11 @@ module.exports = {
       fontSize: {
         "9xl": "98px",
         "3xl": "60px",
-        "2xl": "37px",
+        "2xl": "34px",
         normal: "28px",
+        small: "24px",
         little: "20px",
+        "xs": "17px",
         "2xs": "15px",
         "tight": "12px",
         "3xs": "10px",

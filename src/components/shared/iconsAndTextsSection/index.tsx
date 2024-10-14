@@ -1,4 +1,7 @@
 import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { FreeMode, Pagination } from "swiper/modules";
+import "swiper/css";
 import { useLocation } from "@reach/router";
 
 interface ContentType {
@@ -214,7 +217,7 @@ export default function IconsAndTextsSection() {
 
   return (
     <div>
-      <div className="grid grid-cols-12 gap-16">
+      <div className="hidden lg:grid grid-cols-12 gap-16">
         {handleShowContent().map((item, index: number) => (
           <div
             key={`${item.title}-${index}`}
@@ -233,6 +236,45 @@ export default function IconsAndTextsSection() {
             </div>
           </div>
         ))}
+      </div>
+
+      <div className="block lg:hidden">
+        <Swiper
+          breakpoints={{
+            1000: {
+              slidesPerView: 2,
+            },
+            0: {
+              slidesPerView: 1,
+            },
+          }}
+          spaceBetween={20}
+          freeMode={true}
+          pagination={{
+            clickable: true,
+          }}
+          modules={[FreeMode, Pagination]}
+        >
+          {handleShowContent().map((item, index: number) => (
+            <SwiperSlide key={`${item.title}-${index}`}>
+              <div
+                className={`flex flex-col space-y-2 ${
+                  index >= 0 && index <= 2 ? "col-span-4" : "col-span-6"
+                } justify-center items-center`}
+              >
+                {item.icon}
+                <div>
+                  <h3 className="text-white uppercase text-xs md:text-normal font-bold text-center leading-tight">
+                    {item.title}
+                  </h3>
+                  <p className="text-white text-2xs md:text-little text-center">
+                    {item.description}
+                  </p>
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
     </div>
   );

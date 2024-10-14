@@ -22,12 +22,12 @@ const logosData: ImageType[] = [
 export default function Partners() {
   return (
     <div className="bg-black">
-      <div className="py-32 pb-40 px-8 md:px-32 container">
+      <div className="py-16 md:py-32 md:pb-40 px-8 md:px-32 container">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-11">
-          <h2 className="text-white text-center lg:text-left font-inter font-bold text-3xl uppercase leading-none">
+          <h2 className="text-white text-center lg:text-left font-inter font-bold text-2xl md:text-3xl uppercase leading-none">
             We’ve got the trust of
           </h2>
-          <h3 className="text-white text-center lg:text-left font-inter font-bold text-normal leading-tight">
+          <h3 className="text-white text-center lg:text-left font-inter font-bold text-xs md:text-normal leading-tight">
             Brand With, Nusa, UBU, Ardente, Casa del Cielo, Teu, Instructivo del
             alma, <span className="font-normal">and more.</span>
           </h3>

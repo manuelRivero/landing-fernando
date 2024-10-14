@@ -22,4 +22,4 @@ const ContentAndGrowthPage: React.FC<PageProps> = () => {
 
 export default ContentAndGrowthPage;
 
-export const Head: HeadFC = () => <title>Growth</title>;
+export const Head: HeadFC = () => <title>Growth and funnel</title>;

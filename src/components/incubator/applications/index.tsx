@@ -32,12 +32,12 @@ export default function Applications() {
   const [showSlideInfo, setShowSlideInfo] = useState<number>(-1);
   return (
     <div className="bg-customOrange-500">
-      <div className="pb-36 px-8 md:p-32 container">
+      <div className="py-16 md:pb-32 md:pt-32 lg:pt-52 px-8 md:px-32 container">
         <div className="mb-16">
-          <h1 className="text-white text-center font-bold text-2xl md:text-3xl uppercase leading-tight">
+          <h1 className="text-white text-center font-bold text-small md:text-3xl uppercase leading-tight">
             Applications now open for our Autumn program
           </h1>
-          <p className="text-center text-customGreen-500 text-normal font-semibold">
+          <p className="text-center text-customGreen-500 text-xs md:text-normal font-semibold">
             How It Works
           </p>
         </div>

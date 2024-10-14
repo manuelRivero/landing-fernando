@@ -59,7 +59,7 @@ export default function Footer() {
         </div>
         <div className="grid grid-cols-12 gap-y-8 md:gap-x-8 p-8">
           <div className="col-span-12 lg:col-span-3 flex flex-col space-y-4 lg:space-y-14">
-            <h3 className={`text-${handleIconsColors().mainColor} text-little md:text-normal uppercase`}>
+            <h3 className={`text-${handleIconsColors().mainColor} text-xs md:text-normal uppercase`}>
               Important links
             </h3>
             {importantLinks.map((linkItem) => (
@@ -67,7 +67,7 @@ export default function Footer() {
                 key={linkItem.text}
                 to={linkItem.href}
                 type="button"
-                className={`text-white text-little md:text-normal ${
+                className={`text-white text-xs md:text-normal ${
                   linkItem.bold && "font-semibold"
                 }`}
               >
@@ -77,30 +77,30 @@ export default function Footer() {
           </div>
           <div className="col-span-12 lg:col-span-4 flex flex-col space-y-8">
             <div>
-              <h3 className={`text-${handleIconsColors().mainColor} text-little md:text-little uppercase`}>
+              <h3 className={`text-${handleIconsColors().mainColor} text-xs md:text-little uppercase`}>
                 Contact
               </h3>
-              <p className="text-white text-little md:text-little">
+              <p className="text-white text-xs md:text-little">
                 hola@zapian.co
               </p>
-              <p className="text-white text-little md:text-little">
+              <p className="text-white text-xs md:text-little">
                 55 0000 0000
               </p>
             </div>
             <div>
-              <h3 className={`text-${handleIconsColors().mainColor} text-little md:text-little uppercase`}>
+              <h3 className={`text-${handleIconsColors().mainColor} text-xs md:text-little uppercase`}>
                 Address
               </h3>
-              <p className="text-white text-little md:text-little italic">
+              <p className="text-white text-xs md:text-little italic">
                 Anzures, 11590 CDMX, México. C. del Pez, Centro, 28004 Madrid,
                 España.
               </p>
-              <p className="text-white text-little md:text-little italic">
+              <p className="text-white text-xs md:text-little italic">
                 S Beverly Dr, Beverly Hills, CA 90212, United States.
               </p>
             </div>
             <div>
-              <h3 className={`text-${handleIconsColors().mainColor} text-little md:text-little uppercase`}>
+              <h3 className={`text-${handleIconsColors().mainColor} text-xs md:text-little uppercase`}>
                 Social Media
               </h3>
               <div className="flex space-x-3">
@@ -115,36 +115,36 @@ export default function Footer() {
               </div>
             </div>
             <div>
-              <h3 className={`text-${handleIconsColors().mainColor} text-little md:text-little uppercase font-semibold`}>
+              <h3 className={`text-${handleIconsColors().mainColor} text-xs md:text-little uppercase font-semibold`}>
                 ENGLISH | MEXICO · $0,000
               </h3>
-              <p className="text-white text-little md:text-little italic">
+              <p className="text-white text-xs md:text-little italic">
                 Prices do not include taxes
               </p>
             </div>
             <div>
-              <h3 className={`text-${handleIconsColors().mainColor} text-little md:text-little uppercase`}>
+              <h3 className={`text-${handleIconsColors().mainColor} text-xs md:text-little uppercase`}>
                 We Accept
               </h3>
-              <p className="text-white text-little md:text-little underline">
+              <p className="text-white text-xs md:text-little underline">
                 Visa | Mastercard | American Express | OXXO | PayPal
               </p>
             </div>
           </div>
           <div className="col-span-12 lg:col-span-5 flex flex-col space-y-8">
             <div>
-              <h3 className={`font-normal text-${handleIconsColors().mainColor} text-little md:text-little uppercase mb-2`}>
+              <h3 className={`font-normal text-${handleIconsColors().mainColor} text-xs md:text-little uppercase mb-2`}>
                 Subscribe to the newsletter
               </h3>
-              <div className="grid grid-cols-6 gap-2">
+              <div className="grid grid-cols-12 gap-2">
                 <input
                   type="text"
-                  className={`col-span-6 md:col-span-4 bg-black rounded-full border border-${handleIconsColors().mainColor} text-white px-6 py-1 font-inter`}
+                  className={`col-span-8 bg-black rounded-full border border-${handleIconsColors().mainColor} text-white px-6 py-1 font-inter`}
                 />
-                <div className="flex justify-center col-span-6 md:col-span-2">
+                <div className="flex justify-center col-span-4">
                   <button
                     type="button"
-                    className={`w-fit bg-${handleIconsColors().mainColor} px-6 py-2 rounded-full text-${handleIconsColors().textButtonColor} font-bold lg:uppercase`}
+                    className={`text-3xs md:text-tight w-fit bg-${handleIconsColors().mainColor} px-6 py-2 rounded-full text-${handleIconsColors().textButtonColor} font-bold uppercase`}
                   >
                     Subscribe
                   </button>
@@ -152,25 +152,25 @@ export default function Footer() {
               </div>
             </div>
             <div className="h-full flex flex-col justify-end">
-              <h3 className={`text-${handleIconsColors().mainColor} text-little md:text-little uppercase`}>
+              <h3 className={`text-${handleIconsColors().mainColor} text-xs md:text-little uppercase`}>
                 Resource Links:
               </h3>
-              <p className="text-white text-little md:text-little font-inter italic mb-10">
+              <p className="text-white text-xs md:text-little font-inter italic mb-10">
                 Free PDF
               </p>
               <div className="flex justify-start items-end mb-4">
                 <img src={zapianFooter} alt="Zapian" />
               </div>
-              <h3 className="font-inter font-little text-white text-little md:text-little uppercase">
+              <h3 className="font-inter font-little text-white text-xs md:text-little uppercase">
                 Policies and Terms
               </h3>
-              <p className="text-white text-little md:text-little font-inter">
+              <p className="text-white text-xs md:text-little font-inter">
                 Privacy Policy
               </p>
-              <p className="text-white text-little md:text-little font-inter">
+              <p className="text-white text-xs md:text-little font-inter">
                 Terms and Conditions of Use
               </p>
-              <p className="text-white text-little md:text-little font-inter">
+              <p className="text-white text-xs md:text-little font-inter">
                 © 2023 Zapian All rights reserved.
               </p>
             </div>

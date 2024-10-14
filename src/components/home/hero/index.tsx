@@ -3,12 +3,10 @@ import computerImg from "./../../../images/home/computer.png";
 import spinerIcon from "./../../../images/icons/spiner.svg";
 import star8 from "./../../../images/icons/star-8.svg";
 import star4 from "./../../../images/icons/star-4.svg";
-import { Link } from "gatsby";
 import InfoCard from "../../shared/infoCard";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Pagination } from "swiper/modules";
 import "swiper/css";
-import LinkButton from "../../shared/linkButton";
 import CustomButton from "../../shared/customButton";
 import { useDispatch } from "react-redux";
 import { showContactPopup } from "../../../store/global";
@@ -49,17 +47,17 @@ export default function Hero() {
 
   return (
     <div className="bg-black">
-      <div className="pt-32 lg:pt-52 pb-32 lg:pb-40 px-8 md:px-32 container">
+      <div className="pt-32 md:pt-52 pb-16 md:pb-40 px-8 md:px-32 container">
         <div className="mb-11">
-          <h1 className="text-white text-center lg:text-left font-inter font-bold text-2xl md:text-3xl lg:text-9xl uppercase leading-tight lg:leading-customLineHeight">
+          <h1 className="text-white text-center md:text-left font-inter font-bold text-2xl md:text-3xl lg:text-9xl uppercase leading-tight lg:leading-customLineHeight">
             Empowering Your Business{" "}
             <span className="text-customPink-500">Growth</span>
           </h1>
         </div>
 
-        <div className="flex flex-col-reverse lg:grid lg:grid-cols-2 items-center mb-32">
+        <div className="flex flex-col-reverse lg:grid lg:grid-cols-2 items-center mb-8 md:mb-32">
           <div className="flex flex-col space-y-4 items-center lg:items-start">
-            <h2 className="text-white text-center lg:text-left text-2xl font-bold">
+            <h2 className="text-white text-center lg:text-left text-normal md:text-2xl font-bold">
               WEB · BRANDING · GROWTH
             </h2>
             <CustomButton
@@ -80,7 +78,7 @@ export default function Hero() {
               1300: {
                 slidesPerView: 3, // Mostrar 3 slides cuando la pantalla sea mayor a 1300px
               },
-              900: {
+              1080: {
                 slidesPerView: 2, // Mostrar 2 slides entre 900px y 1300px
               },
               0: {

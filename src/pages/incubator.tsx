@@ -22,4 +22,4 @@ const IncubatorPage: React.FC<PageProps> = () => {
 
 export default IncubatorPage;
 
-export const Head: HeadFC = () => <title>Web and app</title>;
+export const Head: HeadFC = () => <title>Incubator</title>;

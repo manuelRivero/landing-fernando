@@ -11,7 +11,6 @@ export default function VerifyPopup() {
   const { verifyPopupValue } = useSelector((state: RootState) => state.global);
   const childRef = useRef<HTMLDivElement>(null); // Referencia al div hijo
 
-  // Función para cerrar ambos divs
   const handleClickOutside = (event: MouseEvent) => {
     // Verifica si el clic ocurrió fuera del div hijo
     if (childRef.current && !childRef.current.contains(event.target as Node)) {
@@ -41,25 +40,25 @@ export default function VerifyPopup() {
         ref={childRef}
         className={`${
           pathname === "/incubator/" ? "bg-white" : "bg-customBlue-600"
-        } rounded-[32px] lg:w-[825px] p-7  flex flex-col space-y-6`}
+        } rounded-[32px] w-[316px] md:w-[450px] lg:w-[825px] p-7  flex flex-col space-y-6`}
       >
         <h3
           className={`${
             pathname === "/incubator/" ? "text-black" : "text-white"
-          } text-normal uppercase pr-14 font-bold`}
+          } text-xs md:text-normal uppercase pr-14 font-bold`}
         >
           {pathname === "/incubator/"
             ? "Subscribe to the newsletter"
             : "Create an account and chat with us to make informed business decisions"}
         </h3>
 
-        <div className="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-4 items-center justify-between ">
+        <div className="flex flex-row space-x-4 items-center justify-between ">
           <p
             className={`${
               pathname === "/incubator/"
                 ? "bg-customBlue-500 text-customPink-500"
                 : "bg-customGreen-500 text-customBlue-600"
-            } rounded-full text-normal px-6 py-2 font-bold text-nowrap`}
+            } rounded-full text-xs md:text-normal px-6 py-2 font-bold text-nowrap`}
           >
             MX: +52
           </p>
@@ -69,7 +68,7 @@ export default function VerifyPopup() {
               pathname === "/incubator/"
                 ? "border-customBlue-500 text-customBlue-500 placeholder-customBlue-500"
                 : "border-white text-white placeholder-white"
-            } rounded-full w-full border bg-transparent px-6 py-2 text-normal`}
+            } rounded-full w-full border bg-transparent px-6 py-2 text-xs md:text-normal`}
             placeholder={pathname === "/incubator/"
               ? "PHONE NUMBER"
               : "YOUR WHATSAPP"}
@@ -81,7 +80,7 @@ export default function VerifyPopup() {
             pathname === "/incubator/"
               ? "border-customBlue-500 text-customBlue-500 placeholder-customBlue-500"
               : "border-white text-white placeholder-customGreen-500"
-          } rounded-full w-full border bg-transparent px-6 py-2 text-normal`}
+          } rounded-full w-full border bg-transparent px-6 py-2 text-xs md:text-normal`}
           placeholder="EMAIL"
         />
         <div className="flex justify-center">
@@ -91,7 +90,7 @@ export default function VerifyPopup() {
               pathname === "/incubator/"
                 ? "bg-customPink-500 text-customBlue-600"
                 : "bg-customOrange-500 text-customGreen-500"
-            } px-7 py-2 rounded-full text-normal text-center font-bold`}
+            } px-7 py-2 rounded-full text-xs md:text-normal text-center font-bold`}
           >
             VERIFY
           </button>

@@ -1,6 +1,6 @@
 import React from "react";
 import contentImg from "./../../../images/content-and-growth/content.png";
-import LinkButton from "../../shared/linkButton";
+import contentResImg from "./../../../images/content-and-growth/content-res.png";
 import CustomButton from "../../shared/customButton";
 import { useDispatch } from "react-redux";
 import { showContactPopup } from "../../../store/global";
@@ -9,20 +9,20 @@ export default function GrowthHero() {
   const dispatch = useDispatch();
   return (
     <div className="bg-white">
-      <div className="pt-32 lg:pt-52 pb-32 lg:pb-40 px-8 md:px-32 container">
-        <div className="mb-11">
-          <h1 className="text-customBlue-600 text-center lg:text-left font-inter font-bold text-2xl md:text-3xl lg:text-9xl uppercase leading-tight lg:leading-customLineHeight">
+      <div className="pt-32 lg:pt-52 md:pb-40 px-8 md:px-32 container">
+        <div className="md-4 md:mb-11">
+          <h1 className="text-customBlue-600 text-center lg:text-left font-inter font-bold text-2xl lg:text-9xl uppercase leading-tight lg:leading-customLineHeight">
             CONTENT & GROWTH MARKETING
           </h1>
         </div>
 
-        <div className="flex flex-col-reverse lg:grid lg:grid-cols-2 items-center mb-32">
+        <div className="flex flex-col space-y-8 md:space-y-0 lg:grid lg:grid-cols-2 items-center mb-0 md:mb-32">
           <div className="flex flex-col space-y-4 items-center lg:items-start">
             <div>
-              <h2 className="text-customBlue-600 text-center lg:text-left text-normal font-bold uppercase">
+              <h2 className="text-customBlue-600 text-center lg:text-left text-xs md:text-normal font-bold uppercase">
                 Optimize every conversion point
               </h2>
-              <p className="text-customBlue-600 text-center lg:text-left text-normal leading-tight">
+              <p className="text-customBlue-600 text-center lg:text-left text-xs md:text-normal leading-tight">
                 <span className="font-bold">
                   Visualize your client funnel:{" "}
                 </span>
@@ -37,8 +37,11 @@ export default function GrowthHero() {
             />
           </div>
 
-          <div className="flex flex-row justify-end mb-8 lg:mb-0">
+          <div className="hidden md:flex flex-row justify-end mb-8 lg:mb-0">
             <img src={contentImg} alt="Computer" />
+          </div>
+          <div className="flex md:hidden flex-row justify-end mb-8 lg:mb-0">
+            <img src={contentResImg} alt="Computer" />
           </div>
         </div>
       </div>

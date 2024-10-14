@@ -10,7 +10,7 @@ export default function Incubator() {
 
   return (
     <div className="bg-black relative">
-      <div className="py-32 pb-20 lg:pb-40 px-8 md:px-32 container">
+      <div className="py-16 md:py-32 md:pb-20 lg:pb-40 px-8 md:px-32 container">
         <GenericSection
           icon={{ src: incubatorIcon, alt: "Incubator icon" }}
           title="Incubator"

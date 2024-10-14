@@ -4,12 +4,12 @@ import LinkButton from "../../shared/linkButton";
 export default function Welcome() {
   return (
     <div className="bg-customPink-500">
-      <div className="py-32 pb-20 lg:pb-40 px-8 md:px-32 container">
+      <div className="py-16 md:py-32 pb-20 lg:pb-40 px-8 md:px-32 container">
         <div className="grid grid-cols-2 justify-center items-center gap-8">
-          <h2 className="col-span-2 lg:col-span-1 text-white text-2xl md:text-3xl lg:text-9xl font-bold leading-tight">
+          <h2 className="col-span-2 lg:col-span-1 text-white text-3xl md:text-9xl font-bold leading-tight text-center md:text-left">
             Welcome to <span className="italic">Zapian</span>
           </h2>
-          <h2 className="col-span-2 lg:col-span-1 text-white text-normal font-normal">
+          <h2 className="col-span-2 lg:col-span-1 text-white text-xs md:text-normal font-normal text-center md:text-left">
             At Zapian, we are dedicated to the transformative power of
             innovation. Our mission is to empower businesses by providing
             creative and data driven solutions that drive growth and excellence.

@@ -9,7 +9,6 @@ import chevronLeft from "./../../../images/icons/chevron-left.svg";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Pagination, Navigation } from "swiper/modules";
 import "swiper/css";
-import { ImageType } from "../../../types/imageType";
 import { motion } from "framer-motion";
 
 const clientsList = [
@@ -59,7 +58,7 @@ export default function Clients() {
   const [showSlideInfo, setShowSlideInfo] = useState<number>(-1);
   return (
     <div className="bg-black">
-      <div className="pb-36 px-8 md:px-32 container">
+      <div className="py-16 md:pb-36 px-8 md:px-32 container">
         <div className="grid grid-cols-12 gap-8">
           <div className="col-span-12 lg:col-span-3">
             <div className="lg:w-fit">

@@ -4,7 +4,7 @@ import GenericSection from "../../shared/genericSection";
 export default function GetQuotation() {
   return (
     <div className="bg-black">
-      <div className="py-24 px-8 md:px-32 container">
+      <div className="py-16 md:py-24 px-8 md:px-32 container">
         <GenericSection
           title="Can't find the perfect fit for your business?"
           isUppercase={false}

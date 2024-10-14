@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import swiperContainerImg from "./../../../images/web-and-app/swiper-container.png";
 import planDetailContainerImg from "./../../../images/web-and-app/plan-detail-container.png";
-import LinkButton from "../../shared/linkButton";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Pagination } from "swiper/modules";
 import "swiper/css";
@@ -9,19 +8,13 @@ import { motion } from "framer-motion";
 import { useDispatch } from "react-redux";
 import { showContactPopup } from "../../../store/global";
 
-const swiperTexts: string[] = [
-  "Starter · STARTER",
-  "Growth Path · STARTER",
-  "Growth hacker · STARTER",
-];
-
 export default function Plans() {
   const dispatch = useDispatch();
   const [showSlideInfo, setShowSlideInfo] = useState<number>(-1);
 
   return (
     <div className="bg-customGreen-500">
-      <div className="pt-32 lg:pt-52 pb-32 lg:pb-40 px-8 md:px-32 container">
+      <div className="pt-16 lg:pt-52 pb-16 md:pb-40 px-8 md:px-32 container">
         <div>
           <Swiper
             breakpoints={{
@@ -57,7 +50,7 @@ export default function Plans() {
                         alt="swiperContainer"
                         width={"100%"}
                       />
-                      <div className="absolute bottom-0 left-0 font-inter text-white text-normal font-bold uppercase p-8">
+                      <div className="absolute bottom-0 left-0 font-inter text-white text-small md:text-normal font-bold uppercase p-8">
                         <h3>Landing · one-time fee</h3>
                       </div>
                     </div>
@@ -104,7 +97,7 @@ export default function Plans() {
                 <button
                   onClick={() => dispatch(showContactPopup(true))}
                   type="button"
-                  className="bg-customBlue-600 px-7 py-2 rounded-full text-customGreen-500 text-normal text-center font-bold w-fit"
+                  className="bg-customBlue-600 px-7 py-2 rounded-full text-customGreen-500 text-small md:text-normal text-center font-bold w-fit"
                 >
                   SELECT
                 </button>
@@ -125,7 +118,7 @@ export default function Plans() {
                         alt="swiperContainer"
                         width={"100%"}
                       />
-                      <div className="absolute bottom-0 left-0 font-inter text-white text-normal font-bold uppercase p-8">
+                      <div className="absolute bottom-0 left-0 font-inter text-white text-small md:text-normal font-bold uppercase p-8">
                         <h3>Standard Development · one-time fee</h3>
                       </div>
                     </div>
@@ -188,7 +181,7 @@ export default function Plans() {
                 <button
                   onClick={() => dispatch(showContactPopup(true))}
                   type="button"
-                  className="bg-customBlue-600 px-7 py-2 rounded-full text-customGreen-500 text-normal text-center font-bold w-fit"
+                  className="bg-customBlue-600 px-7 py-2 rounded-full text-customGreen-500 text-small md:text-normal text-center font-bold w-fit"
                 >
                   SELECT
                 </button>
@@ -209,7 +202,7 @@ export default function Plans() {
                         alt="swiperContainer"
                         width={"100%"}
                       />
-                      <div className="absolute bottom-0 left-0 font-inter text-white text-normal font-bold uppercase p-8">
+                      <div className="absolute bottom-0 left-0 font-inter text-white text-small md:text-normal font-bold uppercase p-8">
                         <h3>Premium Development · one-time fee</h3>
                       </div>
                     </div>
@@ -269,7 +262,7 @@ export default function Plans() {
                 <button
                   onClick={() => dispatch(showContactPopup(true))}
                   type="button"
-                  className="bg-customBlue-600 px-7 py-2 rounded-full text-customGreen-500 text-normal text-center font-bold w-fit"
+                  className="bg-customBlue-600 px-7 py-2 rounded-full text-customGreen-500 text-small md:text-normal text-center font-bold w-fit"
                 >
                   SELECT
                 </button>

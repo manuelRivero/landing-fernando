@@ -4,7 +4,7 @@ import Header from "./header";
 import Footer from "./footer";
 import { motion } from "framer-motion";
 import { useLocation } from "@reach/router";
-import { Provider, useDispatch, useSelector } from "react-redux";
+import { Provider } from "react-redux";
 import store from "../../store";
 import ContactPopup from "../shared/contactPopup";
 import VerifyPopup from "../shared/verifyPopup";
@@ -101,7 +101,7 @@ export default function Layout({ children }: LayoutProps) {
                   key={linkItem.text}
                   to={linkItem.href}
                   type="button"
-                  className={`font-inter text-white text-little md:text-normal uppercase ${
+                  className={`font-inter text-white text-small md:text-normal uppercase ${
                     linkItem.bold && "font-bold"
                   }`}
                   onClick={() => setIsMenuOpen(false)}

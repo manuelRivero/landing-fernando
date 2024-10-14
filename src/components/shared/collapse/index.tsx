@@ -1,7 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useLocation } from "@reach/router";
-import { showContactPopup } from "../../../store/global";
-import CustomButton from "../customButton";
 import { useDispatch } from "react-redux";
 
 interface Props {
@@ -21,7 +19,6 @@ export default function Collapse({
   icon,
   alt,
 }: Props) {
-  const dispatch = useDispatch()
   const location = useLocation();
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
@@ -31,7 +28,7 @@ export default function Collapse({
   return (
     <div className="relative">
       <div
-        className={`text-${textColor} grid grid-cols-12 items-start py-14 font-inter text-normal`}
+        className={`text-${textColor} grid grid-cols-12 items-start py-14 font-inter text-xs md:text-normal`}
       >
         <div className="col-span-1 place-self-start">
           <img src={icon} alt={alt} />

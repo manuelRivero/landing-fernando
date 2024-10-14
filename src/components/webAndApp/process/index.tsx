@@ -1,7 +1,5 @@
 import React from "react";
-import swiperContainerImg from "./../../../images/content-and-growth/swiper-container.png";
 import flower8 from "./../../../images/icons/flower-8.svg";
-import plusBlue from "./../../../images/icons/plus-blue.svg";
 import Collapse from "../../shared/collapse";
 
 const collapseTexts: { title: string; description: string }[] = [
@@ -18,8 +16,8 @@ const collapseTexts: { title: string; description: string }[] = [
 export default function Process() {
   return (
     <div className="bg-white">
-      <div className="py-32 px-8 md:px-32 container">
-        <h1 className="text-customBlue-600 text-center font-inter font-bold text-2xl md:text-3xl uppercase leading-tight lg:leading-customLineHeight">
+      <div className="py-16 md:py-32 px-8 md:px-32 container">
+        <h1 className="text-customBlue-600 text-center font-inter font-bold text-[45px] md:text-3xl uppercase leading-tight lg:leading-customLineHeight">
           Process
         </h1>
         <div className="flex flex-col divide-y divide-customBlue-600 border-b border-b-customBlue-600 mb-14">

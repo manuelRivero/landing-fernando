@@ -19,7 +19,7 @@ export default function CustomButton({
     <button
       onClick={() => cb()}
       type="button"
-      className={`bg-${bgColor} px-8 py-2 rounded-full text-${textColor} text-normal text-center font-bold ${
+      className={`bg-${bgColor} px-8 py-2 rounded-full text-${textColor} text-xs md:text-normal text-center font-bold ${
         uppercase && "uppercase"
       }`}
     >

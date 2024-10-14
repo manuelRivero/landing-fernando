@@ -37,9 +37,14 @@ export default function WeInterview() {
             <SwiperSlide>
               <div className="flex justify-center">
                 <div className="relative w-fit">
-                  <img src={brandingContainer1} alt={"we interview"} width={"516px"} />
-                  <p className="absolute left-0 top-1/2 -translate-y-1/2 pl-8 pr-20 text-white text-normal font-bold uppercase">
-                  Individuals from your segment, without you having to worry about logistics.
+                  <img
+                    src={brandingContainer1}
+                    alt={"we interview"}
+                    width={"516px"}
+                  />
+                  <p className="absolute left-0 top-1/2 -translate-y-1/2 pl-8 pr-20 text-white text-xs sm:text-little md:text-normal font-bold uppercase">
+                    Individuals from your segment, without you having to worry
+                    about logistics.
                   </p>
                 </div>
               </div>
@@ -48,15 +53,16 @@ export default function WeInterview() {
               <div className="flex justify-center">
                 <div className="relative w-fit">
                   <img src={brandingContainer2} alt={"..."} />
-                  <p className="absolute left-0 top-1/2 -translate-y-1/2 pl-8 pr-20 text-white text-normal font-bold uppercase">
-                  You can send the interview or upload your prospect base. Any option is good!
+                  <p className="absolute left-0 top-1/2 -translate-y-1/2 pl-8 pr-20 text-white text-little md:text-normal font-bold uppercase">
+                    You can send the interview or upload your prospect base. Any
+                    option is good!
                   </p>
                 </div>
               </div>
             </SwiperSlide>
           </Swiper>
         </div>
-        <p className="w-fit text-black text-center text-normal leading-tight">
+        <p className="w-fit text-black text-center text-xs md:text-normal leading-tight">
           Request a quote for your interview and lead your business to success
           with informed decisions.
         </p>
