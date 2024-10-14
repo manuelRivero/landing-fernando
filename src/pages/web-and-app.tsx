@@ -4,17 +4,25 @@ import WebAndAppHero from "../components/webAndApp/webAndAppHero";
 import Plans from "../components/webAndApp/plans";
 import Process from "../components/webAndApp/process";
 import GetQuotation from "../components/webAndApp/getQuotation";
+import { motion } from "framer-motion";
 
 const WebAndAppPage: React.FC<PageProps> = () => {
   return (
-    <div className="relative">
-      <div className="relative overflow-x-hidden">
-        <WebAndAppHero />
-        <Plans />
-        <Process />
-        <GetQuotation />
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.5 }}
+    >
+      <div className="relative">
+        <div className="relative overflow-x-hidden">
+          <WebAndAppHero />
+          <Plans />
+          <Process />
+          <GetQuotation />
+        </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
