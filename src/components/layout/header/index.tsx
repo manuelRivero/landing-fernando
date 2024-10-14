@@ -1,7 +1,7 @@
 import React from "react";
 import zapianLogoDotBlue from "./../../../images/logos/zapian-logo-white-dot-blue.png";
 import zapianLogoBlue from "./../../../images/logos/zapian-logo-blue.png";
-import zapianLogoPink from "./../../../images/logos/zapian-logo-Pink.png";
+import zapianLogoPink from "./../../../images/logos/zapian-logo-pink.png";
 import zapianLogoDotRed from "./../../../images/logos/zapian-logo-white-dot-red.png";
 import { useLocation } from "@reach/router";
 
