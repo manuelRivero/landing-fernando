@@ -62,10 +62,10 @@ export default function Clients() {
         <div className="grid grid-cols-12 gap-8">
           <div className="col-span-12 lg:col-span-3">
             <div className="lg:w-fit">
-              <h2 className="text-white text-center font-inter font-bold text-normal">
+              <h2 className="text-white text-center  font-bold text-normal">
                 REVIEWS <span className="inline lg:hidden"> · Our clients</span>
               </h2>
-              <p className="hidden lg:block text-white text-center font-inter text-normal mb-8">
+              <p className="hidden lg:block text-white text-center  text-normal mb-8">
                 Our clients
               </p>
               <div className="hidden lg:flex items-center justify-between">
@@ -127,7 +127,7 @@ export default function Clients() {
                         <div
                           className={`h-full bg-customBlue-500 rounded-[18px] px-5 transition-all flex flex-col justify-center items-center`}
                         >
-                          <p className="text-white text-2xs place-self-start font-inter font-semibold uppercase">
+                          <p className="text-white text-2xs place-self-start  font-semibold uppercase">
                             {logo.text1}
                             <span className="text-customPink-500">
                               {logo.text2}

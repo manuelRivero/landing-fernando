@@ -28,7 +28,7 @@ export default function Collapse({
   return (
     <div className="relative">
       <div
-        className={`text-${textColor} grid grid-cols-12 items-start py-14 font-inter text-xs md:text-normal`}
+        className={`text-${textColor} grid grid-cols-12 items-start py-14  text-xs md:text-normal`}
       >
         <div className="col-span-1 place-self-start">
           <img src={icon} alt={alt} />

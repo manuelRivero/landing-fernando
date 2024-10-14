@@ -50,7 +50,7 @@ const dispatch = useDispatch()
                         alt="swiperContainer"
                         width={"100%"}
                       />
-                      <div className="absolute bottom-0 left-0 font-inter text-white text-small md:text-normal font-bold uppercase p-8">
+                      <div className="absolute bottom-0 left-0  text-white text-small md:text-normal font-bold uppercase p-8">
                         <h3>Starter · STARTER</h3>
                       </div>
                     </div>
@@ -71,7 +71,7 @@ const dispatch = useDispatch()
                           alt="planDetailContainerImg"
                           width={"100%"}
                         />
-                        <div className="absolute w-full h-full top-0 left-0 font-inter text-customBlue-600 p-8 flex flex-col justify-between">
+                        <div className="absolute w-full h-full top-0 left-0  text-customBlue-600 p-8 flex flex-col justify-between">
                           <h3 className="font-bold text-little uppercase">
                             Starter
                           </h3>
@@ -139,7 +139,7 @@ const dispatch = useDispatch()
                         alt="swiperContainer"
                         width={"100%"}
                       />
-                      <div className="absolute bottom-0 left-0 font-inter text-white text-small md:text-normal font-bold uppercase p-8">
+                      <div className="absolute bottom-0 left-0  text-white text-small md:text-normal font-bold uppercase p-8">
                         <h3>Growth Path · STARTER</h3>
                       </div>
                     </div>
@@ -159,7 +159,7 @@ const dispatch = useDispatch()
                           alt="planDetailContainerImg"
                           width={"100%"}
                         />
-                        <div className="absolute w-full h-full top-0 left-0 font-inter text-customBlue-600 p-8 flex flex-col justify-between">
+                        <div className="absolute w-full h-full top-0 left-0  text-customBlue-600 p-8 flex flex-col justify-between">
                           <h3 className="font-bold text-little uppercase">
                             Growth Path
                           </h3>
@@ -236,7 +236,7 @@ const dispatch = useDispatch()
                         alt="swiperContainer"
                         width={"100%"}
                       />
-                      <div className="absolute bottom-0 left-0 font-inter text-white text-small md:text-normal font-bold uppercase p-8">
+                      <div className="absolute bottom-0 left-0  text-white text-small md:text-normal font-bold uppercase p-8">
                         <h3>Growth hacker · STARTER</h3>
                       </div>
                     </div>
@@ -256,7 +256,7 @@ const dispatch = useDispatch()
                           alt="planDetailContainerImg"
                           width={"100%"}
                         />
-                        <div className="absolute w-full h-full top-0 left-0 font-inter text-customBlue-600 p-8 flex flex-col justify-between">
+                        <div className="absolute w-full h-full top-0 left-0  text-customBlue-600 p-8 flex flex-col justify-between">
                           <h3 className="font-bold text-little uppercase">
                             Growth Hacker
                           </h3>

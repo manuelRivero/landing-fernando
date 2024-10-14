@@ -13,7 +13,7 @@ export default function ApplyNow() {
         <div className="flex flex-col-reverse lg:grid lg:grid-cols-2 lg:gap-x-8 items-center mb-6 md:mb-12">
           <div className="flex flex-col space-y-4 items-center lg:items-start">
             <div>
-              <h1 className="text-white text-center lg:text-left font-inter font-bold text-normal md:text-3xl uppercase leading-tight">
+              <h1 className="text-white text-center lg:text-left  font-bold text-normal md:text-3xl uppercase leading-tight">
                 Ready to Secure Your Exclusive Spot?
               </h1>
               <p className="text-white text-center lg:text-left text-xs md:text-normal leading-tight">

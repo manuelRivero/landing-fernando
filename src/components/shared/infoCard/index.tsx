@@ -15,10 +15,10 @@ export default function InfoCard({ title, description, icon, alt }: Props) {
       </div>
       <div className="absolute top-1 -translate-y-full bg-customPink-500 rounded-t-[30px] w-[263px] md:w-[267px] h-[55px]" />
       <div className="pl-8 flex flex-col space-y-4 absolute top-0 left-0 -translate-y-8">
-        <h3 className="text-white text-normal font-bold font-inter uppercase">
+        <h3 className="text-white text-normal font-bold  uppercase">
           {title}
         </h3>
-        <p className="text-white text-little font-inter">{description}</p>
+        <p className="text-white text-little ">{description}</p>
       </div>
     </div>
   );

@@ -21,7 +21,7 @@ export default function BrandingHero() {
 
           <div className="flex flex-col space-y-6 items-center lg:items-start">
             <div className="space-y-4 md:space-y-0">
-              <h1 className="text-black text-center lg:text-left font-inter font-bold text-2xl md:text-3xl uppercase leading-none">
+              <h1 className="text-black text-center lg:text-left  font-bold text-2xl md:text-3xl uppercase leading-none">
                 <span className="text-customPink-500">BRANDING: </span>NAMING
                 AND DESIGN
               </h1>

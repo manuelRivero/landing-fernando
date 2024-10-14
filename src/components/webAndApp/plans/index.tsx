@@ -50,7 +50,7 @@ export default function Plans() {
                         alt="swiperContainer"
                         width={"100%"}
                       />
-                      <div className="absolute bottom-0 left-0 font-inter text-white text-small md:text-normal font-bold uppercase p-8">
+                      <div className="absolute bottom-0 left-0  text-white text-small md:text-normal font-bold uppercase p-8">
                         <h3>Landing · one-time fee</h3>
                       </div>
                     </div>
@@ -71,7 +71,7 @@ export default function Plans() {
                           alt="planDetailContainerImg"
                           width={"100%"}
                         />
-                        <div className="absolute w-full h-full top-0 left-0 font-inter text-customBlue-600 p-8 flex flex-col justify-between">
+                        <div className="absolute w-full h-full top-0 left-0  text-customBlue-600 p-8 flex flex-col justify-between">
                           <h3 className="font-bold text-little uppercase">
                             Landing
                           </h3>
@@ -118,7 +118,7 @@ export default function Plans() {
                         alt="swiperContainer"
                         width={"100%"}
                       />
-                      <div className="absolute bottom-0 left-0 font-inter text-white text-small md:text-normal font-bold uppercase p-8">
+                      <div className="absolute bottom-0 left-0  text-white text-small md:text-normal font-bold uppercase p-8">
                         <h3>Standard Development · one-time fee</h3>
                       </div>
                     </div>
@@ -138,7 +138,7 @@ export default function Plans() {
                           alt="planDetailContainerImg"
                           width={"100%"}
                         />
-                        <div className="absolute w-full h-full top-0 left-0 font-inter text-customBlue-600 p-8 flex flex-col justify-between">
+                        <div className="absolute w-full h-full top-0 left-0  text-customBlue-600 p-8 flex flex-col justify-between">
                           <h3 className="font-bold text-little uppercase pr-8 leading-tight">
                             Standard Development
                           </h3>
@@ -202,7 +202,7 @@ export default function Plans() {
                         alt="swiperContainer"
                         width={"100%"}
                       />
-                      <div className="absolute bottom-0 left-0 font-inter text-white text-small md:text-normal font-bold uppercase p-8">
+                      <div className="absolute bottom-0 left-0  text-white text-small md:text-normal font-bold uppercase p-8">
                         <h3>Premium Development · one-time fee</h3>
                       </div>
                     </div>
@@ -222,7 +222,7 @@ export default function Plans() {
                           alt="planDetailContainerImg"
                           width={"100%"}
                         />
-                        <div className="absolute w-full h-full top-0 left-0 font-inter text-customBlue-600 p-8 flex flex-col justify-between">
+                        <div className="absolute w-full h-full top-0 left-0  text-customBlue-600 p-8 flex flex-col justify-between">
                           <h3 className="font-bold text-little uppercase pr-8 leading-tight">
                             Premium Development
                           </h3>

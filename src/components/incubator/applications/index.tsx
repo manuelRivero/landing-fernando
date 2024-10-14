@@ -125,7 +125,7 @@ export default function Applications() {
                             alt="swiperContainer"
                             width={"100%"}
                           />
-                          <div className="absolute bottom-0 left-0 font-inter text-customGreen-500 text-normal font-bold uppercase p-8">
+                          <div className="absolute bottom-0 left-0  text-customGreen-500 text-normal font-bold uppercase p-8">
                             <h3>{item.title}</h3>
                           </div>
                         </div>
@@ -148,7 +148,7 @@ export default function Applications() {
                               alt="planDetailContainerImg"
                               width={"100%"}
                             />
-                            <div className="absolute w-full h-full top-0 left-0 font-inter text-customOrange-500 p-8 flex flex-col justify-between">
+                            <div className="absolute w-full h-full top-0 left-0  text-customOrange-500 p-8 flex flex-col justify-between">
                               <h3 className="font-bold text-tight md:text-little uppercase">
                                 {item.title}
                               </h3>

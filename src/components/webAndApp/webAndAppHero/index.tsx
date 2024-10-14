@@ -14,7 +14,7 @@ export default function WebAndAppHero() {
         <div className="flex flex-col space-y-8 md:space-y-0 lg:grid lg:grid-cols-2 items-center mb-0 md:mb-32">
           <div className="flex flex-col space-y-4 items-center lg:items-start">
             <div>
-              <h1 className="text-customBlue-600 text-center lg:text-left font-inter font-bold text-2xl md:text-3xl uppercase leading-none">
+              <h1 className="text-customBlue-600 text-center lg:text-left  font-bold text-2xl md:text-3xl uppercase leading-none">
                 WEB DESIGN & DEVELOPMENT
               </h1>
               <p className="text-customBlue-600 text-center lg:text-left text-xs md:text-normal leading-none">

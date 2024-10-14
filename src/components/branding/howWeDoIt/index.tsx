@@ -16,7 +16,7 @@ export default function HowWeDoIt() {
   return (
     <div className="bg-customPink-500">
       <div className="py-16 md:py-32 px-8 md:px-32 container">
-        <h1 className="text-white text-center font-inter font-bold text-2xl md:text-3xl uppercase leading-tight lg:leading-customLineHeight">
+        <h1 className="text-white text-center  font-bold text-2xl md:text-3xl uppercase leading-tight lg:leading-customLineHeight">
           How we do it?
         </h1>
         <div className="flex flex-col divide-y divide-black border-b border-b-black mb-14">

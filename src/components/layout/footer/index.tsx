@@ -139,7 +139,7 @@ export default function Footer() {
               <div className="grid grid-cols-12 gap-2">
                 <input
                   type="text"
-                  className={`col-span-8 bg-black rounded-full border border-${handleIconsColors().mainColor} text-white px-6 py-1 font-inter`}
+                  className={`col-span-8 bg-black rounded-full border border-${handleIconsColors().mainColor} text-white px-6 py-1 `}
                 />
                 <div className="flex justify-center col-span-4">
                   <button
@@ -155,22 +155,22 @@ export default function Footer() {
               <h3 className={`text-${handleIconsColors().mainColor} text-xs md:text-little uppercase`}>
                 Resource Links:
               </h3>
-              <p className="text-white text-xs md:text-little font-inter italic mb-10">
+              <p className="text-white text-xs md:text-little  italic mb-10">
                 Free PDF
               </p>
               <div className="flex justify-start items-end mb-4">
                 <img src={zapianFooter} alt="Zapian" />
               </div>
-              <h3 className="font-inter font-little text-white text-xs md:text-little uppercase">
+              <h3 className=" font-little text-white text-xs md:text-little uppercase">
                 Policies and Terms
               </h3>
-              <p className="text-white text-xs md:text-little font-inter">
+              <p className="text-white text-xs md:text-little ">
                 Privacy Policy
               </p>
-              <p className="text-white text-xs md:text-little font-inter">
+              <p className="text-white text-xs md:text-little ">
                 Terms and Conditions of Use
               </p>
-              <p className="text-white text-xs md:text-little font-inter">
+              <p className="text-white text-xs md:text-little ">
                 © 2023 Zapian All rights reserved.
               </p>
             </div>

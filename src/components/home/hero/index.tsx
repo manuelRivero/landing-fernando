@@ -49,7 +49,7 @@ export default function Hero() {
     <div className="bg-black">
       <div className="pt-32 md:pt-52 pb-16 md:pb-40 px-8 md:px-32 container">
         <div className="mb-11">
-          <h1 className="text-white text-center md:text-left font-inter font-bold text-2xl md:text-3xl lg:text-9xl uppercase leading-tight lg:leading-customLineHeight">
+          <h1 className="text-white text-center md:text-left  font-bold text-2xl md:text-3xl lg:text-9xl uppercase leading-tight lg:leading-customLineHeight">
             Empowering Your Business{" "}
             <span className="text-customPink-500">Growth</span>
           </h1>

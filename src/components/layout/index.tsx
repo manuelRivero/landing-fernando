@@ -101,7 +101,7 @@ export default function Layout({ children }: LayoutProps) {
                   key={linkItem.text}
                   to={linkItem.href}
                   type="button"
-                  className={`font-inter text-white text-small md:text-normal uppercase ${
+                  className={` text-white text-small md:text-normal uppercase ${
                     linkItem.bold && "font-bold"
                   }`}
                   onClick={() => setIsMenuOpen(false)}
