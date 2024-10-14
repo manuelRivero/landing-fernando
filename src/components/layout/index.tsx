@@ -8,6 +8,7 @@ import { Provider } from "react-redux";
 import store from "../../store";
 import ContactPopup from "../shared/contactPopup";
 import VerifyPopup from "../shared/verifyPopup";
+import whatsapp from "../../images/logos/whatsapp-logo-button.png";
 
 interface LayoutProps {
   children: ReactNode; // Esto permite que se pasen elementos React como hijos
@@ -113,6 +114,18 @@ export default function Layout({ children }: LayoutProps) {
           </motion.div>
           {children}
           <Footer />
+          <div className="fixed bottom-0 right-0 -translate-x-5 md:-translate-x-1/2 -translate-y-5 md:-translate-y-1/2 z-10">
+            <Link
+              to="https://api.whatsapp.com/send?phone=5215639308664&text=%C2%A1Hola!%20Me%20interesa%20saber%20m%C3%A1s%20de%20Zapian."
+              target="_blank"
+            >
+              <img
+                src={whatsapp}
+                alt="Whatsapp"
+                className="w-[113px] md:w-[134px]"
+              />
+            </Link>
+          </div>
         </div>
       </main>
     </Provider>
