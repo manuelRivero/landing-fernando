@@ -27,9 +27,9 @@ const cardsContent: Card[] = [
     alt: "Spiner Icon",
   },
   {
-    title: "Data",
+    title: "Design",
     description:
-      "Our data-driven approach ensures strategic insights for sustainable success.",
+      "Our data-design approach ensures strategic insights for sustainable success.",
     icon: star8,
     alt: "Star 8",
   },
