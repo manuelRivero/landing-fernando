@@ -17,9 +17,12 @@ export default function Welcome() {
           <div className="col-span-2 flex justify-center mt-4">
             <LinkButton
               color={"customPurple-500"}
-              path={"#"}
+              path={
+                "https://www.canva.com/design/DAGEOtU18t0/WrP44fuTROrsfebghYJ5HA/view?utm_content=DAGEOtU18t0&utm_campaign=designshare&utm_medium=link&utm_source=editor"
+              }
               text={"ABOUT US"}
               textColor={"white"}
+              target="_blank"
             />
           </div>
         </div>

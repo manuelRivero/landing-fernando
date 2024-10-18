@@ -13,22 +13,19 @@ interface CollapseType {
   description?: string;
   icon: string;
   alt: string;
-  buttonData?: {
-    text: string;
-    path: string;
-    color: string;
-  };
 }
 const collapseData: CollapseType[] = [
   {
     title: "Digital Platform Design & Development",
-    description: "Build fully functional, visually stunning digital experiences that captivate and engage your users. From app design to web development, we create platforms that drive results and elevate your brand.",
+    description:
+      "Build fully functional, visually stunning digital experiences that captivate and engage your users. From app design to web development, we create platforms that drive results and elevate your brand.",
     icon: lottoIcon,
     alt: "Lotto icon",
   },
   {
     title: "BRANDING: NAMING AND DESIGN",
-    description: "Launch your business with a brand that not only stands out but also resonates with your audience. We craft memorable brand identities that connect with your target market and keep you top of mind.",
+    description:
+      "Launch your business with a brand that not only stands out but also resonates with your audience. We craft memorable brand identities that connect with your target market and keep you top of mind.",
     icon: plusOutlinedIcon,
     alt: "Plus outlined icon",
   },
@@ -38,16 +35,11 @@ const collapseData: CollapseType[] = [
     alt: "Flower icon",
     description:
       "Fuel your business growth with data-driven strategies. We optimize your entire sales funnel—from customer attraction to retention—ensuring every step is designed to maximize performance and long-term success.",
-    buttonData: {
-      text: "GET QUOTE",
-      path: "#",
-      color: "customPink-400",
-    },
   },
 ];
 
 export default function Services() {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   return (
     <div className="bg-customBlue-500">

@@ -43,7 +43,7 @@ const dispatch = useDispatch()
                   }}
                   className="cursor-pointer relative"
                 >
-                  <div className="flex justify-center items-center h-[420px]">
+                  <div className={`${ showSlideInfo === 1 && "scale-50"} transition-all flex justify-center items-center h-[420px]`}>
                     <div className="relative w-fit h-fit">
                       <img
                         src={swiperContainerImg}
@@ -61,7 +61,7 @@ const dispatch = useDispatch()
                     animate={
                       showSlideInfo === 1 ? { opacity: 1 } : { opacity: 0 }
                     }
-                    transition={{ duration: 0.5, ease: "easeOut" }} // Transición suave sin rebote
+                    transition={{ duration: 0.2, ease: "easeOut" }} // Transición suave sin rebote
                     className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full flex justify-center items-center`}
                   >
                     <div className="flex justify-center">
@@ -69,7 +69,6 @@ const dispatch = useDispatch()
                         <img
                           src={planDetailContainerImg}
                           alt="planDetailContainerImg"
-                          width={"100%"}
                         />
                         <div className="absolute w-full h-full top-0 left-0 font-inter text-customBlue-600 p-8 flex flex-col justify-between">
                           <h3 className="font-bold text-little uppercase">
@@ -132,7 +131,7 @@ const dispatch = useDispatch()
                   }}
                   className="cursor-pointer relative"
                 >
-                  <div className="flex justify-center items-center h-[420px]">
+                  <div className={`${ showSlideInfo === 2 && "scale-50"} transition-all flex justify-center items-center h-[420px]`}>
                     <div className="relative w-fit h-fit">
                       <img
                         src={swiperContainerImg}
@@ -149,7 +148,7 @@ const dispatch = useDispatch()
                     animate={
                       showSlideInfo === 2 ? { opacity: 1 } : { opacity: 0 }
                     }
-                    transition={{ duration: 0.5, ease: "easeOut" }} // Transición suave sin rebote
+                    transition={{ duration: 0.2, ease: "easeOut" }} // Transición suave sin rebote
                     className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-full w-full flex justify-center items-center`}
                   >
                     <div className="flex justify-center">
@@ -229,7 +228,7 @@ const dispatch = useDispatch()
                   }}
                   className="cursor-pointer relative"
                 >
-                  <div className="flex justify-center items-center h-[420px]">
+                  <div className={`${ showSlideInfo === 3 && "scale-50"} transition-all flex justify-center items-center h-[420px]`}>
                     <div className="relative w-fit h-fit">
                       <img
                         src={swiperContainerImg}
@@ -246,7 +245,7 @@ const dispatch = useDispatch()
                     animate={
                       showSlideInfo === 3 ? { opacity: 1 } : { opacity: 0 }
                     }
-                    transition={{ duration: 0.5, ease: "easeOut" }} // Transición suave sin rebote
+                    transition={{ duration: 0.2, ease: "easeOut" }} // Transición suave sin rebote
                     className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-full w-full flex justify-center items-center`}
                   >
                     <div className="flex justify-center">

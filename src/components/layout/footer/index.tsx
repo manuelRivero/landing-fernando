@@ -12,7 +12,7 @@ import whatsappLogo from "./../../../images/logos/whatsapp-logo.svg";
 import { ImageType } from "../../../types/imageType";
 import { useLocation } from "@reach/router";
 
-const importantLinks = [
+const relevantLinks = [
   { text: "Home", href: "/", bold: true },
   { text: "Web", href: "/web-and-app", bold: false },
   { text: "Branding", href: "/branding", bold: false },
@@ -55,14 +55,21 @@ export default function Footer() {
     <footer className="bg-black">
       <div className="container">
         <div className="grid grid-cols-1 px-8">
-          <img src={pathname === "/branding/" ? footerTopPink : footerTop} alt="Footer Top" />
+          <img
+            src={pathname === "/branding/" ? footerTopPink : footerTop}
+            alt="Footer Top"
+          />
         </div>
         <div className="grid grid-cols-12 gap-y-8 md:gap-x-8 p-8">
           <div className="col-span-12 lg:col-span-3 flex flex-col space-y-4 lg:space-y-14">
-            <h3 className={`text-${handleIconsColors().mainColor} text-xs md:text-normal uppercase`}>
-              Important links
+            <h3
+              className={`text-${
+                handleIconsColors().mainColor
+              } text-xs md:text-normal uppercase`}
+            >
+              Relevant Links
             </h3>
-            {importantLinks.map((linkItem) => (
+            {relevantLinks.map((linkItem) => (
               <Link
                 key={linkItem.text}
                 to={linkItem.href}
@@ -77,18 +84,24 @@ export default function Footer() {
           </div>
           <div className="col-span-12 lg:col-span-4 flex flex-col space-y-8">
             <div>
-              <h3 className={`text-${handleIconsColors().mainColor} text-xs md:text-little uppercase`}>
+              <h3
+                className={`text-${
+                  handleIconsColors().mainColor
+                } text-xs md:text-little uppercase`}
+              >
                 Contact
               </h3>
               <p className="text-white text-xs md:text-little">
-                hola@zapian.co
+                andy@zapian.io
               </p>
-              <p className="text-white text-xs md:text-little">
-                55 0000 0000
-              </p>
+              <p className="text-white text-xs md:text-little">5540699598</p>
             </div>
-            <div>
-              <h3 className={`text-${handleIconsColors().mainColor} text-xs md:text-little uppercase`}>
+            {/* <div>
+              <h3
+                className={`text-${
+                  handleIconsColors().mainColor
+                } text-xs md:text-little uppercase`}
+              >
                 Address
               </h3>
               <p className="text-white text-xs md:text-little italic">
@@ -98,9 +111,13 @@ export default function Footer() {
               <p className="text-white text-xs md:text-little italic">
                 S Beverly Dr, Beverly Hills, CA 90212, United States.
               </p>
-            </div>
+            </div> */}
             <div>
-              <h3 className={`text-${handleIconsColors().mainColor} text-xs md:text-little uppercase`}>
+              <h3
+                className={`text-${
+                  handleIconsColors().mainColor
+                } text-xs md:text-little uppercase`}
+              >
                 Social Media
               </h3>
               <div className="flex space-x-3">
@@ -115,7 +132,11 @@ export default function Footer() {
               </div>
             </div>
             <div>
-              <h3 className={`text-${handleIconsColors().mainColor} text-xs md:text-little uppercase font-semibold`}>
+              <h3
+                className={`text-${
+                  handleIconsColors().mainColor
+                } text-xs md:text-little uppercase font-semibold`}
+              >
                 ENGLISH | MEXICO · $0,000
               </h3>
               <p className="text-white text-xs md:text-little italic">
@@ -123,7 +144,11 @@ export default function Footer() {
               </p>
             </div>
             <div>
-              <h3 className={`text-${handleIconsColors().mainColor} text-xs md:text-little uppercase`}>
+              <h3
+                className={`text-${
+                  handleIconsColors().mainColor
+                } text-xs md:text-little uppercase`}
+              >
                 We Accept
               </h3>
               <p className="text-white text-xs md:text-little underline">
@@ -133,18 +158,28 @@ export default function Footer() {
           </div>
           <div className="col-span-12 lg:col-span-5 flex flex-col space-y-8">
             <div>
-              <h3 className={`font-normal text-${handleIconsColors().mainColor} text-xs md:text-little uppercase mb-2`}>
+              <h3
+                className={`font-normal text-${
+                  handleIconsColors().mainColor
+                } text-xs md:text-little uppercase mb-2`}
+              >
                 Subscribe to the newsletter
               </h3>
               <div className="grid grid-cols-12 gap-2">
                 <input
                   type="text"
-                  className={`col-span-8 bg-black rounded-full border border-${handleIconsColors().mainColor} text-white px-6 py-1 font-inter`}
+                  className={`col-span-8 bg-black rounded-full border border-${
+                    handleIconsColors().mainColor
+                  } text-white px-6 py-1 font-inter`}
                 />
                 <div className="flex justify-center col-span-4">
                   <button
                     type="button"
-                    className={`text-3xs md:text-tight w-fit bg-${handleIconsColors().mainColor} px-6 py-2 rounded-full text-${handleIconsColors().textButtonColor} font-bold uppercase`}
+                    className={`text-3xs md:text-tight w-fit bg-${
+                      handleIconsColors().mainColor
+                    } px-6 py-2 rounded-full text-${
+                      handleIconsColors().textButtonColor
+                    } font-bold uppercase`}
                   >
                     Subscribe
                   </button>
@@ -152,7 +187,11 @@ export default function Footer() {
               </div>
             </div>
             <div className="h-full flex flex-col justify-end">
-              <h3 className={`text-${handleIconsColors().mainColor} text-xs md:text-little uppercase`}>
+              <h3
+                className={`text-${
+                  handleIconsColors().mainColor
+                } text-xs md:text-little uppercase`}
+              >
                 Resource Links:
               </h3>
               <p className="text-white text-xs md:text-little font-inter italic mb-10">
@@ -177,7 +216,14 @@ export default function Footer() {
           </div>
         </div>
         <div className="grid grid-cols-1">
-          <img src={pathname === "/" || pathname === "/incubator/" ? footerBottom : footerBottomWhite} alt="Footer Bottom" />
+          <img
+            src={
+              pathname === "/" || pathname === "/incubator/"
+                ? footerBottom
+                : footerBottomWhite
+            }
+            alt="Footer Bottom"
+          />
         </div>
       </div>
     </footer>

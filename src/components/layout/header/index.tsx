@@ -1,9 +1,10 @@
 import React from "react";
-import zapianLogoDotBlue from "./../../../images/logos/zapian-logo-white-dot-blue.png";
-import zapianLogoBlue from "./../../../images/logos/zapian-logo-blue.png";
-import zapianLogoPink from "./../../../images/logos/zapian-logo-pink.png";
-import zapianLogoDotRed from "./../../../images/logos/zapian-logo-white-dot-red.png";
+import zapianLogoDotBlue from "./../../../images/logos/zapian-logo-white-dot-blue.svg";
+import zapianLogoBlue from "./../../../images/logos/zapian-logo-blue.svg";
+import zapianLogoPink from "./../../../images/logos/zapian-logo-pink.svg";
+import zapianLogoDotRed from "./../../../images/logos/zapian-logo-white-dot-red.svg";
 import { useLocation } from "@reach/router";
+import { Link } from "gatsby";
 
 interface Props {
   onToggleMenu: () => void;
@@ -35,10 +36,12 @@ export default function Header({ onToggleMenu }: Props) {
     >
       <div className="flex flex-row justify-between">
         <div className="flex flex-row justify-center items-center">
-          <img
-            src={handleIconsColors(location.pathname).zapianLogo}
-            alt="Zapian logo"
-          />
+          <Link to="/">
+            <img
+              src={handleIconsColors(location.pathname).zapianLogo}
+              alt="Zapian logo"
+            />
+          </Link>
         </div>
         <div className="flex flex-row justify-center items-center">
           <svg

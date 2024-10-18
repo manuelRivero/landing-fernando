@@ -7,7 +7,7 @@ export default function IncubatorHero() {
   return (
     <div className="bg-black">
       <div className="py-16 md:pb-32 md:pt-32 lg:pt-52 px-8 md:px-32 container">
-        <div className="flex flex-col-reverse lg:grid lg:grid-cols-2 items-center ">
+        <div className="flex flex-col-reverse lg:grid lg:grid-cols-2 lg:gap-x-8 items-center ">
           <div className="flex flex-col space-y-4 items-center lg:items-start">
             <div>
               <h1 className="text-white text-center lg:text-left font-inter font-bold text-[56px] md:text-3xl uppercase mb-4 md:mb-0 leading-tight">
