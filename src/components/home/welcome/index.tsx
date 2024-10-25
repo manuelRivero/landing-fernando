@@ -18,7 +18,7 @@ export default function Welcome() {
             <LinkButton
               color={"customPurple-500"}
               path={
-                "https://www.canva.com/design/DAGEOtU18t0/WrP44fuTROrsfebghYJ5HA/view?utm_content=DAGEOtU18t0&utm_campaign=designshare&utm_medium=link&utm_source=editor"
+                "https://www.canva.com/design/DAGPUawZZGc/fD2EIHHW5kEXha5cRZaj2Q/view?utm_content=DAGPUawZZGc&utm_campaign=designshare&utm_medium=link&utm_source=editor"
               }
               text={"ABOUT US"}
               textColor={"white"}

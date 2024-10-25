@@ -40,7 +40,7 @@ export default function Collapse({
           </div>
           {isOpen && (
             <div className="flex flex-col items-center mt-4">
-              <p className={location.pathname === "/" ? "text-center" : ""}>
+              <p className="text-center">
                 {description}
               </p>
             </div>

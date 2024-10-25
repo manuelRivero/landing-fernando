@@ -4,15 +4,35 @@ import Collapse from "../../shared/collapse";
 
 const collapseTexts: { title: string; description: string }[] = [
   {
-    title: "HAvE THE BEST CONTENT",
+    title: "HAVE THE BEST CONTENT",
     description:
-      "We delve deep to decipher how we can minimize your customer acquisition cost and devise optimal strategies to effectively communicate your business's core value to your ideal target audience.",
+      "Craft compelling, high-quality content that not only engages your audience but also aligns with your brand’s goals and drives meaningful interactions.",
   },
-  { title: "Focus on Elementary Metrics", description: "" },
-  { title: "A REAL Funnel Strategy", description: "" },
-  { title: "NOT HAVING TO DO EVERYTHING MANUAL", description: "" },
-  { title: "ADVERTISMENT THAT WORKS", description: "" },
-  { title: "DO EXPERIMENTATION", description: "" },
+  {
+    title: "FOCUS ON ELEMENTARY METRICS",
+    description:
+      "Monitor and optimize the essential metrics that directly impact your growth, ensuring you stay focused on what truly matters for your business success.",
+  },
+  {
+    title: "A REAL FUNNEL STRATEGY",
+    description:
+      "Develop a well-structured funnel that nurtures leads through every stage, converting prospects into loyal customers with a seamless, efficient approach.",
+  },
+  {
+    title: "NOT HAVING TO DO EVERYTHING MANUAL",
+    description:
+      "Take advantage of automation tools that handle repetitive tasks, giving you more time to focus on strategy and growth.",
+  },
+  {
+    title: "ADVERTISMENT THAT WORKS",
+    description:
+      "Create targeted, high-performance ad campaigns that reach the right audience, deliver results, and maximize your return on investment.",
+  },
+  {
+    title: "DO EXPERIMENTATION",
+    description:
+      "Consistently experiment with new strategies, testing different approaches to find what works best for your brand and audience.",
+  },
 ];
 
 export default function Process() {

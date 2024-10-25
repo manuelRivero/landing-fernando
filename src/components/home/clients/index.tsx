@@ -93,6 +93,7 @@ export default function Clients() {
               }}
               spaceBetween={20}
               freeMode={true}
+              loop={true}
               pagination={{
                 clickable: true,
               }}

@@ -98,6 +98,7 @@ export default function Applications() {
               }}
               spaceBetween={20}
               freeMode={true}
+              loop={true}
               pagination={{
                 clickable: true,
               }}

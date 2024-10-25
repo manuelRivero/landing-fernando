@@ -2,7 +2,7 @@ import React from "react";
 import contentImg from "./../../../images/incubator/applyNow.png";
 import CustomButton from "../../shared/customButton";
 import { useDispatch } from "react-redux";
-import { showContactPopup, showVerifyPopup } from "../../../store/global";
+import { showContactPopup } from "../../../store/global";
 
 export default function ApplyNow() {
   const dispatch = useDispatch();
@@ -26,7 +26,7 @@ export default function ApplyNow() {
               <CustomButton
                 bgColor="customGreen-500"
                 text="APPLY NOW"
-                cb={() => dispatch(showVerifyPopup(true))}
+                cb={() => dispatch(showContactPopup(true))}
               />
             </div>
           </div>
@@ -39,7 +39,7 @@ export default function ApplyNow() {
               <CustomButton
                 bgColor="customGreen-500"
                 text="APPLY NOW"
-                cb={() => dispatch(showVerifyPopup(true))}
+                cb={() => dispatch(showContactPopup(true))}
               />
             </div>
           </div>

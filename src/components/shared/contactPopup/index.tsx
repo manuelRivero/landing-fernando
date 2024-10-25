@@ -52,6 +52,7 @@ export default function ContactPopup() {
 
   const onSubmit: SubmitHandler<ContactData> = async (data) => {
     console.log("Sent data", data);
+    reset()
   };
 
   return (
@@ -105,7 +106,7 @@ export default function ContactPopup() {
             </p>
             <div className="w-full">
               <input
-                type="text"
+                type="number"
                 className="placeholder-customYellow-500 rounded-full w-full border border-customYellow-500 bg-transparent px-6 py-2 text-xs md:text-normal text-customYellow-500"
                 placeholder="PHONE NUMBER"
                 {...register("phone")}

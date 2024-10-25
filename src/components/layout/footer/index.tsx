@@ -11,6 +11,8 @@ import tiktokLogo from "./../../../images/logos/tiktok-logo.svg";
 import whatsappLogo from "./../../../images/logos/whatsapp-logo.svg";
 import { ImageType } from "../../../types/imageType";
 import { useLocation } from "@reach/router";
+import { useDispatch } from "react-redux";
+import { setSubscribePopup, showVerifyPopup } from "../../../store/global";
 
 const relevantLinks = [
   { text: "Home", href: "/", bold: true },
@@ -20,15 +22,35 @@ const relevantLinks = [
   { text: "Incubator", href: "/incubator", bold: true },
 ];
 
-const socialMediaList: ImageType[] = [
-  { src: linkedinLogo, alt: "linkedin-logo" },
-  { src: instagramLogo, alt: "instagram-logo" },
-  { src: tiktokLogo, alt: "tiktok-logo" },
-  { src: whatsappLogo, alt: "whatsapp-logo" },
+interface SocialMediaLinksType extends ImageType {
+  href: string;
+}
+const socialMediaList: SocialMediaLinksType[] = [
+  {
+    src: linkedinLogo,
+    alt: "linkedin-logo",
+    href: "http://linkedin.com/in/andreacaraza/",
+  },
+  {
+    src: instagramLogo,
+    alt: "instagram-logo",
+    href: "http://instagram.com/zapian.io/",
+  },
+  {
+    src: tiktokLogo,
+    alt: "tiktok-logo",
+    href: "https://www.tiktok.com/@andycaraza",
+  },
+  {
+    src: whatsappLogo,
+    alt: "whatsapp-logo",
+    href: "https://api.whatsapp.com/send?phone=5540699598&text=%C2%A1Hola!%20Me%20interesa%20saber%20m%C3%A1s%20de%20Zapian.",
+  },
 ];
 
 export default function Footer() {
   const { pathname } = useLocation();
+  const dispatch = useDispatch();
 
   const handleIconsColors = (): {
     mainColor: string;
@@ -94,24 +116,7 @@ export default function Footer() {
               <p className="text-white text-xs md:text-little">
                 andy@zapian.io
               </p>
-              <p className="text-white text-xs md:text-little">5540699598</p>
             </div>
-            {/* <div>
-              <h3
-                className={`text-${
-                  handleIconsColors().mainColor
-                } text-xs md:text-little uppercase`}
-              >
-                Address
-              </h3>
-              <p className="text-white text-xs md:text-little italic">
-                Anzures, 11590 CDMX, México. C. del Pez, Centro, 28004 Madrid,
-                España.
-              </p>
-              <p className="text-white text-xs md:text-little italic">
-                S Beverly Dr, Beverly Hills, CA 90212, United States.
-              </p>
-            </div> */}
             <div>
               <h3
                 className={`text-${
@@ -121,13 +126,15 @@ export default function Footer() {
                 Social Media
               </h3>
               <div className="flex space-x-3">
-                {socialMediaList.map((logo: ImageType) => (
-                  <div
+                {socialMediaList.map((logo: SocialMediaLinksType) => (
+                  <a
                     key={logo.alt}
+                    href={logo.href}
+                    target="_blank"
                     className="flex justify-center items-center"
                   >
                     <img src={logo.src} alt={logo.alt} />
-                  </div>
+                  </a>
                 ))}
               </div>
             </div>
@@ -165,17 +172,24 @@ export default function Footer() {
               >
                 Subscribe to the newsletter
               </h3>
-              <div className="grid grid-cols-12 gap-2">
-                <input
-                  type="text"
-                  className={`col-span-8 bg-black rounded-full border border-${
-                    handleIconsColors().mainColor
-                  } text-white px-6 py-1 font-inter`}
-                />
+              <div
+                className="grid grid-cols-12 gap-2 cursor-pointer"
+                onClick={() => {
+                  dispatch(setSubscribePopup(true));
+                  dispatch(showVerifyPopup(true));
+                }}
+              >
+                <div className="col-span-8">
+                  <div
+                    className={`cursor-pointer w-full h-full bg-black rounded-full border border-${
+                      handleIconsColors().mainColor
+                    } text-white px-6 py-1 font-inter`}
+                  />
+                </div>
                 <div className="flex justify-center col-span-4">
                   <button
                     type="button"
-                    className={`text-3xs md:text-tight w-fit bg-${
+                    className={`text-3xs md:text-tight w-fit h-fit bg-${
                       handleIconsColors().mainColor
                     } px-6 py-2 rounded-full text-${
                       handleIconsColors().textButtonColor

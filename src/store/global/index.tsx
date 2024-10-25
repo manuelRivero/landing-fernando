@@ -4,6 +4,7 @@ import { createSlice, PayloadAction  } from "@reduxjs/toolkit";
 const initialValues = {
   contactPopupValue: false,
   verifyPopupValue: false,
+  subscribePopup: false,
 };
 
 const globalSlice = createSlice({
@@ -16,8 +17,11 @@ const globalSlice = createSlice({
     showContactPopup: (state, action: PayloadAction<boolean>) => {
       state.contactPopupValue = action.payload;
     },
+    setSubscribePopup: (state, action: PayloadAction<boolean>) => {
+      state.subscribePopup = action.payload;
+    },
   },
 });
 
-export const { showVerifyPopup, showContactPopup } = globalSlice.actions;
+export const { showVerifyPopup, showContactPopup, setSubscribePopup } = globalSlice.actions;
 export default globalSlice.reducer;

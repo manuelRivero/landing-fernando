@@ -4,13 +4,25 @@ import Collapse from "../../shared/collapse";
 
 const collapseTexts: { title: string; description: string }[] = [
   {
-    title: "User-Centric UX Flow",
+    title: "USER-CENTRIC UX FLOW",
     description:
-      "Understand vision, brand, and goals. Analyze target audience and align coding and design strategies for a tailored plan.",
+      "We design intuitive user journeys that prioritize ease of navigation, guiding visitors smoothly toward your website’s goals while enhancing user satisfaction and boosting conversions.",
   },
-  { title: "UI RESEARCH And Development", description: "" },
-  { title: "ANIMATIONS", description: "" },
-  { title: "Integration and FUNCTIONALITIES", description: "" },
+  {
+    title: "UI RESEARCH AND DEVELOPMENT",
+    description:
+      "We develop visually engaging and highly functional interfaces based on in-depth research, ensuring that every design choice aligns with your business objectives for a seamless user experience.",
+  },
+  {
+    title: "ANIMATIONS",
+    description:
+      "Our animations bring your site to life, subtly enhancing the user experience and engagement without compromising speed or functionality.",
+  },
+  {
+    title: "INTEGRATION AND FUNCTIONALITIES",
+    description:
+      "We integrate advanced features and APIs to ensure your site is both visually appealing and fully functional, offering everything from payment systems to customized page experiences.",
+  },
 ];
 
 export default function Process() {
