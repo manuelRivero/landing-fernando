@@ -11,6 +11,7 @@ import officeImg from "../images/home/office.png";
 import whatsapp from "../images/logos/whatsapp-logo-button.png";
 import Clients from "../components/home/clients";
 import Welcome from "../components/home/welcome";
+import { SEO } from "../components/seo";
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
@@ -47,4 +48,4 @@ const IndexPage: React.FC<PageProps> = () => {
 
 export default IndexPage;
 
-export const Head: HeadFC = () => <title>Home</title>;
+export const Head: HeadFC = () => <SEO title="Zapian | Digital Marketing Agency - Proven Growth Strategies" description="Achieve measurable brand growth with our digital marketing solutions, from web design to content and branding. Tailored strategies boost online visibility, customer engagement, and conversions." />;

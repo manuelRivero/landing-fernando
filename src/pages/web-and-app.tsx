@@ -4,6 +4,7 @@ import WebAndAppHero from "../components/webAndApp/webAndAppHero";
 import Plans from "../components/webAndApp/plans";
 import Process from "../components/webAndApp/process";
 import GetQuotation from "../components/webAndApp/getQuotation";
+import { SEO } from "../components/seo";
 
 const WebAndAppPage: React.FC<PageProps> = () => {
   return (
@@ -20,4 +21,9 @@ const WebAndAppPage: React.FC<PageProps> = () => {
 
 export default WebAndAppPage;
 
-export const Head: HeadFC = () => <title>Web and app</title>;
+export const Head: HeadFC = () => (
+  <SEO
+    title="Custom Web Design & Development | Zapian Digital Marketing Agency"
+    description="Increase conversions with user-focused web design, optimized UX/UI, and seamless integrations. We build fast, responsive sites that enhance user experiences and strengthen brand impact."
+  />
+);

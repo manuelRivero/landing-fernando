@@ -6,6 +6,7 @@ import WeHelpYou from "../components/branding/weHelpYou";
 import WeInterview from "../components/branding/weInterview";
 import HowWeDoIt from "../components/branding/howWeDoIt";
 import SomethingElse from "../components/branding/somethingElse";
+import { SEO } from "../components/seo";
 
 const BrandingPage: React.FC<PageProps> = () => {
   return (
@@ -23,4 +24,4 @@ const BrandingPage: React.FC<PageProps> = () => {
 
 export default BrandingPage;
 
-export const Head: HeadFC = () => <title>Branding</title>;
+export const Head: HeadFC = () => <SEO title="Branding Services for Strong, Memorable Identities | Zapian" description="Transform your brand with compelling design and messaging that differentiates you in the market. Our branding expertise fosters customer loyalty and builds lasting impressions." />;
