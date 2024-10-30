@@ -1,8 +1,9 @@
 import React from "react";
+import OgImage from "../images/OgImage.jpg"
 
 interface Props {
-    title: string;
-    description: string;
+  title: string;
+  description: string;
 }
 
 export const SEO = ({ title, description }: Props) => {
@@ -15,6 +16,15 @@ export const SEO = ({ title, description }: Props) => {
     <>
       <title>{seo.title}</title>
       <meta name="description" content={seo.description} />
+      <meta property="og:title" content="Zapian | Digital Marketing Agency - Proven Growth Strategies" />
+      <meta
+        property="og:image"
+        content={OgImage}
+      />
+      <meta
+        property="og:type"
+        content="website"
+      />
     </>
   );
 };
