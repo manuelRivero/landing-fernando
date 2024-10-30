@@ -19,10 +19,10 @@ export const SEO = ({ title, description }: Props) => {
       <meta property="og:title" content="Zapian | Digital Marketing Agency - Proven Growth Strategies" />
       <meta
         property="og:image"
-        content={OgImage}
+        content={`https://landing-fernando.onrender.com` + OgImage}
       />
       <meta
-        property="og:type"
+        name="og:type"
         content="website"
       />
     </>
