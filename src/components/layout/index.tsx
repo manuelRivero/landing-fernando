@@ -122,7 +122,7 @@ export default function Layout({ children }: LayoutProps) {
               <img
                 src={whatsapp}
                 alt="Whatsapp"
-                className="w-[113px] md:w-[134px]"
+                className="w-[70px] md:w-[134px]"
               />
             </Link>
           </div>
