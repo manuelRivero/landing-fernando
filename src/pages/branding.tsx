@@ -11,7 +11,7 @@ import { SEO } from "../components/seo";
 const BrandingPage: React.FC<PageProps> = () => {
   return (
     <div className="relative">
-      <div className="relative overflow-x-hidden">
+      <div className="relative overflow-x-hidden overflow-y-hidden">
         <BrandingHero />
         <WeHelpYou />
         <WeInterview />

@@ -102,12 +102,13 @@ export default function Layout({ children }: LayoutProps) {
                   key={linkItem.text}
                   to={linkItem.href}
                   type="button"
-                  className={`font-inter text-white text-small md:text-normal uppercase ${
+                  className={`font-inter text-white text-small md:text-normal group relative uppercase ${
                     linkItem.bold && "font-bold"
                   }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {linkItem.text}
+                  <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-white transition-all group-hover:w-full"></span>
                 </Link>
               ))}
             </div>
@@ -122,7 +123,7 @@ export default function Layout({ children }: LayoutProps) {
               <img
                 src={whatsapp}
                 alt="Whatsapp"
-                className="w-[70px] md:w-[134px]"
+                className="w-[70px] md:w-[134px] hover:scale-110 transition-all"
               />
             </Link>
           </div>

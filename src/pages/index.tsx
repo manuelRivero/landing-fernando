@@ -16,7 +16,7 @@ import AnimateSection from "../components/shared/animateSection";
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
-    <div className="relative overflow-x-hidden">
+    <div className="relative overflow-x-hidden overflow-y-hidden">
       <Hero />
       <Services />
       <Welcome />
