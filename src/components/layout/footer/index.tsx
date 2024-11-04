@@ -96,11 +96,12 @@ export default function Footer() {
                 key={linkItem.text}
                 to={linkItem.href}
                 type="button"
-                className={`text-white text-xs md:text-normal ${
+                className={`relative w-fit group text-white text-xs md:text-normal ${
                   linkItem.bold && "font-semibold"
                 }`}
               >
                 {linkItem.text}
+                <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-white transition-all group-hover:w-full"></span>
               </Link>
             ))}
           </div>
@@ -131,7 +132,7 @@ export default function Footer() {
                     key={logo.alt}
                     href={logo.href}
                     target="_blank"
-                    className="flex justify-center items-center"
+                    className="flex justify-center items-center hover:scale-110 transition-all"
                   >
                     <img src={logo.src} alt={logo.alt} />
                   </a>
@@ -189,7 +190,7 @@ export default function Footer() {
                 <div className="flex justify-center col-span-4">
                   <button
                     type="button"
-                    className={`text-3xs md:text-tight w-fit h-fit bg-${
+                    className={`hover:scale-110 transition-all text-3xs md:text-tight w-fit h-fit bg-${
                       handleIconsColors().mainColor
                     } px-6 py-2 rounded-full text-${
                       handleIconsColors().textButtonColor

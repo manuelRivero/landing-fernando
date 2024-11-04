@@ -221,7 +221,7 @@ export default function IconsAndTextsSection() {
         {handleShowContent().map((item, index: number) => (
           <div
             key={`${item.title}-${index}`}
-            className={`flex flex-col space-y-2 ${
+            className={`hover:scale-105 transition-all flex flex-col space-y-2 ${
               index >= 0 && index <= 2 ? "col-span-4" : "col-span-6"
             } justify-center items-center`}
           >

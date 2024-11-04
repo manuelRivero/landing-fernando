@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Link, type HeadFC, type PageProps } from "gatsby";
+import { type HeadFC, type PageProps } from "gatsby";
 import Hero from "../components/home/hero";
 import Services from "../components/home/services";
 import Partners from "../components/home/partners";
@@ -12,6 +12,7 @@ import whatsapp from "../images/logos/whatsapp-logo-button.png";
 import Clients from "../components/home/clients";
 import Welcome from "../components/home/welcome";
 import { SEO } from "../components/seo";
+import AnimateSection from "../components/shared/animateSection";
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
@@ -23,14 +24,16 @@ const IndexPage: React.FC<PageProps> = () => {
       <Contact />
       <Incubator />
       <div className="bg-black">
-        <div className="grid grid-cols-3 gap-8 container px-8">
-          <div className="col-span-1 flex justify-center items-center">
-            <img src={teamImg} alt="Team" />
+        <AnimateSection orientation="vertical">
+          <div className="grid grid-cols-3 gap-8 container px-8">
+            <div className="col-span-1 flex justify-center items-center">
+              <img src={teamImg} alt="Team" />
+            </div>
+            <div className="col-span-2 flex justify-center items-center">
+              <img src={officeImg} alt="Office" />
+            </div>
           </div>
-          <div className="col-span-2 flex justify-center items-center">
-            <img src={officeImg} alt="Office" />
-          </div>
-        </div>
+        </AnimateSection>
       </div>
       <Coaching />
       <Clients />
@@ -48,4 +51,9 @@ const IndexPage: React.FC<PageProps> = () => {
 
 export default IndexPage;
 
-export const Head: HeadFC = () => <SEO title="Zapian | Digital Marketing Agency - Proven Growth Strategies" description="Achieve measurable brand growth with our digital marketing solutions, from web design to content and branding. Tailored strategies boost online visibility, customer engagement, and conversions." />;
+export const Head: HeadFC = () => (
+  <SEO
+    title="Zapian | Digital Marketing Agency - Proven Growth Strategies"
+    description="Achieve measurable brand growth with our digital marketing solutions, from web design to content and branding. Tailored strategies boost online visibility, customer engagement, and conversions."
+  />
+);

@@ -1,12 +1,12 @@
-import React from "react";
+import React, { useRef } from "react";
 import Collapse from "../../shared/collapse";
 import lottoIcon from "./../../../images/icons/lotto.svg";
 import plusOutlinedIcon from "./../../../images/icons/plus-outlined.svg";
 import flowerIcon from "./../../../images/icons/flower-white.svg";
-import LinkButton from "../../shared/linkButton";
 import CustomButton from "../../shared/customButton";
 import { useDispatch } from "react-redux";
 import { showContactPopup } from "../../../store/global";
+import AnimateSection from "../../shared/animateSection";
 
 interface CollapseType {
   title: string;
@@ -43,38 +43,41 @@ export default function Services() {
 
   return (
     <div className="bg-customBlue-500">
-      <div className="py-16 md:py-24 px-8 md:px-32 container">
-        <div className="lg:max-w-[479px]">
-          <h1 className="text-white text-center lg:text-left font-inter font-bold text-2xl md:text-3xl uppercase">
-            Services
-          </h1>
-          <p className="text-white text-center lg:text-left font-inter text-xs md:text-normal">
-            We specialize in <span className="font-bold">business growth</span>{" "}
-            and <span className="font-bold">digital product</span> development.
-          </p>
-        </div>
+      <AnimateSection>
+        <div className="py-16 md:py-24 px-8 md:px-32 container">
+          <div className="lg:max-w-[479px]">
+            <h1 className="text-white text-center lg:text-left font-inter font-bold text-2xl md:text-3xl uppercase">
+              Services
+            </h1>
+            <p className="text-white text-center lg:text-left font-inter text-xs md:text-normal">
+              We specialize in{" "}
+              <span className="font-bold">business growth</span> and{" "}
+              <span className="font-bold">digital product</span> development.
+            </p>
+          </div>
 
-        <div className="flex flex-col divide-y divide-customPink-400 border-b border-b-customPink-400 mb-14">
-          {collapseData.map((item: CollapseType, index: number) => (
-            <Collapse
-              key={`${item.title}-${index}`}
-              title={item.title}
-              icon={item.icon}
-              alt={item.alt}
-              description={item.description}
+          <div className="flex flex-col divide-y divide-customPink-400 border-b border-b-customPink-400 mb-14">
+            {collapseData.map((item: CollapseType, index: number) => (
+              <Collapse
+                key={`${item.title}-${index}`}
+                title={item.title}
+                icon={item.icon}
+                alt={item.alt}
+                description={item.description}
+              />
+            ))}
+          </div>
+
+          <div className="flex justify-center">
+            <CustomButton
+              bgColor="customPink-400"
+              textColor="white"
+              text="GET QUOTE"
+              cb={() => dispatch(showContactPopup(true))}
             />
-          ))}
+          </div>
         </div>
-
-        <div className="flex justify-center">
-          <CustomButton
-            bgColor="customPink-400"
-            textColor="white"
-            text="GET QUOTE"
-            cb={() => dispatch(showContactPopup(true))}
-          />
-        </div>
-      </div>
+      </AnimateSection>
     </div>
   );
 }

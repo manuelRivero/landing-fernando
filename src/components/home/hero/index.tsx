@@ -10,6 +10,7 @@ import "swiper/css";
 import CustomButton from "../../shared/customButton";
 import { useDispatch } from "react-redux";
 import { showContactPopup } from "../../../store/global";
+import AnimateSection from "../../shared/animateSection";
 
 interface Card {
   title: string;
@@ -72,40 +73,42 @@ export default function Hero() {
             <img src={computerImg} alt="Computer" />
           </div>
         </div>
-        <div>
-          <Swiper
-            breakpoints={{
-              1300: {
-                slidesPerView: 3, // Mostrar 3 slides cuando la pantalla sea mayor a 1300px
-              },
-              1080: {
-                slidesPerView: 2, // Mostrar 2 slides entre 900px y 1300px
-              },
-              0: {
-                slidesPerView: 1, // Mostrar 1 slide si la pantalla es menor a 900px
-              },
-            }}
-            spaceBetween={20}
-            freeMode={true}
-            pagination={{
-              clickable: true,
-            }}
-            modules={[FreeMode, Pagination]}
-          >
-            {cardsContent.map((card: Card, index: number) => (
-              <SwiperSlide key={`${card.title}-${index}`}>
-                <div className="flex justify-center">
-                  <InfoCard
-                    title={card.title}
-                    description={card.description}
-                    icon={card.icon}
-                    alt={card.alt}
-                  />
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
+        <AnimateSection orientation="vertical">
+          <div>
+            <Swiper
+              breakpoints={{
+                1300: {
+                  slidesPerView: 3, // Mostrar 3 slides cuando la pantalla sea mayor a 1300px
+                },
+                1080: {
+                  slidesPerView: 2, // Mostrar 2 slides entre 900px y 1300px
+                },
+                0: {
+                  slidesPerView: 1, // Mostrar 1 slide si la pantalla es menor a 900px
+                },
+              }}
+              spaceBetween={20}
+              freeMode={true}
+              pagination={{
+                clickable: true,
+              }}
+              modules={[FreeMode, Pagination]}
+            >
+              {cardsContent.map((card: Card, index: number) => (
+                <SwiperSlide key={`${card.title}-${index}`}>
+                  <div className="flex justify-center">
+                    <InfoCard
+                      title={card.title}
+                      description={card.description}
+                      icon={card.icon}
+                      alt={card.alt}
+                    />
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+        </AnimateSection>
       </div>
     </div>
   );
