@@ -16,3 +16,24 @@ input[type="number"]::-webkit-inner-spin-button {
 input[type="number"] {
     -moz-appearance: textfield;
 }
+
+.my-custom-pagination {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Espacio entre bullets */
+  margin-top: 10px; /* Posición de los bullets */
+}
+
+.my-custom-pagination .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+.my-custom-pagination .swiper-pagination-bullet-active {
+  background-color: #2C5DF3; /* Cambia el color para indicar el slide activo */
+  opacity: 1;
+}
+
+

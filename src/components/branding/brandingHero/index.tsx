@@ -12,7 +12,7 @@ export default function BrandingHero() {
   return (
     <div className="bg-white">
       <AnimateSection>
-        <div className="pt-32 lg:pt-52 px-8 md:px-32 container">
+        <div className="mb-10 md:mb-0 pt-32 lg:pt-52 px-8 md:px-32 container">
           <div className="flex flex-col-reverse lg:grid lg:grid-cols-2 gap-16 items-center mb-0 md:mb-32">
             <div className="hidden md:flex flex-row justify-end lg:mb-0">
               <img src={contentImg} alt="Computer" />

@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import swiperContainerImg from "./../../../images/incubator/swiper-container.png";
+import swiperContainerResImg from "./../../../images/incubator/swiper-container-res.png";
 import aplicationDetailContainerImg from "./../../../images/incubator/aplication-detail-container.png";
+import aplicationDetailContainerResImg from "./../../../images/incubator/aplication-detail-container-res.png";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Pagination, Navigation } from "swiper/modules";
 import "swiper/css";
@@ -95,10 +97,9 @@ export default function Applications() {
                     slidesPerView: 2, // Mostrar 2 slides entre 900px y 1300px
                   },
                   0: {
-                    slidesPerView: 1, // Mostrar 1 slide si la pantalla es menor a 900px
+                    slidesPerView: 1.4, // Mostrar 1 slide si la pantalla es menor a 900px
                   },
                 }}
-                spaceBetween={20}
                 freeMode={true}
                 loop={true}
                 pagination={{
@@ -127,6 +128,13 @@ export default function Applications() {
                               src={swiperContainerImg}
                               alt="swiperContainer"
                               width={"100%"}
+                              className="hidden md:block"
+                            />
+                            <img
+                              src={swiperContainerResImg}
+                              alt="swiperContainer"
+                              width={"100%"}
+                              className="block md:hidden"
                             />
                             <div className="absolute bottom-0 left-0 font-inter text-customGreen-500 text-normal font-bold uppercase p-8">
                               <h3>{item.title}</h3>
@@ -150,6 +158,13 @@ export default function Applications() {
                                 src={aplicationDetailContainerImg}
                                 alt="planDetailContainerImg"
                                 width={"100%"}
+                                className="hidden md:block"
+                              />
+                              <img
+                                src={aplicationDetailContainerResImg}
+                                alt="planDetailContainerImg"
+                                width={"100%"}
+                                className="block md:hidden"
                               />
                               <div className="absolute w-full h-full top-0 left-0 font-inter text-customOrange-500 p-8 flex flex-col justify-between">
                                 <h3 className="font-bold text-tight md:text-little uppercase">

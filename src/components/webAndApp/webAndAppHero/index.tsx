@@ -12,7 +12,7 @@ export default function WebAndAppHero() {
   return (
     <div className="bg-white">
       <AnimateSection orientation="vertical">
-        <div className="pt-32 lg:pt-52 px-8 md:px-32 container">
+        <div className="mb-10 md:mb-0 pt-32 lg:pt-52 px-8 md:px-32 container">
           <div className="flex flex-col space-y-8 lg:space-y-0 lg:grid lg:grid-cols-2 lg:gap-x-8 items-center mb-0 md:mb-32">
             <div className="flex flex-col space-y-4 items-center lg:items-start">
               <div>

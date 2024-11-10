@@ -30,7 +30,7 @@ const cardsContent: Card[] = [
   {
     title: "Design",
     description:
-      "Our data-design approach ensures strategic insights for sustainable success.",
+      "Our design-driven approach ensures strategic development and brand success.",
     icon: star8,
     alt: "Star 8",
   },
@@ -87,10 +87,10 @@ export default function Hero() {
                   slidesPerView: 1, // Mostrar 1 slide si la pantalla es menor a 900px
                 },
               }}
-              spaceBetween={20}
               freeMode={true}
               pagination={{
                 clickable: true,
+                el: '.pagination-1',
               }}
               modules={[FreeMode, Pagination]}
             >
@@ -107,6 +107,7 @@ export default function Hero() {
                 </SwiperSlide>
               ))}
             </Swiper>
+            <div className="pagination-1 my-custom-pagination md:hidden"></div>
           </div>
         </AnimateSection>
       </div>

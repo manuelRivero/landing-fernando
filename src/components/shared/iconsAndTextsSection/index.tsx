@@ -245,18 +245,18 @@ export default function IconsAndTextsSection() {
               slidesPerView: 2,
             },
             0: {
-              slidesPerView: 1,
+              slidesPerView: 1.4,
             },
           }}
-          spaceBetween={20}
           freeMode={true}
           pagination={{
             clickable: true,
+            el: '.pagination-3'
           }}
           modules={[FreeMode, Pagination]}
         >
           {handleShowContent().map((item, index: number) => (
-            <SwiperSlide key={`${item.title}-${index}`}>
+            <SwiperSlide key={`${item.title}-${index}`} className="max-w-[250px]">
               <div
                 className={`flex flex-col space-y-2 ${
                   index >= 0 && index <= 2 ? "col-span-4" : "col-span-6"
@@ -275,6 +275,7 @@ export default function IconsAndTextsSection() {
             </SwiperSlide>
           ))}
         </Swiper>
+        <div className="pagination-3 my-custom-pagination pt-5 md:hidden"></div>
       </div>
     </div>
   );

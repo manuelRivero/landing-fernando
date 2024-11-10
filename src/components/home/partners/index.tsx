@@ -52,6 +52,7 @@ export default function Partners() {
               freeMode={true}
               pagination={{
                 clickable: true,
+                el: '.pagination-2',
               }}
               modules={[FreeMode, Pagination]}
             >
@@ -63,6 +64,7 @@ export default function Partners() {
                 </SwiperSlide>
               ))}
             </Swiper>
+            <div className="pagination-2 my-custom-pagination md:hidden"></div>
           </div>
         </div>
       </AnimateSection>

@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import client1 from "./../../../images/home/clients/client1.png";
 import client2 from "./../../../images/home/clients/client2.png";
 import client3 from "./../../../images/home/clients/client3.png";
+import client1Res from "./../../../images/home/clients/client1-res.png";
+import client2Res from "./../../../images/home/clients/client2-res.png";
+import client3Res from "./../../../images/home/clients/client3-res.png";
 import client4 from "./../../../images/home/clients/client4.png";
 import client5 from "./../../../images/home/clients/client5.png";
 import chevronRight from "./../../../images/icons/chevron-right.svg";
@@ -15,6 +18,7 @@ import AnimateSection from "../../shared/animateSection";
 const clientsList = [
   {
     src: client1,
+    srcRes: client1Res,
     alt: "client-1",
     text1: "",
     text2: "· Ana Pau",
@@ -23,6 +27,7 @@ const clientsList = [
   },
   {
     src: client2,
+    srcRes: client2Res,
     alt: "client-2",
     text1: "Curena Mia",
     text2: "· Jimena de la Torre",
@@ -31,6 +36,7 @@ const clientsList = [
   },
   {
     src: client3,
+    srcRes: client3Res,
     alt: "client-3",
     text1: "Centro de Diseño, Cine y TV ",
     text2: "· Miguel Torres",
@@ -81,7 +87,7 @@ export default function Clients() {
                 </div>
               </div>
             </div>
-            <div className="col-span-12 lg:col-span-9">
+            <div className="hidden md:block col-span-12 lg:col-span-9">
               <Swiper
                 breakpoints={{
                   1300: {
@@ -91,10 +97,9 @@ export default function Clients() {
                     slidesPerView: 2, // Mostrar 2 slides entre 900px y 1300px
                   },
                   0: {
-                    slidesPerView: 1, // Mostrar 1 slide si la pantalla es menor a 900px
+                    slidesPerView: 2, // Mostrar 1 slide si la pantalla es menor a 900px
                   },
                 }}
-                spaceBetween={20}
                 freeMode={true}
                 loop={true}
                 pagination={{
@@ -107,7 +112,7 @@ export default function Clients() {
                 modules={[FreeMode, Pagination, Navigation]}
               >
                 {clientsList.map((logo, index: number) => (
-                  <SwiperSlide key={`${index}`} className="cursor-pointer">
+                  <SwiperSlide key={`${index}`} className="cursor-pointer mr-[100px] md:mr-[20px]">
                     <div
                       className="flex justify-center"
                       onClick={() => {
@@ -120,7 +125,12 @@ export default function Clients() {
                         <img
                           src={logo.src}
                           alt={logo.alt}
-                          className="max-w-[220px]"
+                          className="hidden md:block max-w-[220px]"
+                        />
+                        <img
+                          src={logo.srcRes}
+                          alt={logo.alt}
+                          className="block md:hidden max-w-[220px]"
                         />
                         <motion.div
                           initial={{ opacity: 0 }}
@@ -151,6 +161,87 @@ export default function Clients() {
                     </div>
                   </SwiperSlide>
                 ))}
+              </Swiper>
+            </div>
+            <div className="block md:hidden col-span-12 lg:col-span-9">
+              <Swiper
+                breakpoints={{
+                  1300: {
+                    slidesPerView: 3, // Mostrar 3 slides cuando la pantalla sea mayor a 1300px
+                  },
+                  700: {
+                    slidesPerView: 2, // Mostrar 2 slides entre 900px y 1300px
+                  },
+                  0: {
+                    slidesPerView: 1.4, // Mostrar 1 slide si la pantalla es menor a 900px
+                  },
+                }}
+                spaceBetween={15}
+                freeMode={true}
+                loop={true}
+                pagination={{
+                  clickable: true,
+                }}
+                navigation={{
+                  prevEl: ".custom-prev-btn", // Selector del botón "prev"
+                  nextEl: ".custom-next-btn", // Selector del botón "next"
+                }}
+                modules={[FreeMode, Pagination, Navigation]}
+              >
+                {clientsList.map((logo, index: number) => {
+                  if (logo.srcRes) {
+                    return (
+                    <SwiperSlide key={`${index}`} className="cursor-pointer">
+                      <div
+                        className="flex justify-center"
+                        onClick={() => {
+                          setShowSlideInfo((prev: number) =>
+                            prev === index ? -1 : index
+                          );
+                        }}
+                      >
+                        <div className="relative w-fit">
+                          <img
+                            src={logo.src}
+                            alt={logo.alt}
+                            className="hidden md:block max-w-[220px]"
+                          />
+                          <img
+                            src={logo.srcRes}
+                            alt={logo.alt}
+                            className="block md:hidden max-w-[220px]"
+                          />
+                          <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={
+                              showSlideInfo === index
+                                ? { opacity: 1 }
+                                : { opacity: 0 }
+                            }
+                            transition={{ duration: 0.5, ease: "easeOut" }} // Transición suave sin rebote
+                            className={`absolute top-0 left-0 h-full`}
+                          >
+                            <div
+                              className={`h-full bg-customBlue-500 rounded-[18px] px-5 transition-all flex flex-col justify-center items-center`}
+                            >
+                              <p className="text-white text-2xs place-self-start font-inter font-semibold uppercase">
+                                {logo.text1}
+                                <span className="text-customPink-500">
+                                  {logo.text2}
+                                </span>
+                              </p>
+
+                              <p className="text-white text-3xs font-light">
+                                {logo.description}
+                              </p>
+                            </div>
+                          </motion.div>
+                        </div>
+                      </div>
+                    </SwiperSlide>
+                    )
+                  }
+                })}
               </Swiper>
             </div>
           </div>

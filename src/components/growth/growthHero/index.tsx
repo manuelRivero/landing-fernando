@@ -11,7 +11,7 @@ export default function GrowthHero() {
   return (
     <div className="bg-white">
       <AnimateSection orientation="vertical">
-        <div className="pt-32 lg:pt-52 md:pb-40 px-8 md:px-32 container">
+        <div className="mb-10 md:mb-0 pt-32 lg:pt-52 md:pb-40 px-8 md:px-32 container">
           <div className="md-4 md:mb-11">
             <h1 className="text-customBlue-600 text-center lg:text-left font-inter font-bold text-2xl lg:text-9xl uppercase leading-tight lg:leading-customLineHeight">
               CONTENT & GROWTH MARKETING

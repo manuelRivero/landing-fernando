@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import swiperContainerImg from "./../../../images/web-and-app/swiper-container.png";
+import swiperContainerResImg from "./../../../images/web-and-app/swiper-container-res.png";
 import planDetailContainerImg from "./../../../images/web-and-app/plan-detail-container.png";
+import planDetailContainerResImg from "./../../../images/web-and-app/plan-detail-container-res.png";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Pagination } from "swiper/modules";
 import "swiper/css";
@@ -27,10 +29,9 @@ export default function Plans() {
                   slidesPerView: 2, // Mostrar 2 slides entre 900px y 1300px
                 },
                 0: {
-                  slidesPerView: 1, // Mostrar 1 slide si la pantalla es menor a 900px
+                  slidesPerView: 1.4, // Mostrar 1 slide si la pantalla es menor a 900px
                 },
               }}
-              spaceBetween={20}
               freeMode={true}
               pagination={{
                 clickable: true,
@@ -38,7 +39,7 @@ export default function Plans() {
               modules={[FreeMode, Pagination]}
             >
               <SwiperSlide>
-                <div className="flex flex-col items-center space-y-8">
+                <div className="flex flex-col items-center space-y-8 w-fit">
                   <div
                     onClick={() => {
                       setShowSlideInfo((prev: number) => (prev === 1 ? -1 : 1));
@@ -55,6 +56,13 @@ export default function Plans() {
                           src={swiperContainerImg}
                           alt="swiperContainer"
                           width={"100%"}
+                          className="hidden md:block"
+                        />
+                        <img
+                          src={swiperContainerResImg}
+                          alt="swiperContainer"
+                          width={"100%"}
+                          className="block md:hidden"
                         />
                         <div className="absolute bottom-0 left-0 font-inter text-white text-small md:text-normal font-bold uppercase p-8">
                           <h3>Landing · one-time fee</h3>
@@ -76,6 +84,13 @@ export default function Plans() {
                             src={planDetailContainerImg}
                             alt="planDetailContainerImg"
                             width={"100%"}
+                            className="hidden md:block"
+                          />
+                          <img
+                            src={planDetailContainerResImg}
+                            alt="planDetailContainerImg"
+                            width={"100%"}
+                            className="block md:hidden"
                           />
                           <div className="absolute w-full h-full top-0 left-0 font-inter text-customBlue-600 p-8 flex flex-col justify-between">
                             <h3 className="font-bold text-little uppercase">
@@ -124,10 +139,17 @@ export default function Plans() {
                     >
                       <div className="relative w-fit h-fit">
                         <img
-                          src={swiperContainerImg}
-                          alt="swiperContainer"
-                          width={"100%"}
-                        />
+                            src={swiperContainerImg}
+                            alt="swiperContainer"
+                            width={"100%"}
+                            className="hidden md:block"
+                          />
+                          <img
+                            src={swiperContainerResImg}
+                            alt="swiperContainer"
+                            width={"100%"}
+                            className="block md:hidden"
+                          />
                         <div className="absolute bottom-0 left-0 font-inter text-white text-small md:text-normal font-bold uppercase p-8">
                           <h3>Standard Development · one-time fee</h3>
                         </div>
@@ -143,10 +165,17 @@ export default function Plans() {
                     >
                       <div className="flex justify-center">
                         <div className="relative w-fit">
-                          <img
+                        <img
                             src={planDetailContainerImg}
                             alt="planDetailContainerImg"
                             width={"100%"}
+                            className="hidden md:block"
+                          />
+                          <img
+                            src={planDetailContainerResImg}
+                            alt="planDetailContainerImg"
+                            width={"100%"}
+                            className="block md:hidden"
                           />
                           <div className="absolute w-full h-full top-0 left-0 font-inter text-customBlue-600 p-8 flex flex-col justify-between">
                             <h3 className="font-bold text-little uppercase pr-8 leading-tight">
@@ -154,32 +183,32 @@ export default function Plans() {
                             </h3>
 
                             <div className="flex flex-col">
-                              <p className="text-2xs leading-tight">
+                              <p className="text-[12px] leading-tight">
                                 · Design and development
                               </p>
-                              <p className="text-2xs leading-tight">
+                              <p className="text-[12px] leading-tight">
                                 · Up to 3 pages
                               </p>
-                              <p className="text-2xs leading-tight">
+                              <p className="text-[12px] leading-tight">
                                 · Web animations (Intermediate)
                               </p>
-                              <p className="text-2xs leading-tight">
+                              <p className="text-[12px] leading-tight">
                                 · Standard back-office design
                               </p>
-                              <p className="text-2xs leading-tight">
+                              <p className="text-[12px] leading-tight">
                                 · Enhanced features and services
                               </p>
-                              <p className="text-2xs leading-tight">
+                              <p className="text-[12px] leading-tight">
                                 · Intermediate integrations and APIs
                               </p>
-                              <p className="text-2xs leading-tight">
+                              <p className="text-[12px] leading-tight">
                                 · Accept Payment
                               </p>
-                              <p className="text-2xs leading-tight">
+                              <p className="text-[12px] leading-tight">
                                 · Web customization by cookies/page
                                 (Intermediate)
                               </p>
-                              <p className="text-2xs leading-tight">
+                              <p className="text-[12px] leading-tight">
                                 · Annual maintenance (Regular)
                               </p>
                             </div>
@@ -213,10 +242,17 @@ export default function Plans() {
                     >
                       <div className="relative w-fit h-fit">
                         <img
-                          src={swiperContainerImg}
-                          alt="swiperContainer"
-                          width={"100%"}
-                        />
+                            src={swiperContainerImg}
+                            alt="swiperContainer"
+                            width={"100%"}
+                            className="hidden md:block"
+                          />
+                          <img
+                            src={swiperContainerResImg}
+                            alt="swiperContainer"
+                            width={"100%"}
+                            className="block md:hidden"
+                          />
                         <div className="absolute bottom-0 left-0 font-inter text-white text-small md:text-normal font-bold uppercase p-8">
                           <h3>Premium Development · one-time fee</h3>
                         </div>
@@ -233,38 +269,45 @@ export default function Plans() {
                       <div className="flex justify-center">
                         <div className="relative w-fit">
                           <img
-                            src={planDetailContainerImg}
-                            alt="planDetailContainerImg"
-                            width={"100%"}
-                          />
+                              src={planDetailContainerImg}
+                              alt="planDetailContainerImg"
+                              width={"100%"}
+                              className="hidden md:block"
+                            />
+                            <img
+                              src={planDetailContainerResImg}
+                              alt="planDetailContainerImg"
+                              width={"100%"}
+                              className="block md:hidden"
+                            />
                           <div className="absolute w-full h-full top-0 left-0 font-inter text-customBlue-600 p-8 flex flex-col justify-between">
                             <h3 className="font-bold text-little uppercase pr-8 leading-tight">
                               Premium Development
                             </h3>
 
                             <div className="flex flex-col">
-                              <p className="text-2xs leading-tight">
+                              <p className="text-[12px] leading-tight">
                                 · Design and development
                               </p>
-                              <p className="text-2xs leading-tight">
+                              <p className="text-[12px] leading-tight">
                                 · Up to 10 pages
                               </p>
-                              <p className="text-2xs leading-tight">
+                              <p className="text-[12px] leading-tight">
                                 · Web animations (Advanced)
                               </p>
-                              <p className="text-2xs leading-tight">
+                              <p className="text-[12px] leading-tight">
                                 · Customized back-office design
                               </p>
-                              <p className="text-2xs leading-tight">
+                              <p className="text-[12px] leading-tight">
                                 · Accept Payment
                               </p>
-                              <p className="text-2xs leading-tight">
+                              <p className="text-[12px] leading-tight">
                                 · Advanced features and services
                               </p>
-                              <p className="text-2xs leading-tight">
+                              <p className="text-[12px] leading-tight">
                                 · Advanced integrations and APIs
                               </p>
-                              <p className="text-2xs leading-tight">
+                              <p className="text-[12px] leading-tight">
                                 · Web customization by cookies/page (Advanced)
                               </p>
                             </div>

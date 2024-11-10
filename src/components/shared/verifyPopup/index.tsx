@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useLocation } from "@reach/router";
 import { useDispatch, useSelector } from "react-redux";
 import { motion } from "framer-motion";
@@ -20,6 +20,8 @@ export default function VerifyPopup() {
     (state: RootState) => state.global
   );
   const childRef = useRef<HTMLDivElement>(null);
+  const [code, setCode] = useState<string>('');
+  const [step, setStep] = useState<number>(1);
 
   const schema = yup.object().shape({
     email: yup.string().email().required(),
@@ -38,6 +40,8 @@ export default function VerifyPopup() {
   const handleClickOutside = (event: MouseEvent) => {
     // Verifica si el clic ocurrió fuera del div hijo
     if (childRef.current && !childRef.current.contains(event.target as Node)) {
+      setStep(1)
+      setCode('')
       dispatch(showVerifyPopup(false));
       dispatch(setSubscribePopup(false));
     }
@@ -55,6 +59,16 @@ export default function VerifyPopup() {
   const onSubmit: SubmitHandler<VerifyData> = async (data) => {
     console.log("Sent data", data);
     reset();
+    setStep(2)
+  };
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const input = event.target.value;
+
+    // Limita el valor a solo 4 dígitos numéricos
+    if (input.length <= 4) {
+      setCode(input);
+    }
   };
 
   return (
@@ -64,90 +78,157 @@ export default function VerifyPopup() {
       transition={{ duration: 0.5, ease: "easeOut" }}
       className={`${
         verifyPopupValue ? "fixed" : "hidden"
-      } h-screen w-full flex justify-center items-center z-20 overflow-hidde bg-black bg-opacity-30`}
+      } h-screen w-full flex justify-center items-center z-20 overflow-y-auto bg-black bg-opacity-30`}
     >
       <div
         ref={childRef}
-        className={`${
+        className={`rounded-[32px] w-[316px] md:w-[450px] lg:w-[825px] ${step !== 1 && "mt-[500px]"}`}
+      >
+        <div className={`${
           pathname === "/incubator/" || subscribePopup
             ? "bg-white"
             : "bg-customBlue-600"
-        } rounded-[32px] w-[316px] md:w-[450px] lg:w-[825px] p-7`}
-      >
-        <form
-          onSubmit={handleSubmit(onSubmit)}
-          className="flex flex-col space-y-6"
-        >
-          <h3
-            className={`${
-              pathname === "/incubator/" || subscribePopup
-                ? "text-black"
-                : "text-white"
-            } text-xs md:text-normal uppercase pr-14 font-bold`}
+        } ${step === 1 ? "rounded-[32px]" : "rounded-t-[32px] pb-0"} p-7`}>
+          <form
+            onSubmit={handleSubmit(onSubmit)}
+            className="flex flex-col space-y-6"
           >
-            {pathname === "/incubator/" || subscribePopup
-              ? "Subscribe to the newsletter"
-              : "Create an account and chat with us to make informed business decisions"}
-          </h3>
-
-          <div className="flex flex-row space-x-4 items-start justify-between ">
-            <p
+            <h3
               className={`${
                 pathname === "/incubator/" || subscribePopup
-                  ? "bg-customBlue-500 text-customPink-500"
-                  : "bg-customGreen-500 text-customBlue-600"
-              } rounded-full text-xs md:text-normal px-6 py-2 font-bold text-nowrap`}
+                  ? "text-black"
+                  : "text-white"
+              } text-xs md:text-normal uppercase pr-14 font-bold`}
             >
-              MX: +52
-            </p>
-            <div className="w-full">
+              {pathname === "/incubator/" || subscribePopup
+                ? "Subscribe to the newsletter"
+                : "Create an account and chat with us to make informed business decisions"}
+            </h3>
+
+            <div className="flex flex-row space-x-4 items-start justify-between ">
+              <p
+                className={`${
+                  pathname === "/incubator/" || subscribePopup
+                    ? "bg-customBlue-500 text-customPink-500"
+                    : "bg-customGreen-500 text-customBlue-600"
+                } rounded-full text-xs md:text-normal px-6 py-2 font-bold text-nowrap`}
+              >
+                MX: +52
+              </p>
+              <div className="w-full">
+                <input
+                  {...register("phone")}
+                  type="number"
+                  className={`${
+                    pathname === "/incubator/" || subscribePopup
+                      ? "border-customBlue-500 text-customBlue-500 placeholder-customBlue-500"
+                      : "border-white text-white placeholder-white"
+                  } rounded-full w-full border bg-transparent px-6 py-2 text-xs md:text-normal`}
+                  placeholder={
+                    pathname === "/incubator/" || subscribePopup
+                      ? "PHONE NUMBER"
+                      : "YOUR WHATSAPP"
+                  }
+                />
+                <p className="text-tight md:text-xs text-red-500">
+                  {errors.phone?.message}
+                </p>
+              </div>
+            </div>
+            <div>
               <input
-                {...register("phone")}
-                type="number"
+                {...register("email")}
+                type="text"
                 className={`${
                   pathname === "/incubator/" || subscribePopup
                     ? "border-customBlue-500 text-customBlue-500 placeholder-customBlue-500"
-                    : "border-white text-white placeholder-white"
+                    : "border-white text-white placeholder-customGreen-500"
                 } rounded-full w-full border bg-transparent px-6 py-2 text-xs md:text-normal`}
-                placeholder={
-                  pathname === "/incubator/" || subscribePopup
-                    ? "PHONE NUMBER"
-                    : "YOUR WHATSAPP"
-                }
+                placeholder="EMAIL"
               />
               <p className="text-tight md:text-xs text-red-500">
-                {errors.phone?.message}
+                {errors.email?.message}
               </p>
             </div>
-          </div>
-          <div>
+            <div className="flex justify-center">
+              <button
+                type="submit"
+                className={`${
+                  pathname === "/incubator/" || subscribePopup
+                    ? "bg-customPink-500 text-customBlue-600"
+                    : "bg-customOrange-500 text-customGreen-500"
+                } px-7 py-2 rounded-full text-xs md:text-normal text-center font-bold`}
+              >
+                VERIFY
+              </button>
+            </div>
+          </form>
+        </div>
+        {step > 1 && <div className={`${
+          pathname === "/incubator/" || subscribePopup
+            ? "bg-customBlue-600"
+            : "bg-customGreen-500"
+        } ${step === 2 && "rounded-b-[32px] mb-10"}`}>
+          <div className={`${
+          pathname === "/incubator/" || subscribePopup
+            ? "bg-white"
+            : "bg-customBlue-600"
+        } h-10 rounded-b-[32px]`} />
+          <div className={`p-7 ${step > 2 && "pb-0"} flex flex-col space-y-6`}>
+            <h3 className={`${
+          pathname === "/incubator/" || subscribePopup
+            ? "text-customPink-500"
+            : "text-customBlue-600"
+        } text-xs md:text-normal uppercase font-bold`}>
+              Place here the 4-digit code delivered to your phone
+            </h3>
+
             <input
-              {...register("email")}
-              type="text"
+              type="number"
+              value={code}
+              onChange={handleChange}
               className={`${
                 pathname === "/incubator/" || subscribePopup
-                  ? "border-customBlue-500 text-customBlue-500 placeholder-customBlue-500"
-                  : "border-white text-white placeholder-customGreen-500"
-              } rounded-full w-full border bg-transparent px-6 py-2 text-xs md:text-normal`}
-              placeholder="EMAIL"
+                  ? "placeholder-white text-white border-white"
+                  : "placeholder-customOrange-500 text-customOrange-500 border-customOrange-500"
+              }  rounded-full w-full border bg-transparent px-6 py-2 text-xs md:text-normal`}
+              placeholder="DIGIT CODE"
             />
-            <p className="text-tight md:text-xs text-red-500">
-              {errors.email?.message}
-            </p>
+
+            <div className="flex justify-center">
+              <button
+                disabled={code.length !== 4 && step < 3}
+                onClick={() => {
+                  setStep(3)
+                  setCode('')
+                }}
+                className={`${
+                  pathname === "/incubator/" || subscribePopup
+                    ? "bg-customPink-500 text-customBlue-600"
+                    : "bg-customBlue-600 text-customGreen-500"
+                } ${code.length !== 4 && "opacity-60"}  px-7 py-2 rounded-full text-xs md:text-normal text-center font-bold`}
+              >
+                {
+                  pathname === "/incubator/" || subscribePopup
+                    ? "CONTINUE"
+                    : "OK"
+                }
+              </button>
+            </div>
           </div>
-          <div className="flex justify-center">
-            <button
-              type="submit"
-              className={`${
-                pathname === "/incubator/" || subscribePopup
-                  ? "bg-customPink-500 text-customBlue-600"
-                  : "bg-customOrange-500 text-customGreen-500"
-              } px-7 py-2 rounded-full text-xs md:text-normal text-center font-bold`}
-            >
-              VERIFY
-            </button>
+        </div>}
+        {step > 2 && <div className="bg-[#5A56EC] rounded-b-[32px] mb-10">
+          <div className={`${
+          pathname === "/incubator/" || subscribePopup
+            ? "bg-customBlue-600"
+            : "bg-customGreen-500"
+        } h-10 rounded-b-[32px]`} />
+          <div className="p-7">
+            <h3 className="text-white text-center text-xs md:text-normal uppercase font-bold">
+              Thanks for your interest in us! 
+            </h3>
           </div>
-        </form>
+        </div>}
       </div>
     </motion.div>
   );
