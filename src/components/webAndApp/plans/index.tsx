@@ -32,6 +32,7 @@ export default function Plans() {
                   slidesPerView: 1.4, // Mostrar 1 slide si la pantalla es menor a 900px
                 },
               }}
+              spaceBetween={20}
               freeMode={true}
               pagination={{
                 clickable: true,
